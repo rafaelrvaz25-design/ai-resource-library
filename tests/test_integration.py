@@ -208,9 +208,9 @@ class TestUpdateCheck(unittest.TestCase):
             path = Path(tmp)
             (path / ".git").mkdir()
             def same(args, timeout):
-                return subprocess.CompletedProcess(args, 0, stdout="abc123\\n" if "rev-parse" in args else "abc123\\trefs/heads/main\\n", stderr="")
+                return subprocess.CompletedProcess(args, 0, stdout="abc123\n" if "rev-parse" in args else "abc123\trefs/heads/main\n", stderr="")
             def different(args, timeout):
-                return subprocess.CompletedProcess(args, 0, stdout="abc123\\n" if "rev-parse" in args else "def456\\trefs/heads/main\\n", stderr="")
+                return subprocess.CompletedProcess(args, 0, stdout="abc123\n" if "rev-parse" in args else "def456\trefs/heads/main\n", stderr="")
             self.assertEqual(ll.check_updates(path, git=same)["status"], "current")
             self.assertEqual(ll.check_updates(path, git=different)["status"], "different")
 
@@ -221,7 +221,7 @@ class TestUpdateCheck(unittest.TestCase):
             (path / ".git").mkdir()
             def failure(args, timeout):
                 if "rev-parse" in args:
-                    return subprocess.CompletedProcess(args, 0, stdout="abc123\\n", stderr="")
+                    return subprocess.CompletedProcess(args, 0, stdout="abc123\n", stderr="")
                 return subprocess.CompletedProcess(args, 128, stdout="", stderr="Could not resolve host")
             self.assertEqual(ll.check_updates(path, git=failure)["status"], "unknown")
 
