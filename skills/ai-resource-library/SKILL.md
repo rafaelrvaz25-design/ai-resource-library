@@ -5,7 +5,7 @@ description: Pesquisa a AI Resource Library pessoal do utilizador (catálogo de 
 
 # AI Resource Library — consulta e recomendação
 
-**Versão do protocolo da skill: 1.1.0** (atualização manual; não é a versão do catálogo).
+**Versão do protocolo da skill: 1.2.0** (atualização manual; não é a versão do catálogo).
 
 Biblioteca: repositório privado `rafaelrvaz25-design/ai-resource-library`. As regras completas estão no
 `AGENTS.md` da biblioteca. Esta skill só lê: não altera o projeto, não instala nada e não faz push.
@@ -43,9 +43,9 @@ Um diretório que exista mas falhe esta verificação é ignorado: indicar o mot
    - Nunca pôr tokens no URL, nunca imprimir credenciais, nunca fazer push.
 
 Se for uma cópia local, **verificar atualização quando houver rede e autorização de leitura**, sem alterar ficheiros:
-`python <dir-desta-skill>/scripts/locate_library.py --check-updates`. Se a skill instalada não
+`python <dir-desta-skill>/scripts/locate_library.py --check-updates --check-history`. Se a skill instalada não
 tiver scripts, usar `$LIB/skills/ai-resource-library/scripts/locate_library.py --check-updates`.
-O estado `different` indica SHA diferente, não prova que a cópia esteja atrasada. Se a verificação
+O estado `different` indica SHA diferente. Com `--check-history`, consultar `history`: `behind`, `ahead`, `diverged` ou `unknown`; o fetch ocorre apenas numa cópia temporária. Se a verificação
 falhar, indicar estado desconhecido e continuar com a versão local, explicitando a limitação.
 Comparar também a **versão do protocolo da skill** instalada com a do SKILL.md na main remota.
 Se a instalada não tiver versão, indicar `legacy/unknown`; se for diferente, indicar a diferença
