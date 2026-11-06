@@ -99,6 +99,15 @@ class T2bProductDesignDiscovery(unittest.TestCase):
         self.assertEqual(result["results"], [])
 
 
+class T2cVisualVocabulary(unittest.TestCase):
+    def test_visual_synonyms_are_expanded(self):
+        for word, expected in (("tipografia", "typography"), ("cor", "color"),
+                               ("contraste", "contrast"), ("imagens", "images"),
+                               ("consistencia", "consistency")):
+            self.assertIn(expected, search.expand_query(word)[0])
+
+
+
 class T3AiAutomation(unittest.TestCase):
     """Teste 3: servidores MCP e ferramentas para automatizar desenvolvimento."""
 
