@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import search  # noqa: E402
+import discover  # noqa: E402
 import validate  # noqa: E402
 from library import load_collections, load_environments, load_registry, load_resources  # noqa: E402
 
@@ -205,6 +206,39 @@ class T5bCssLintDiscovery(unittest.TestCase):
     def test_stylelint_is_discoverable(self):
         self.assertIn("stylelint", ids(run_search("stylelint", "--limit", "5")))
         self.assertIn("stylelint", ids(run_search("css lint", "--limit", "10")))
+
+
+class T5cProgressiveDiscovery(unittest.TestCase):
+    def test_compact_index_covers_catalog_without_full_descriptions(self):
+        resources = load_resources()
+        cards = discover.compact_index(resources)
+        self.assertEqual(len(cards), len(resources))
+        self.assertEqual({c["id"] for c in cards}, {r["id"] for r in resources})
+        self.assertTrue(all(c["summary"] and c["detail_command"] for c in cards))
+        self.assertTrue(all("description" not in c and "install" not in c for c in cards))
+
+    def test_lint_is_not_confused_with_minification(self):
+        ranked = discover.rank("css lint", load_resources(), load_collections())
+        found = [c["id"] for c in ranked]
+        self.assertIn("stylelint", found)
+        self.assertLess(found.index("stylelint"), found.index("lightning-css"))
+        self.assertIn("linting", discover.AVOID_WHEN["lightning-css"])
+
+    def test_visual_regression_recovers_playwright(self):
+        ranked = discover.rank("visual regression", load_resources(), load_collections())
+        self.assertIn("playwright", [c["id"] for c in ranked[:5]])
+
+    def test_technology_context_downranks_wordpress_only_tool(self):
+        ranked = discover.rank("performance", load_resources(), load_collections(),
+                               technology="nextjs")
+        self.assertNotIn("query-monitor", [c["id"] for c in ranked[:5]])
+
+    def test_show_is_deferred_and_unknown_id_fails(self):
+        with contextlib.redirect_stdout(io.StringIO()) as out:
+            self.assertEqual(discover.main(["--show", "stylelint"]), 0)
+        self.assertEqual(json.loads(out.getvalue())["id"], "stylelint")
+        with contextlib.redirect_stderr(io.StringIO()):
+            self.assertEqual(discover.main(["--show", "nonexistent-id"]), 1)
 
 
 class T6Integrity(unittest.TestCase):

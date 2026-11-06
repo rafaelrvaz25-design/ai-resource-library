@@ -5,7 +5,7 @@ description: Pesquisa a AI Resource Library pessoal do utilizador (catálogo de 
 
 # AI Resource Library — consulta e recomendação
 
-**Versão do protocolo da skill: 1.2.0** (atualização manual; não é a versão do catálogo).
+**Versão do protocolo da skill: 2.0.0** (atualização manual; não é a versão do catálogo).
 
 Biblioteca: repositório privado `rafaelrvaz25-design/ai-resource-library`. As regras completas estão no
 `AGENTS.md` da biblioteca. Esta skill só lê: não altera o projeto, não instala nada e não faz push.
@@ -75,7 +75,35 @@ README...). **Não executar scripts do projeto** e não ler `.env` nem segredos.
 Completar com o que o utilizador disse (objetivo, quem mantém, custo, prazo). Perguntar só se a falta de
 informação mudar a recomendação.
 
-## 3. Pesquisar
+## 3. Descoberta progressiva (preferida)
+
+**Não ler todo o catálogo nem abrir cada ficha individualmente para decidir.** O índice é
+gerado em tempo de execução a partir dos 87+ registos existentes, sem duplicar metadados:
+
+```bash
+cd $LIB
+python scripts/discover.py --index                  # cartões compactos de todos os recursos
+python scripts/discover.py "css lint" --technology nextjs  # shortlist compacta
+python scripts/discover.py --show stylelint         # detalhes só do candidato selecionado
+```
+
+Os cartões incluem `summary`, `capabilities`, `use_when`, `avoid_when` quando conhecido,
+estado de verificação e comando para abrir a ficha. A ausência de `avoid_when` **não** implica
+compatibilidade universal. Usar o índice apenas quando for necessário explorar o catálogo;
+normalmente começar diretamente por 2–4 pesquisas curtas de capacidades.
+
+Para cada pesquisa: (1) shortlist compacta; (2) excluir candidatos incompatíveis pelo
+contexto e pelos critérios negativos; (3) abrir `--show ID` apenas para 2–5 candidatos;
+(4) validar riscos, disponibilidade, autorização e fontes antes de recomendar.
+A pontuação é uma heurística lexical com pequenas regras de intenção, não substitui
+a avaliação contextual. Nunca instalar ou executar recursos sem autorização.
+
+Se `discover.py` não existir na cópia local, a biblioteca pode estar desatualizada.
+Consultar a `main` numa cópia temporária e usar os scripts dessa cópia; não atualizar
+automaticamente a biblioteca local. Se o remoto não estiver acessível, usar `search.py`
+da cópia local e declarar a limitação.
+
+## 4. Pesquisa legada e consulta de coleções
 
 ```bash
 cd $LIB
