@@ -2474,5 +2474,216 @@
     ],
     "notes": null,
     "doc": null
+  },
+  {
+    "type": "tool",
+    "origin": "external",
+    "requirements": [],
+    "dependencies": [],
+    "configuration": null,
+    "notes": null,
+    "doc": null,
+    "id": "sharp",
+    "name": "Sharp",
+    "summary": "Processamento e otimização de imagens em Node.js com formatos WebP e AVIF.",
+    "description": "Biblioteca Node.js baseada em libvips para redimensionamento, conversão e otimização de imagens. Adequada a pipelines de build, não necessária para simples exportação manual.",
+    "urls": {
+      "official": "https://sharp.pixelplumbing.com/",
+      "docs": "https://sharp.pixelplumbing.com/",
+      "github": "https://github.com/lovell/sharp",
+      "package": "https://www.npmjs.com/package/sharp"
+    },
+    "categories": [
+      "performance",
+      "web-development",
+      "developer-tools"
+    ],
+    "tags": [
+      "images",
+      "image-optimization",
+      "webp",
+      "avif",
+      "node"
+    ],
+    "features": [
+      "Redimensionamento de imagens",
+      "Conversão de formatos",
+      "Processamento em lote"
+    ],
+    "use_cases": [
+      "Otimizar imagens de case studies para um website",
+      "Gerar múltiplas dimensões de imagens"
+    ],
+    "technologies": [
+      "javascript",
+      "node"
+    ],
+    "platforms": [
+      "node"
+    ],
+    "related": [
+      {
+        "id": "lighthouse",
+        "relation": "complements",
+        "note": "Medir o impacto após otimizar as imagens"
+      }
+    ],
+    "install": {
+      "method": "npm",
+      "instructions": "Consultar instruções oficiais e compatibilidade da plataforma.",
+      "commands": [
+        "npm install sharp"
+      ]
+    },
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": "https://github.com/lovell/sharp/blob/main/LICENSE"
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-05",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Metadados do repositório oficial GitHub: descrição, estado não arquivado, atividade e SPDX. Compatibilidade e instalação não testadas.",
+      "sources": [
+        "https://github.com/lovell/sharp",
+        "https://sharp.pixelplumbing.com/"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.github",
+        "license.spdx",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": [
+        "requirements",
+        "install",
+        "platforms"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Lê e transforma ficheiros de imagem locais",
+      "notes": "Dependência nativa; validar compatibilidade e segurança antes de instalar."
+    },
+    "limitations": [
+      "Pode exigir dependências binárias compatíveis com a plataforma.",
+      "Não substitui revisão visual e compressão adequada ao conteúdo."
+    ]
+  },
+  {
+    "type": "tool",
+    "origin": "external",
+    "requirements": [],
+    "dependencies": [],
+    "configuration": null,
+    "notes": null,
+    "doc": null,
+    "id": "lightning-css",
+    "name": "Lightning CSS",
+    "summary": "Transformação, compatibilidade e minificação de CSS com motor em Rust.",
+    "description": "Parser, transformador e minificador CSS, utilizável em pipelines de frontend. Pode complementar o build existente, mas não deve ser introduzido sem medir benefício.",
+    "urls": {
+      "official": "https://lightningcss.dev/",
+      "docs": "https://lightningcss.dev/docs.html",
+      "github": "https://github.com/parcel-bundler/lightningcss",
+      "package": "https://www.npmjs.com/package/lightningcss"
+    },
+    "categories": [
+      "performance",
+      "web-development",
+      "developer-tools"
+    ],
+    "tags": [
+      "css",
+      "minification",
+      "optimization",
+      "frontend"
+    ],
+    "features": [
+      "Minificação de CSS",
+      "Transformação de sintaxe CSS",
+      "Compatibilidade entre browsers"
+    ],
+    "use_cases": [
+      "Avaliar otimização de CSS de um website",
+      "Processar CSS em pipeline de build"
+    ],
+    "technologies": [
+      "css",
+      "javascript"
+    ],
+    "platforms": [
+      "node"
+    ],
+    "related": [
+      {
+        "id": "lighthouse",
+        "relation": "complements",
+        "note": "Avaliar o impacto no desempenho"
+      }
+    ],
+    "install": {
+      "method": "npm",
+      "instructions": "Consultar documentação oficial e integração com o bundler.",
+      "commands": [
+        "npm install lightningcss"
+      ]
+    },
+    "license": {
+      "spdx": "MPL-2.0",
+      "name": "Mozilla Public License 2.0",
+      "url": "https://github.com/parcel-bundler/lightningcss/blob/master/LICENSE"
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-04",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Metadados do repositório oficial GitHub: descrição, estado não arquivado, atividade e SPDX. Integração e compatibilidade não testadas.",
+      "sources": [
+        "https://github.com/parcel-bundler/lightningcss",
+        "https://lightningcss.dev/"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.github",
+        "license.spdx",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": [
+        "requirements",
+        "install",
+        "platforms"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Lê e transforma CSS local durante o build",
+      "notes": "Validar compatibilidade do bundler e output antes de adotar."
+    },
+    "limitations": [
+      "Pode ser redundante com o pipeline CSS existente.",
+      "A minificação não corrige problemas de arquitetura ou consistência de estilos."
+    ]
   }
 ]

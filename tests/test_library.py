@@ -214,6 +214,12 @@ class T6Integrity(unittest.TestCase):
             self.assertEqual(out.returncode, 1)
             self.assertIn("nao-existe", out.stdout)
 
+    def test_validate_runs_with_isolated_python(self):
+        out = subprocess.run([sys.executable, "-I", str(ROOT / "scripts/validate.py"), "--json"],
+                             cwd=ROOT, capture_output=True, text=True)
+        self.assertEqual(out.returncode, 0, out.stderr + out.stdout)
+        self.assertTrue(json.loads(out.stdout)["ok"])
+
     def test_registry_files_exist(self):
         for t, meta in load_registry()["types"].items():
             self.assertTrue((ROOT / "catalog" / meta["file"]).exists(), t)
