@@ -67,14 +67,13 @@ def rank(query: str, resources: list[dict], collections: list[dict],
     for rec in resources:
         if rec["verification"]["status"] == "deprecated":
             continue
+        if technology and rec["id"] == "query-monitor" and technology.lower() != "wordpress":
+            continue
         raw, reasons = score(rec, groups, idx)
         bonus = 0.0
         for word in words:
             if rec["id"] in INTENTS.get(word, ()):
                 bonus += 12.0
-        # Penalizar resultados incompatíveis, sem excluir recursos que possam ser úteis.
-        if technology and rec["id"] == "query-monitor" and technology.lower() != "wordpress":
-            bonus -= 30.0
         if raw <= 0 and bonus <= 0:
             continue
         selected.append((raw + bonus, rec, reasons))
