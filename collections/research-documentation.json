@@ -1,0 +1,48 @@
+{
+  "id": "research-documentation",
+  "name": "Research & Documentation",
+  "description": "Recursos para pesquisa, análise de informação, documentação técnica, gestão de conhecimento, organização de fontes e síntese.",
+  "goals": [
+    "Organizar fontes de forma rastreável.",
+    "Produzir documentação técnica fácil de manter.",
+    "Usar documentação oficial e atualizada ao avaliar ferramentas."
+  ],
+  "use_cases": [
+    "Organizar fontes de uma pesquisa UX",
+    "Publicar documentação de um design system ou biblioteca",
+    "Converter documentação entre formatos",
+    "Verificar links e fontes de documentação"
+  ],
+  "categories": ["research", "documentation", "knowledge-management", "ux-research"],
+  "tags": ["sources", "references", "docs-site", "markdown", "conversion", "link-checker", "synthesis"],
+  "resources": [
+    { "id": "zotero", "role": "core", "rationale": "Gestor de referências open-source para recolher e citar fontes." },
+    { "id": "pandoc", "role": "recommended", "rationale": "Converte Markdown em DOCX/PDF/HTML para partilhar documentação." },
+    { "id": "mkdocs-material", "role": "recommended", "rationale": "Site de documentação a partir de Markdown com pesquisa incluída." },
+    { "id": "mkdocs", "role": "optional", "rationale": "Base do Material for MkDocs; atividade recente reduzida." },
+    { "id": "docusaurus", "role": "alternative", "rationale": "Alternativa React com versionamento de documentação." },
+    { "id": "storybook", "role": "optional", "rationale": "Documentação viva de componentes." },
+    { "id": "context7", "role": "recommended", "rationale": "Documentação de bibliotecas atualizada para agentes." },
+    { "id": "mcp-server-fetch", "role": "optional", "rationale": "Leitura de páginas de documentação por agentes." },
+    { "id": "lychee", "role": "optional", "rationale": "Verificação de links mais completa do que o script incluído." },
+    { "id": "marked", "role": "optional", "rationale": "Renderizar Markdown em páginas web próprias." },
+    { "id": "claude-design-plugin-skills", "role": "optional", "rationale": "Inclui research-synthesis e user-research (observadas, unverified)." },
+    { "id": "ai-resource-library", "role": "reference", "rationale": "Esta biblioteca é ela própria um sistema de gestão de conhecimento." },
+    { "id": "ai-resource-library-skill", "role": "recommended", "rationale": "Consulta estruturada do catálogo." }
+  ],
+  "recommendations": [
+    {
+      "scenario": "Documentação técnica de um projeto",
+      "prefer": ["mkdocs-material"],
+      "consider": ["docusaurus", "pandoc", "lychee"],
+      "why": "Markdown + pesquisa integrada com configuração mínima; Docusaurus quando a equipa já usa React e precisa de versões."
+    },
+    {
+      "scenario": "Pesquisa e organização de fontes",
+      "prefer": ["zotero"],
+      "consider": ["claude-design-plugin-skills", "mcp-server-fetch"],
+      "why": "Fontes rastreáveis com citações; síntese assistida por agente sobre fontes guardadas."
+    }
+  ],
+  "updated_on": "2026-11-06"
+}

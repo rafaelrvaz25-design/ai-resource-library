@@ -1,0 +1,1349 @@
+[
+  {
+    "id": "docusaurus",
+    "name": "Docusaurus",
+    "type": "framework",
+    "origin": "external",
+    "summary": "Gerador de sites de documentação baseado em React.",
+    "description": "Ferramenta da Meta para sites de documentação com versões, blog, pesquisa e MDX.",
+    "urls": {
+      "official": "https://docusaurus.io/",
+      "docs": null,
+      "github": "https://github.com/facebook/docusaurus",
+      "package": null
+    },
+    "categories": [
+      "documentation",
+      "web-development"
+    ],
+    "tags": [
+      "docs-site",
+      "mdx",
+      "react",
+      "static-site"
+    ],
+    "features": [
+      "Versionamento de docs",
+      "MDX",
+      "i18n"
+    ],
+    "use_cases": [
+      "Documentação técnica de um produto ou design system"
+    ],
+    "technologies": [
+      "react",
+      "markdown"
+    ],
+    "platforms": [
+      "node",
+      "web"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "mkdocs-material",
+        "relation": "alternative_to",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "npm",
+      "instructions": null,
+      "commands": [
+        "npx create-docusaurus@latest"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-06",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://docusaurus.io/",
+        "https://github.com/facebook/docusaurus"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Código instalado no projeto",
+      "notes": "Dependência npm: rever versão, licença e changelog antes de adicionar."
+    },
+    "limitations": [
+      "Mais pesado do que geradores puramente Markdown."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "gsap",
+    "name": "GSAP (GreenSock Animation Platform)",
+    "type": "framework",
+    "origin": "external",
+    "summary": "Biblioteca de animação JavaScript de alto desempenho, incluindo ScrollTrigger.",
+    "description": "Biblioteca de animação para a web com timelines, ScrollTrigger e plugins. Desde a aquisição pela Webflow é gratuita (incluindo plugins antes pagos) sob a licença 'Standard No Charge', que não é uma licença open-source OSI. Usada no portfolio-v2.",
+    "urls": {
+      "official": "https://gsap.com/",
+      "docs": "https://gsap.com/docs/v3/",
+      "github": "https://github.com/greensock/GSAP",
+      "package": "https://www.npmjs.com/package/gsap"
+    },
+    "categories": [
+      "web-development",
+      "frontend",
+      "animation"
+    ],
+    "tags": [
+      "animation",
+      "scroll",
+      "scrolltrigger",
+      "timeline",
+      "javascript"
+    ],
+    "features": [
+      "Timelines",
+      "ScrollTrigger",
+      "Animação de SVG, CSS e objetos JS",
+      "Funciona com qualquer framework"
+    ],
+    "use_cases": [
+      "Animações de landing pages",
+      "Efeitos ligados ao scroll",
+      "Micro-interações"
+    ],
+    "technologies": [
+      "javascript"
+    ],
+    "platforms": [
+      "web"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "motion",
+        "relation": "alternative_to",
+        "note": "Motion é mais idiomático em React"
+      },
+      {
+        "id": "webflow",
+        "relation": "part_of",
+        "note": "GSAP pertence à Webflow"
+      }
+    ],
+    "install": {
+      "method": "npm",
+      "instructions": null,
+      "commands": [
+        "npm install gsap"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": "https://gsap.com/standard-license"
+    },
+    "pricing": {
+      "model": "free",
+      "notes": "Gratuito para uso comercial; licença própria ('Standard No Charge'), não OSI."
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-03",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://gsap.com/",
+        "https://gsap.com/docs/v3/",
+        "https://github.com/greensock/GSAP",
+        "https://webflow.com/blog/gsap-becomes-free"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Código instalado no projeto",
+      "notes": "Dependência npm: rever versão, licença e changelog antes de adicionar."
+    },
+    "limitations": [
+      "A licença tem restrições próprias (ex.: uso em ferramentas que concorram com a Webflow); ler antes de redistribuir."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "locomotive-scroll",
+    "name": "Locomotive Scroll",
+    "type": "framework",
+    "origin": "external",
+    "summary": "Biblioteca de smooth scroll e deteção de elementos no viewport.",
+    "description": "Biblioteca para smooth scrolling e efeitos de parallax. A v5 assenta no Lenis. O portfolio-v2 usa a 5.0.0-beta.",
+    "urls": {
+      "official": "https://scroll.locomotive.ca/docs",
+      "docs": null,
+      "github": "https://github.com/locomotivemtl/locomotive-scroll",
+      "package": "https://www.npmjs.com/package/locomotive-scroll"
+    },
+    "categories": [
+      "web-development",
+      "frontend",
+      "animation"
+    ],
+    "tags": [
+      "smooth-scroll",
+      "parallax",
+      "scroll"
+    ],
+    "features": [
+      "Smooth scroll",
+      "Deteção de entrada no viewport",
+      "Parallax por atributos data-"
+    ],
+    "use_cases": [
+      "Sites de portfólio com scroll suave"
+    ],
+    "technologies": [
+      "javascript"
+    ],
+    "platforms": [
+      "web"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "gsap",
+        "relation": "complements",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "npm",
+      "instructions": null,
+      "commands": [
+        "npm install locomotive-scroll"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "maintenance-only",
+      "last_activity": "2026-04-01",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://scroll.locomotive.ca/docs",
+        "https://github.com/locomotivemtl/locomotive-scroll"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": [
+        "description (base Lenis na v5)"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Código instalado no projeto",
+      "notes": "Dependência npm: rever versão, licença e changelog antes de adicionar."
+    },
+    "limitations": [
+      "Smooth scroll pode prejudicar acessibilidade e performance; respeitar prefers-reduced-motion."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "marked",
+    "name": "marked",
+    "type": "framework",
+    "origin": "external",
+    "summary": "Parser de Markdown rápido para JavaScript.",
+    "description": "Converte Markdown em HTML. Usado no portfolio-v2 para gerar case studies a partir de content/*.md.",
+    "urls": {
+      "official": "https://marked.js.org/",
+      "docs": null,
+      "github": "https://github.com/markedjs/marked",
+      "package": "https://www.npmjs.com/package/marked"
+    },
+    "categories": [
+      "web-development",
+      "documentation"
+    ],
+    "tags": [
+      "markdown",
+      "parser",
+      "content"
+    ],
+    "features": [
+      "Markdown → HTML",
+      "Extensões"
+    ],
+    "use_cases": [
+      "Gerar páginas a partir de ficheiros Markdown"
+    ],
+    "technologies": [
+      "javascript"
+    ],
+    "platforms": [
+      "web",
+      "node"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": {
+      "method": "npm",
+      "instructions": null,
+      "commands": [
+        "npm install marked"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-02",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://marked.js.org/",
+        "https://github.com/markedjs/marked",
+        "https://registry.npmjs.org/marked/latest"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Código instalado no projeto",
+      "notes": "Dependência npm: rever versão, licença e changelog antes de adicionar."
+    },
+    "limitations": [
+      "Não sanitiza HTML: usar um sanitizador (ex.: DOMPurify) com conteúdo não confiável."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "motion",
+    "name": "Motion (antigo Framer Motion)",
+    "type": "framework",
+    "origin": "external",
+    "summary": "Biblioteca de animação para React e JavaScript, sucessora do Framer Motion.",
+    "description": "Biblioteca de animação declarativa. O pacote framer-motion evoluiu para 'motion' (motion.dev), com APIs para React, JavaScript e Vue. O portfolio-v2 usa framer-motion 10.",
+    "urls": {
+      "official": "https://motion.dev/",
+      "docs": "https://motion.dev/docs",
+      "github": "https://github.com/motiondivision/motion",
+      "package": "https://www.npmjs.com/package/motion"
+    },
+    "categories": [
+      "web-development",
+      "frontend",
+      "animation"
+    ],
+    "tags": [
+      "animation",
+      "react",
+      "gestures",
+      "layout-animation",
+      "framer-motion"
+    ],
+    "features": [
+      "Componentes motion.* para React",
+      "Animações de layout e de saída",
+      "Gestos e animações por scroll"
+    ],
+    "use_cases": [
+      "Transições de página em Next.js",
+      "Micro-interações em componentes React"
+    ],
+    "technologies": [
+      "react",
+      "javascript"
+    ],
+    "platforms": [
+      "web"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "gsap",
+        "relation": "alternative_to",
+        "note": null
+      },
+      {
+        "id": "react",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "npm",
+      "instructions": null,
+      "commands": [
+        "npm install motion"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "freemium",
+      "notes": "Biblioteca MIT; existem extras pagos (Motion+) — confirmar no site."
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-06",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://motion.dev/",
+        "https://motion.dev/docs",
+        "https://github.com/motiondivision/motion"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": [
+        "pricing.notes"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Código instalado no projeto",
+      "notes": "Dependência npm: rever versão, licença e changelog antes de adicionar."
+    },
+    "limitations": [
+      "Projetos com framer-motion antigo precisam de migração para os imports de 'motion'."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "nextjs",
+    "name": "Next.js",
+    "type": "framework",
+    "origin": "external",
+    "summary": "Framework React para aplicações web com SSR, SSG e exportação estática.",
+    "description": "Framework full-stack sobre React mantido pela Vercel. Suporta App Router, renderização no servidor, geração estática e exportação para hosting estático (ex.: GitHub Pages). Usado no projeto interno portfolio-v2 (versão 13.4).",
+    "urls": {
+      "official": "https://nextjs.org/",
+      "docs": "https://nextjs.org/docs",
+      "github": "https://github.com/vercel/next.js",
+      "package": "https://www.npmjs.com/package/next"
+    },
+    "categories": [
+      "web-development",
+      "frontend"
+    ],
+    "tags": [
+      "react",
+      "ssr",
+      "ssg",
+      "static-export",
+      "routing",
+      "javascript",
+      "typescript"
+    ],
+    "features": [
+      "App Router e Pages Router",
+      "Renderização no servidor e geração estática",
+      "Exportação estática (output: 'export')",
+      "Otimização de imagens e fontes"
+    ],
+    "use_cases": [
+      "Portfólios e sites de marketing com conteúdo em Markdown",
+      "Aplicações React com SEO",
+      "Landing pages com exportação estática"
+    ],
+    "technologies": [
+      "react",
+      "javascript",
+      "typescript",
+      "node"
+    ],
+    "platforms": [
+      "web",
+      "node"
+    ],
+    "requirements": [
+      "Node.js (ver versão mínima na documentação da versão usada)"
+    ],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "react",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "github-pages",
+        "relation": "integrates_with",
+        "note": "via exportação estática"
+      },
+      {
+        "id": "internal-portfolio-v2",
+        "relation": "integrates_with",
+        "note": "usado neste projeto"
+      }
+    ],
+    "install": {
+      "method": "npm",
+      "instructions": "Criar projeto novo com create-next-app.",
+      "commands": [
+        "npx create-next-app@latest"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-06",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://nextjs.org/",
+        "https://nextjs.org/docs",
+        "https://github.com/vercel/next.js"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Código instalado no projeto",
+      "notes": "Dependência npm: rever versão, licença e changelog antes de adicionar."
+    },
+    "limitations": [
+      "Exportação estática não suporta funcionalidades que exigem servidor (ex.: rotas API dinâmicas).",
+      "Mudanças significativas entre versões major; o portfolio-v2 está fixado na 13.4.10."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "radix-ui-primitives",
+    "name": "Radix UI Primitives",
+    "type": "framework",
+    "origin": "external",
+    "summary": "Componentes React sem estilos, acessíveis, para construir design systems.",
+    "description": "Primitivas de UI (dialog, dropdown, tabs...) com gestão de foco, teclado e ARIA, sem estilos impostos.",
+    "urls": {
+      "official": "https://www.radix-ui.com/primitives",
+      "docs": "https://www.radix-ui.com/primitives/docs/overview/introduction",
+      "github": "https://github.com/radix-ui/primitives",
+      "package": null
+    },
+    "categories": [
+      "frontend",
+      "component-library",
+      "accessibility",
+      "design-systems"
+    ],
+    "tags": [
+      "react",
+      "headless",
+      "accessibility",
+      "aria",
+      "components"
+    ],
+    "features": [
+      "Componentes headless",
+      "Navegação por teclado e foco",
+      "Atributos ARIA corretos"
+    ],
+    "use_cases": [
+      "Construir componentes acessíveis de um design system"
+    ],
+    "technologies": [
+      "react"
+    ],
+    "platforms": [
+      "web"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": {
+      "method": "npm",
+      "instructions": "Instalar cada primitiva individualmente (@radix-ui/react-*).",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-10-14",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://www.radix-ui.com/primitives",
+        "https://www.radix-ui.com/primitives/docs/overview/introduction",
+        "https://github.com/radix-ui/primitives"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Código instalado no projeto",
+      "notes": "Dependência npm: rever versão, licença e changelog antes de adicionar."
+    },
+    "limitations": [
+      "Só React."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "react",
+    "name": "React",
+    "type": "framework",
+    "origin": "external",
+    "summary": "Biblioteca JavaScript para construir interfaces com componentes.",
+    "description": "Biblioteca de UI baseada em componentes declarativos, mantida pela Meta. Base do Next.js e da maioria das bibliotecas de componentes modernas.",
+    "urls": {
+      "official": "https://react.dev/",
+      "docs": "https://react.dev/learn",
+      "github": "https://github.com/facebook/react",
+      "package": "https://www.npmjs.com/package/react"
+    },
+    "categories": [
+      "web-development",
+      "frontend",
+      "component-library"
+    ],
+    "tags": [
+      "components",
+      "jsx",
+      "hooks",
+      "javascript",
+      "reusable-components"
+    ],
+    "features": [
+      "Componentes e hooks",
+      "JSX",
+      "Server Components (com frameworks compatíveis)"
+    ],
+    "use_cases": [
+      "Criar componentes reutilizáveis",
+      "SPAs e interfaces interativas",
+      "Implementar design systems em código"
+    ],
+    "technologies": [
+      "javascript",
+      "typescript"
+    ],
+    "platforms": [
+      "web"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "nextjs",
+        "relation": "complements",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "npm",
+      "instructions": "Normalmente instalado através de um framework (Next.js) ou bundler (Vite).",
+      "commands": [
+        "npm install react react-dom"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-05",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://react.dev/",
+        "https://react.dev/learn",
+        "https://github.com/facebook/react"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Código instalado no projeto",
+      "notes": "Dependência npm: rever versão, licença e changelog antes de adicionar."
+    },
+    "limitations": [
+      "Não inclui routing, data fetching nem estilos: requer escolhas adicionais."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "sass",
+    "name": "Sass (Dart Sass)",
+    "type": "framework",
+    "origin": "external",
+    "summary": "Pré-processador CSS com variáveis, mixins, módulos e nesting.",
+    "description": "Implementação de referência do Sass. Usado no portfolio-v2 com CSS Modules (*.module.scss).",
+    "urls": {
+      "official": "https://sass-lang.com/",
+      "docs": "https://sass-lang.com/documentation/",
+      "github": "https://github.com/sass/dart-sass",
+      "package": "https://www.npmjs.com/package/sass"
+    },
+    "categories": [
+      "web-development",
+      "frontend"
+    ],
+    "tags": [
+      "css",
+      "scss",
+      "preprocessor",
+      "styles"
+    ],
+    "features": [
+      "Módulos (@use)",
+      "Mixins e funções",
+      "Nesting"
+    ],
+    "use_cases": [
+      "Estilos organizados em projetos React/Next.js",
+      "Tokens de design em SCSS"
+    ],
+    "technologies": [
+      "css"
+    ],
+    "platforms": [
+      "web",
+      "node"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": {
+      "method": "npm",
+      "instructions": null,
+      "commands": [
+        "npm install -D sass"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-06",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://sass-lang.com/",
+        "https://sass-lang.com/documentation/",
+        "https://github.com/sass/dart-sass"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Código instalado no projeto",
+      "notes": "Dependência npm: rever versão, licença e changelog antes de adicionar."
+    },
+    "limitations": [
+      "@import está descontinuado em favor de @use/@forward."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "shadcn-ui",
+    "name": "shadcn/ui",
+    "type": "framework",
+    "origin": "external",
+    "summary": "Coleção de componentes React acessíveis que se copiam para o projeto via CLI.",
+    "description": "Não é uma dependência tradicional: a CLI copia o código dos componentes (baseados em Radix UI e Tailwind) para o projeto, que passa a ser dono do código.",
+    "urls": {
+      "official": "https://ui.shadcn.com/",
+      "docs": "https://ui.shadcn.com/docs",
+      "github": "https://github.com/shadcn-ui/ui",
+      "package": null
+    },
+    "categories": [
+      "web-development",
+      "frontend",
+      "component-library",
+      "design-systems"
+    ],
+    "tags": [
+      "react",
+      "components",
+      "tailwind",
+      "radix",
+      "accessibility",
+      "reusable-components"
+    ],
+    "features": [
+      "Componentes copiáveis e editáveis",
+      "CLI para adicionar componentes",
+      "Temas via CSS variables"
+    ],
+    "use_cases": [
+      "Base de componentes React reutilizáveis",
+      "Arranque rápido de um design system em código"
+    ],
+    "technologies": [
+      "react",
+      "typescript",
+      "tailwind"
+    ],
+    "platforms": [
+      "web"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "radix-ui-primitives",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "tailwindcss",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "react",
+        "relation": "depends_on",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "npm",
+      "instructions": "Usar a CLI documentada para inicializar e adicionar componentes.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-06",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://ui.shadcn.com/",
+        "https://ui.shadcn.com/docs",
+        "https://github.com/shadcn-ui/ui"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Escreve ficheiros no projeto",
+      "notes": "A CLI gera código no repositório: rever o diff."
+    },
+    "limitations": [
+      "Atualizações dos componentes não chegam automaticamente (o código é copiado)."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "style-dictionary",
+    "name": "Style Dictionary",
+    "type": "framework",
+    "origin": "external",
+    "summary": "Sistema de build que transforma design tokens em código para várias plataformas.",
+    "description": "Converte tokens (JSON, incl. formato DTCG) em CSS variables, SCSS, JS, iOS, Android, etc. Ponte típica entre Tokens Studio/Figma e código.",
+    "urls": {
+      "official": "https://styledictionary.com/",
+      "docs": null,
+      "github": "https://github.com/style-dictionary/style-dictionary",
+      "package": "https://www.npmjs.com/package/style-dictionary"
+    },
+    "categories": [
+      "design-systems",
+      "design-tokens",
+      "frontend"
+    ],
+    "tags": [
+      "design-tokens",
+      "css-variables",
+      "dtcg",
+      "build",
+      "handoff"
+    ],
+    "features": [
+      "Transforms e formats configuráveis",
+      "Suporte ao formato W3C DTCG",
+      "Múltiplas plataformas de saída"
+    ],
+    "use_cases": [
+      "Exportar tokens do Figma para CSS/SCSS",
+      "Manter tokens sincronizados entre design e código"
+    ],
+    "technologies": [
+      "javascript",
+      "json",
+      "css"
+    ],
+    "platforms": [
+      "node"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "tokens-studio",
+        "relation": "complements",
+        "note": null
+      },
+      {
+        "id": "design-tokens-format",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "npm",
+      "instructions": null,
+      "commands": [
+        "npm install -D style-dictionary"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-03",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://styledictionary.com/",
+        "https://github.com/style-dictionary/style-dictionary"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": [
+        "features (suporte DTCG — confirmar versão)"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Código instalado no projeto",
+      "notes": "Dependência npm: rever versão, licença e changelog antes de adicionar."
+    },
+    "limitations": [
+      "Exige configuração; a curva inicial é maior do que exportar CSS manualmente."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "tailwindcss",
+    "name": "Tailwind CSS",
+    "type": "framework",
+    "origin": "external",
+    "summary": "Framework CSS utility-first para construir interfaces diretamente no markup.",
+    "description": "Framework CSS baseado em classes utilitárias, com configuração de tokens (cores, espaçamentos, tipografia).",
+    "urls": {
+      "official": "https://tailwindcss.com/",
+      "docs": "https://tailwindcss.com/docs",
+      "github": "https://github.com/tailwindlabs/tailwindcss",
+      "package": "https://www.npmjs.com/package/tailwindcss"
+    },
+    "categories": [
+      "web-development",
+      "frontend",
+      "design-systems"
+    ],
+    "tags": [
+      "css",
+      "utility-first",
+      "responsive",
+      "tokens",
+      "landing-page"
+    ],
+    "features": [
+      "Classes utilitárias",
+      "Variantes responsivas e de estado",
+      "Tema configurável"
+    ],
+    "use_cases": [
+      "Landing pages responsivas rápidas",
+      "Implementar tokens de design system"
+    ],
+    "technologies": [
+      "css"
+    ],
+    "platforms": [
+      "web"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "shadcn-ui",
+        "relation": "complements",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "npm",
+      "instructions": "Seguir o guia de instalação para o framework usado.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-05",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://tailwindcss.com/",
+        "https://tailwindcss.com/docs",
+        "https://github.com/tailwindlabs/tailwindcss"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Código instalado no projeto",
+      "notes": "Dependência npm: rever versão, licença e changelog antes de adicionar."
+    },
+    "limitations": [
+      "Markup com muitas classes; exige convenções de equipa."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "threejs",
+    "name": "three.js",
+    "type": "framework",
+    "origin": "external",
+    "summary": "Biblioteca JavaScript para gráficos 3D na web (WebGL/WebGPU).",
+    "description": "Biblioteca 3D de referência para a web. Usada no portfolio-v2 (componente LogoMaterial3D).",
+    "urls": {
+      "official": "https://threejs.org/",
+      "docs": "https://threejs.org/docs/",
+      "github": "https://github.com/mrdoob/three.js",
+      "package": "https://www.npmjs.com/package/three"
+    },
+    "categories": [
+      "web-development",
+      "frontend",
+      "animation"
+    ],
+    "tags": [
+      "3d",
+      "webgl",
+      "webgpu",
+      "graphics"
+    ],
+    "features": [
+      "Cenas, câmaras, materiais e luzes",
+      "Renderizadores WebGL e WebGPU",
+      "Carregadores de modelos (glTF, etc.)"
+    ],
+    "use_cases": [
+      "Elementos 3D em portfólios e landing pages",
+      "Visualizações interativas"
+    ],
+    "technologies": [
+      "javascript"
+    ],
+    "platforms": [
+      "web"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": {
+      "method": "npm",
+      "instructions": null,
+      "commands": [
+        "npm install three"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-06",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://threejs.org/",
+        "https://threejs.org/docs/",
+        "https://github.com/mrdoob/three.js"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Código instalado no projeto",
+      "notes": "Dependência npm: rever versão, licença e changelog antes de adicionar."
+    },
+    "limitations": [
+      "Impacto relevante em performance e tamanho do bundle; avaliar em dispositivos móveis.",
+      "API muda entre versões r1xx."
+    ],
+    "notes": null,
+    "doc": null
+  }
+]

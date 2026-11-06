@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+link-report.md
+.DS_Store
+.env
+.env.*

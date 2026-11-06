@@ -1,0 +1,428 @@
+[
+  {
+    "id": "agent-skills-spec",
+    "name": "Agent Skills (especificação)",
+    "type": "standard",
+    "origin": "external",
+    "summary": "Especificação aberta do formato de skills (pasta com SKILL.md e recursos).",
+    "description": "Formato de skills publicado em agentskills.io: frontmatter com name e description, instruções e ficheiros auxiliares carregados sob demanda.",
+    "urls": {
+      "official": "https://agentskills.io/",
+      "docs": null,
+      "github": "https://github.com/agentskills/agentskills",
+      "package": null
+    },
+    "categories": [
+      "ai-agents"
+    ],
+    "tags": [
+      "skills",
+      "specification",
+      "skill-md",
+      "interoperability"
+    ],
+    "features": [
+      "SKILL.md com frontmatter",
+      "Carregamento progressivo"
+    ],
+    "use_cases": [
+      "Escrever skills portáveis"
+    ],
+    "technologies": [],
+    "platforms": [],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": null,
+    "configuration": null,
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-04",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://agentskills.io/",
+        "https://github.com/agentskills/agentskills",
+        "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": false,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": null
+    },
+    "limitations": [
+      "Suporte varia entre agentes."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "agents-md",
+    "name": "AGENTS.md",
+    "type": "standard",
+    "origin": "external",
+    "summary": "Formato aberto de instruções para agentes de código, lido por vários agentes.",
+    "description": "Ficheiro Markdown na raiz do repositório com instruções para agentes. Lido nativamente pelo Codex e por outras ferramentas; o Claude Code lê CLAUDE.md, que pode importar AGENTS.md.",
+    "urls": {
+      "official": "https://agents.md/",
+      "docs": null,
+      "github": "https://github.com/agentsmd/agents.md",
+      "package": null
+    },
+    "categories": [
+      "ai-agents",
+      "documentation"
+    ],
+    "tags": [
+      "agents-md",
+      "instructions",
+      "interoperability",
+      "standard"
+    ],
+    "features": [
+      "Instruções de projeto em Markdown simples"
+    ],
+    "use_cases": [
+      "Instruções universais desta biblioteca"
+    ],
+    "technologies": [],
+    "platforms": [
+      "codex",
+      "cursor",
+      "claude-code"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": null,
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-09-10",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://agents.md/",
+        "https://github.com/agentsmd/agents.md"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": [
+        "platforms (lista de agentes compatíveis muda)"
+      ]
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": false,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": null
+    },
+    "limitations": [
+      "Cada agente decide se o lê automaticamente; confirmar na documentação do agente."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "design-tokens-format",
+    "name": "Design Tokens Format (W3C DTCG)",
+    "type": "standard",
+    "origin": "external",
+    "summary": "Formato JSON de design tokens do W3C Design Tokens Community Group.",
+    "description": "Especificação para trocar tokens entre ferramentas (Figma, Tokens Studio, Style Dictionary).",
+    "urls": {
+      "official": "https://www.designtokens.org/",
+      "docs": null,
+      "github": "https://github.com/design-tokens/community-group",
+      "package": null
+    },
+    "categories": [
+      "design-tokens",
+      "design-systems"
+    ],
+    "tags": [
+      "design-tokens",
+      "dtcg",
+      "w3c",
+      "json",
+      "interoperability"
+    ],
+    "features": [
+      "Formato $value/$type",
+      "Aliases"
+    ],
+    "use_cases": [
+      "Estruturar tokens de um design system de forma portável"
+    ],
+    "technologies": [],
+    "platforms": [],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "style-dictionary",
+        "relation": "integrates_with",
+        "note": null
+      },
+      {
+        "id": "tokens-studio",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": null,
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": "W3C Software and Document License."
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-09-08",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://www.designtokens.org/",
+        "https://github.com/design-tokens/community-group"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": [
+        "estado formal da especificação"
+      ]
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": false,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": null
+    },
+    "limitations": [
+      "Relatório de Community Group, não Recomendação W3C formal."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "model-context-protocol",
+    "name": "Model Context Protocol (MCP)",
+    "type": "standard",
+    "origin": "external",
+    "summary": "Protocolo aberto para ligar aplicações de IA a ferramentas e dados.",
+    "description": "Especificação aberta (originalmente da Anthropic) que define servidores com tools, resources e prompts e clientes que os consomem.",
+    "urls": {
+      "official": "https://modelcontextprotocol.io/",
+      "docs": "https://modelcontextprotocol.io/specification/",
+      "github": "https://github.com/modelcontextprotocol/modelcontextprotocol",
+      "package": null
+    },
+    "categories": [
+      "mcp",
+      "ai-agents",
+      "integrations"
+    ],
+    "tags": [
+      "protocol",
+      "specification",
+      "tools",
+      "interoperability"
+    ],
+    "features": [
+      "Tools, resources, prompts",
+      "Transportes STDIO e HTTP"
+    ],
+    "use_cases": [
+      "Avaliar se um servidor MCP é a integração certa"
+    ],
+    "technologies": [],
+    "platforms": [],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": null,
+    "configuration": null,
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-06",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://modelcontextprotocol.io/",
+        "https://modelcontextprotocol.io/specification/",
+        "https://github.com/modelcontextprotocol/modelcontextprotocol"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": [
+        "license (transição MIT → Apache-2.0)"
+      ]
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": false,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": null
+    },
+    "limitations": [
+      "Especificação em evolução; versões datadas."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "wcag-22",
+    "name": "WCAG 2.2",
+    "type": "standard",
+    "origin": "external",
+    "summary": "Diretrizes de acessibilidade para conteúdo web do W3C (versão 2.2).",
+    "description": "Recomendação W3C com critérios de sucesso nos níveis A, AA e AAA. Referência para auditorias de acessibilidade.",
+    "urls": {
+      "official": "https://www.w3.org/TR/WCAG22/",
+      "docs": null,
+      "github": "https://github.com/w3c/wcag",
+      "package": null
+    },
+    "categories": [
+      "accessibility"
+    ],
+    "tags": [
+      "a11y",
+      "wcag",
+      "w3c",
+      "standard",
+      "compliance"
+    ],
+    "features": [
+      "Critérios de sucesso A/AA/AAA",
+      "Técnicas e explicações"
+    ],
+    "use_cases": [
+      "Definir o nível de conformidade de um website"
+    ],
+    "technologies": [],
+    "platforms": [],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": null,
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": "W3C Document License."
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-02",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://www.w3.org/TR/WCAG22/",
+        "https://github.com/w3c/wcag"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": false,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": null
+    },
+    "limitations": [
+      "Conformidade exige testes manuais além de ferramentas automáticas."
+    ],
+    "notes": null,
+    "doc": null
+  }
+]

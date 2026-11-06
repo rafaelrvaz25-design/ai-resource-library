@@ -1,0 +1,678 @@
+[
+  {
+    "id": "ai-resource-library-skill",
+    "name": "Skill: ai-resource-library",
+    "type": "skill",
+    "origin": "internal",
+    "summary": "Skill desta biblioteca: pesquisar o catálogo e recomendar recursos fundamentados.",
+    "description": "Skill portável (formato Agent Skills) incluída em skills/ai-resource-library/. Localiza a biblioteca, executa scripts/search.py, lê metadados e aplica o processo de seleção do AGENTS.md.",
+    "urls": {
+      "official": "https://github.com/rafaelrvaz25-design/ai-resource-library/tree/main/skills/ai-resource-library",
+      "docs": null,
+      "github": "https://github.com/rafaelrvaz25-design/ai-resource-library",
+      "package": null
+    },
+    "categories": [
+      "ai-agents",
+      "research",
+      "knowledge-management"
+    ],
+    "tags": [
+      "skill",
+      "resource-selection",
+      "catalog-search",
+      "claude",
+      "internal"
+    ],
+    "features": [
+      "Pesquisa local por script",
+      "Fallback por leitura de JSON via GitHub",
+      "Recomendações com critérios"
+    ],
+    "use_cases": [
+      "Escolher ferramentas no início de um projeto"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude",
+      "claude-code",
+      "codex",
+      "cursor"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "ai-resource-library",
+        "relation": "part_of",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "skill",
+      "instructions": "Carregar a pasta skills/ai-resource-library como skill (Claude: Settings → Capabilities → Skills; Claude Code: .claude/skills/).",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/rafaelrvaz25-design/ai-resource-library/tree/main/skills/ai-resource-library",
+        "https://github.com/rafaelrvaz25-design/ai-resource-library"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": [
+        "urls (repositório criado nesta sessão)"
+      ]
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Leitura do catálogo",
+      "notes": "Só executa o search.py desta biblioteca."
+    },
+    "limitations": [
+      "Requer acesso ao repositório privado na sessão."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "claude-design-plugin-skills",
+    "name": "Skills de design do Claude (observadas)",
+    "type": "skill",
+    "origin": "external",
+    "summary": "Conjunto de skills de design observado na conta Claude do utilizador (accessibility-review, design-system, design-handoff...).",
+    "description": "Skills com o prefixo 'design:' observadas nesta sessão em 2026-11-06: accessibility-review, design-critique, design-handoff, design-system, research-synthesis, user-research, ux-copy. A fonte pública e licença não foram confirmadas.",
+    "urls": {
+      "official": null,
+      "docs": null,
+      "github": null,
+      "package": null
+    },
+    "categories": [
+      "design",
+      "design-systems",
+      "ux-research",
+      "accessibility"
+    ],
+    "tags": [
+      "skill",
+      "design-system",
+      "handoff",
+      "a11y",
+      "ux-research",
+      "ux-copy",
+      "claude"
+    ],
+    "features": [
+      "Auditoria WCAG 2.1 AA",
+      "Documentação de design system",
+      "Especificações de handoff",
+      "Síntese de pesquisa"
+    ],
+    "use_cases": [
+      "Documentar um design system",
+      "Rever acessibilidade antes do handoff",
+      "Sintetizar entrevistas de utilizadores"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": {
+      "method": "skill",
+      "instructions": "Já presentes na conta observada; confirmar disponibilidade na sessão atual.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": null,
+      "url": null
+    },
+    "pricing": {
+      "model": "unknown",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "unverified",
+      "verified_on": null,
+      "method": "URL oficial respondeu HTTP 200 em 2026-11-06; descrição baseada na documentação oficial.",
+      "sources": [],
+      "confirmed_fields": [],
+      "unconfirmed_fields": [
+        "urls.official",
+        "license",
+        "pricing",
+        "origem"
+      ]
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": false,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": null
+    },
+    "limitations": [
+      "Disponibilidade específica da conta; não portável para outros agentes."
+    ],
+    "notes": "Observado no ambiente Claude do utilizador (lista de skills disponíveis) em 2026-11-06.",
+    "doc": null
+  },
+  {
+    "id": "figma-agent-skills",
+    "name": "Skills do plugin Figma para Claude (observadas)",
+    "type": "skill",
+    "origin": "external",
+    "summary": "Skills do plugin Figma (figma-use, figma-generate-library, figma-design-to-code...) observadas na conta Claude.",
+    "description": "Skills que acompanham o servidor MCP da Figma e são obrigatórias antes de certas ferramentas (ex.: figma-use antes de use_figma). Observadas em 2026-11-06. Inclui figma-generate-library (design system a partir de código) e figma-code-connect.",
+    "urls": {
+      "official": null,
+      "docs": null,
+      "github": null,
+      "package": null
+    },
+    "categories": [
+      "design",
+      "design-systems",
+      "mcp"
+    ],
+    "tags": [
+      "skill",
+      "figma",
+      "design-system",
+      "code-connect",
+      "design-to-code",
+      "claude"
+    ],
+    "features": [
+      "figma-use",
+      "figma-generate-library",
+      "figma-generate-design",
+      "figma-design-to-code",
+      "figma-code-connect"
+    ],
+    "use_cases": [
+      "Criar um design system em Figma a partir de código",
+      "Implementar designs em código"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude",
+      "claude-code"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "figma-mcp-server",
+        "relation": "complements",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "skill",
+      "instructions": "Instaladas com o plugin Figma; confirmar na sessão.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": null,
+      "url": null
+    },
+    "pricing": {
+      "model": "unknown",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "unverified",
+      "verified_on": null,
+      "method": "URL oficial respondeu HTTP 200 em 2026-11-06; descrição baseada na documentação oficial.",
+      "sources": [],
+      "confirmed_fields": [],
+      "unconfirmed_fields": [
+        "urls.official",
+        "license",
+        "origem pública"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": false,
+      "requires_credentials": true,
+      "data_access": "Ficheiros Figma",
+      "notes": null
+    },
+    "limitations": [
+      "Dependem do conector Figma estar ativo."
+    ],
+    "notes": "Observado no ambiente Claude do utilizador em 2026-11-06.",
+    "doc": null
+  },
+  {
+    "id": "skill-frontend-design",
+    "name": "Skill: frontend-design (Anthropic)",
+    "type": "skill",
+    "origin": "external",
+    "summary": "Skill com orientação de design visual intencional para construir interfaces.",
+    "description": "Skill do repositório anthropics/skills que orienta direção estética, tipografia e escolhas que evitam resultados genéricos. Também observada como disponível na conta Claude do utilizador.",
+    "urls": {
+      "official": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+      "docs": null,
+      "github": "https://github.com/anthropics/skills",
+      "package": null
+    },
+    "categories": [
+      "design",
+      "frontend",
+      "ai-agents"
+    ],
+    "tags": [
+      "skill",
+      "ui-design",
+      "typography",
+      "landing-page",
+      "claude"
+    ],
+    "features": [
+      "Direção estética",
+      "Tipografia e cor"
+    ],
+    "use_cases": [
+      "Gerar landing pages com identidade visual própria"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude",
+      "claude-code"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "anthropic-skills",
+        "relation": "part_of",
+        "note": null
+      },
+      {
+        "id": "agent-skills-spec",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "skill",
+      "instructions": "Disponível em Claude; ou instalar via marketplace anthropics/skills no Claude Code.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-10-28",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+        "https://github.com/anthropics/skills"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": false,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": "Skills podem incluir scripts: rever antes de executar."
+    },
+    "limitations": [
+      "Orientação, não substitui um design system existente."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "skill-mcp-builder",
+    "name": "Skill: mcp-builder (Anthropic)",
+    "type": "skill",
+    "origin": "external",
+    "summary": "Guia para criar servidores MCP de qualidade em Python (FastMCP) ou TypeScript.",
+    "description": "Skill de orientação para desenhar ferramentas MCP que integram APIs externas.",
+    "urls": {
+      "official": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
+      "docs": null,
+      "github": "https://github.com/anthropics/skills",
+      "package": null
+    },
+    "categories": [
+      "mcp",
+      "ai-agents",
+      "developer-tools"
+    ],
+    "tags": [
+      "skill",
+      "mcp",
+      "server-development",
+      "fastmcp",
+      "typescript"
+    ],
+    "features": [],
+    "use_cases": [
+      "Criar um servidor MCP para esta biblioteca (v2)"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude-code",
+      "claude"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "anthropic-skills",
+        "relation": "part_of",
+        "note": null
+      },
+      {
+        "id": "model-context-protocol",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "skill",
+      "instructions": null,
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-10-28",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
+        "https://github.com/anthropics/skills"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": false,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": "Skills podem incluir scripts: rever antes de executar."
+    },
+    "limitations": [
+      "Orientação; o servidor resultante tem de ser testado e mantido."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "skill-skill-creator",
+    "name": "Skill: skill-creator (Anthropic)",
+    "type": "skill",
+    "origin": "external",
+    "summary": "Skill para criar, melhorar e avaliar outras skills.",
+    "description": "Ajuda a escrever SKILL.md, testar triggers e medir desempenho de skills.",
+    "urls": {
+      "official": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+      "docs": null,
+      "github": "https://github.com/anthropics/skills",
+      "package": null
+    },
+    "categories": [
+      "ai-agents",
+      "automation"
+    ],
+    "tags": [
+      "skill",
+      "skill-authoring",
+      "evals"
+    ],
+    "features": [],
+    "use_cases": [
+      "Melhorar a skill ai-resource-library"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude-code",
+      "claude"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "anthropic-skills",
+        "relation": "part_of",
+        "note": null
+      },
+      {
+        "id": "agent-skills-spec",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "skill",
+      "instructions": null,
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-10-28",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+        "https://github.com/anthropics/skills"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": false,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": "Skills podem incluir scripts: rever antes de executar."
+    },
+    "limitations": [],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "skill-webapp-testing",
+    "name": "Skill: webapp-testing (Anthropic)",
+    "type": "skill",
+    "origin": "external",
+    "summary": "Skill para testar aplicações web locais com Playwright.",
+    "description": "Instruções e scripts para verificar funcionalidade, capturar screenshots e ler logs do browser.",
+    "urls": {
+      "official": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+      "docs": null,
+      "github": "https://github.com/anthropics/skills",
+      "package": null
+    },
+    "categories": [
+      "testing",
+      "ai-agents"
+    ],
+    "tags": [
+      "skill",
+      "playwright",
+      "testing",
+      "screenshots"
+    ],
+    "features": [],
+    "use_cases": [
+      "Testar uma landing page localmente com um agente"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude-code",
+      "claude"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "anthropic-skills",
+        "relation": "part_of",
+        "note": null
+      },
+      {
+        "id": "playwright",
+        "relation": "depends_on",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "skill",
+      "instructions": null,
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-10-28",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+        "https://github.com/anthropics/skills"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Aplicação local",
+      "notes": "Inclui scripts executáveis."
+    },
+    "limitations": [
+      "Requer Playwright instalado no ambiente."
+    ],
+    "notes": null,
+    "doc": null
+  }
+]

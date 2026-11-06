@@ -1,0 +1,591 @@
+[
+  {
+    "id": "create-block-theme",
+    "name": "Create Block Theme",
+    "type": "plugin",
+    "origin": "external",
+    "summary": "Plugin oficial para criar e exportar temas de blocos a partir do Site Editor.",
+    "description": "Permite desenhar um tema no Site Editor e exportá-lo como tema de blocos (incl. theme.json), sem escrever o tema à mão.",
+    "urls": {
+      "official": "https://wordpress.org/plugins/create-block-theme/",
+      "docs": null,
+      "github": "https://github.com/WordPress/create-block-theme",
+      "package": null
+    },
+    "categories": [
+      "cms",
+      "web-development",
+      "design-systems"
+    ],
+    "tags": [
+      "wordpress",
+      "block-theme",
+      "theme-json",
+      "landing-page",
+      "full-site-editing"
+    ],
+    "features": [
+      "Criar tema a partir do Site Editor",
+      "Exportar tema em ZIP",
+      "Gerir fontes e estilos"
+    ],
+    "use_cases": [
+      "Construir uma landing page WordPress com tema de blocos próprio",
+      "Traduzir tokens de design para theme.json"
+    ],
+    "technologies": [],
+    "platforms": [
+      "wordpress"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "wordpress",
+        "relation": "depends_on",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "wordpress-plugin",
+      "instructions": null,
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "GPL-2.0-or-later",
+      "name": "GNU GPL v2 ou posterior",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-10-01",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://wordpress.org/plugins/create-block-theme/",
+        "https://github.com/WordPress/create-block-theme"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Ficheiros de tema do site",
+      "notes": null
+    },
+    "limitations": [
+      "Destina-se a desenvolvimento; desativar em produção."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "eslint-plugin-jsx-a11y",
+    "name": "eslint-plugin-jsx-a11y",
+    "type": "plugin",
+    "origin": "external",
+    "summary": "Regras ESLint para detetar problemas de acessibilidade em JSX.",
+    "description": "Análise estática de componentes React para problemas de acessibilidade (alt em falta, roles inválidos, etc.). Incluído no eslint-config-next.",
+    "urls": {
+      "official": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y",
+      "docs": null,
+      "github": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y",
+      "package": "https://www.npmjs.com/package/eslint-plugin-jsx-a11y"
+    },
+    "categories": [
+      "accessibility",
+      "code-quality",
+      "frontend"
+    ],
+    "tags": [
+      "eslint",
+      "a11y",
+      "react",
+      "jsx",
+      "linting"
+    ],
+    "features": [
+      "Regras de acessibilidade para JSX"
+    ],
+    "use_cases": [
+      "Prevenir problemas de acessibilidade em componentes React reutilizáveis"
+    ],
+    "technologies": [
+      "react",
+      "javascript"
+    ],
+    "platforms": [
+      "node"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "react",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "npm",
+      "instructions": null,
+      "commands": [
+        "npm install -D eslint-plugin-jsx-a11y"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "maintenance-only",
+      "last_activity": "2026-01-03",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y",
+        "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": [
+        "description (inclusão no eslint-config-next)"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Código instalado no projeto",
+      "notes": "Dependência npm: rever versão, licença e changelog antes de adicionar."
+    },
+    "limitations": [
+      "Análise estática apenas; não deteta problemas em runtime.",
+      "Último commit em 2026-01: atividade moderada."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "gutenberg",
+    "name": "Gutenberg (plugin)",
+    "type": "plugin",
+    "origin": "external",
+    "summary": "Plugin de desenvolvimento do editor de blocos do WordPress.",
+    "description": "Versão em desenvolvimento ativo do editor de blocos e Site Editor; as funcionalidades estáveis entram no core do WordPress.",
+    "urls": {
+      "official": "https://wordpress.org/plugins/gutenberg/",
+      "docs": null,
+      "github": "https://github.com/WordPress/gutenberg",
+      "package": null
+    },
+    "categories": [
+      "cms",
+      "web-development"
+    ],
+    "tags": [
+      "wordpress",
+      "block-editor",
+      "full-site-editing",
+      "blocks"
+    ],
+    "features": [
+      "Funcionalidades experimentais do editor",
+      "Pacotes @wordpress/*"
+    ],
+    "use_cases": [
+      "Testar funcionalidades novas do editor de blocos"
+    ],
+    "technologies": [
+      "javascript",
+      "react",
+      "php"
+    ],
+    "platforms": [
+      "wordpress"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "wordpress",
+        "relation": "part_of",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "wordpress-plugin",
+      "instructions": null,
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "GPL-2.0-or-later",
+      "name": "GNU GPL v2 ou posterior",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-06",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://wordpress.org/plugins/gutenberg/",
+        "https://github.com/WordPress/gutenberg"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": [
+        "license (licença dupla GPL-2.0+/MPL para contribuições recentes)"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Site WordPress",
+      "notes": "Não recomendado em produção sem necessidade."
+    },
+    "limitations": [
+      "Funcionalidades experimentais podem mudar."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "query-monitor",
+    "name": "Query Monitor",
+    "type": "plugin",
+    "origin": "external",
+    "summary": "Painel de diagnóstico para WordPress: queries, hooks, erros PHP e pedidos HTTP.",
+    "description": "Plugin de debugging para WordPress que mostra queries lentas, erros, hooks e chamadas HTTP.",
+    "urls": {
+      "official": "https://wordpress.org/plugins/query-monitor/",
+      "docs": null,
+      "github": "https://github.com/johnbillion/query-monitor",
+      "package": null
+    },
+    "categories": [
+      "cms",
+      "performance",
+      "developer-tools"
+    ],
+    "tags": [
+      "wordpress",
+      "debugging",
+      "performance",
+      "php"
+    ],
+    "features": [
+      "Análise de queries",
+      "Erros PHP",
+      "Hooks e ações"
+    ],
+    "use_cases": [
+      "Diagnosticar performance de um site WordPress"
+    ],
+    "technologies": [],
+    "platforms": [
+      "wordpress"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "wordpress",
+        "relation": "depends_on",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "wordpress-plugin",
+      "instructions": null,
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "GPL-2.0-or-later",
+      "name": "GNU GPL v2 ou posterior",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-10-27",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://wordpress.org/plugins/query-monitor/",
+        "https://github.com/johnbillion/query-monitor"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Informação interna do site",
+      "notes": "Visível apenas para administradores, mas desativar em produção se não for necessário."
+    },
+    "limitations": [
+      "Ferramenta de diagnóstico, não de otimização automática."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "stark",
+    "name": "Stark",
+    "type": "plugin",
+    "origin": "external",
+    "summary": "Suite de acessibilidade com plugins para Figma e outras ferramentas.",
+    "description": "Ferramentas de acessibilidade (contraste, simulação de daltonismo, verificação de foco) para design e desenvolvimento.",
+    "urls": {
+      "official": "https://www.getstark.co/",
+      "docs": null,
+      "github": null,
+      "package": null
+    },
+    "categories": [
+      "accessibility",
+      "design"
+    ],
+    "tags": [
+      "figma-plugin",
+      "a11y",
+      "contrast",
+      "color-blindness"
+    ],
+    "features": [
+      "Verificação de contraste",
+      "Simulação de visão",
+      "Anotações de acessibilidade"
+    ],
+    "use_cases": [
+      "Verificar acessibilidade no design antes do handoff"
+    ],
+    "technologies": [],
+    "platforms": [
+      "figma"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": {
+      "method": "figma-plugin",
+      "instructions": null,
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": null
+    },
+    "pricing": {
+      "model": "freemium",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "URL oficial respondeu HTTP 200 em 2026-11-06; descrição baseada na documentação oficial.",
+      "sources": [
+        "https://www.getstark.co/"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official"
+      ],
+      "unconfirmed_fields": [
+        "features",
+        "pricing",
+        "platforms (lista completa)"
+      ]
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": false,
+      "requires_credentials": false,
+      "data_access": "Ficheiros Figma abertos",
+      "notes": null
+    },
+    "limitations": [
+      "Funcionalidades avançadas pagas."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "tokens-studio",
+    "name": "Tokens Studio for Figma",
+    "type": "plugin",
+    "origin": "external",
+    "summary": "Plugin do Figma para gerir design tokens e sincronizá-los com Git.",
+    "description": "Plugin open-source para criar, aplicar e sincronizar tokens (cores, tipografia, espaçamento) entre Figma e repositórios (GitHub, etc.).",
+    "urls": {
+      "official": "https://tokens.studio/",
+      "docs": "https://docs.tokens.studio/",
+      "github": "https://github.com/tokens-studio/figma-plugin",
+      "package": null
+    },
+    "categories": [
+      "design-systems",
+      "design-tokens",
+      "design"
+    ],
+    "tags": [
+      "figma-plugin",
+      "design-tokens",
+      "github-sync",
+      "theming",
+      "design-system",
+      "handoff"
+    ],
+    "features": [
+      "Tokens em JSON",
+      "Sincronização com GitHub/GitLab",
+      "Temas e sets",
+      "Exportação compatível com Style Dictionary"
+    ],
+    "use_cases": [
+      "Gerir tokens de um design system em Figma",
+      "Ponte design → código"
+    ],
+    "technologies": [],
+    "platforms": [
+      "figma"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "figma",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "style-dictionary",
+        "relation": "complements",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "figma-plugin",
+      "instructions": "Instalar a partir da Figma Community.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "freemium",
+      "notes": "Plugin base gratuito; funcionalidades Pro pagas."
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-06",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://tokens.studio/",
+        "https://docs.tokens.studio/",
+        "https://github.com/tokens-studio/figma-plugin"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": [
+        "pricing.notes",
+        "urls.docs"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": false,
+      "requires_credentials": true,
+      "data_access": "Token de acesso ao repositório Git quando se usa sync",
+      "notes": "Usar tokens com permissões mínimas."
+    },
+    "limitations": [
+      "Figma Variables nativas cobrem parte dos casos de uso; avaliar se o plugin é necessário."
+    ],
+    "notes": null,
+    "doc": null
+  }
+]

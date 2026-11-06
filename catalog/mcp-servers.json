@@ -1,0 +1,1327 @@
+[
+  {
+    "id": "automattic-wordpress-mcp",
+    "name": "WordPress MCP (Automattic) — descontinuado",
+    "type": "mcp-server",
+    "origin": "external",
+    "summary": "Antigo plugin MCP da Automattic, arquivado e substituído pelo MCP Adapter.",
+    "description": "O README declara o repositório descontinuado e arquivado, sem manutenção, e encaminha para WordPress/mcp-adapter e Abilities API. Mantido no catálogo para evitar que seja recomendado por engano.",
+    "urls": {
+      "official": "https://github.com/Automattic/wordpress-mcp",
+      "docs": null,
+      "github": "https://github.com/Automattic/wordpress-mcp",
+      "package": null
+    },
+    "categories": [
+      "mcp",
+      "cms"
+    ],
+    "tags": [
+      "wordpress",
+      "deprecated"
+    ],
+    "features": [],
+    "use_cases": [
+      "Nenhum para instalações novas"
+    ],
+    "technologies": [],
+    "platforms": [
+      "wordpress"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "wordpress-mcp-adapter",
+        "relation": "replaced_by",
+        "note": null
+      }
+    ],
+    "install": null,
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": null,
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "archived",
+      "last_activity": "2026-09-17",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "deprecated",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/Automattic/wordpress-mcp",
+        "https://github.com/Automattic/wordpress-mcp"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": [
+        "license"
+      ]
+    },
+    "risk": {
+      "level": "high",
+      "executes_code": true,
+      "requires_credentials": true,
+      "data_access": "Site WordPress",
+      "notes": "Não instalar: sem manutenção de segurança."
+    },
+    "limitations": [
+      "Descontinuado; não usar."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "chrome-devtools-mcp",
+    "name": "Chrome DevTools MCP",
+    "type": "mcp-server",
+    "origin": "external",
+    "summary": "Servidor MCP oficial da equipa Chrome DevTools para inspecionar e depurar páginas.",
+    "description": "Dá a agentes acesso a DevTools: performance traces, rede, consola e automação do Chrome.",
+    "urls": {
+      "official": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "docs": null,
+      "github": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "package": null
+    },
+    "categories": [
+      "mcp",
+      "performance",
+      "testing",
+      "developer-tools"
+    ],
+    "tags": [
+      "chrome",
+      "devtools",
+      "performance",
+      "debugging",
+      "network"
+    ],
+    "features": [
+      "Traces de performance",
+      "Inspeção de rede e consola",
+      "Automação do browser"
+    ],
+    "use_cases": [
+      "Diagnosticar performance de um website com um agente"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude-code",
+      "cursor",
+      "vscode",
+      "codex"
+    ],
+    "requirements": [
+      "Node.js",
+      "Chrome"
+    ],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "lighthouse",
+        "relation": "complements",
+        "note": null
+      },
+      {
+        "id": "playwright-mcp",
+        "relation": "alternative_to",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "npx",
+      "instructions": "Ver README.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-06",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+        "https://github.com/ChromeDevTools/chrome-devtools-mcp"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "high",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Conteúdo do browser",
+      "notes": "Concede a um agente acesso a sistemas externos: pedir autorização antes de instalar e usar permissões mínimas."
+    },
+    "limitations": [
+      "Pode expor dados de sessões do browser se usado com o perfil pessoal."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "context7",
+    "name": "Context7",
+    "type": "mcp-server",
+    "origin": "external",
+    "summary": "Servidor MCP que fornece documentação atualizada e por versão de bibliotecas.",
+    "description": "Serviço da Upstash que injeta documentação e exemplos de código atualizados no contexto do agente, reduzindo APIs inventadas.",
+    "urls": {
+      "official": "https://context7.com/",
+      "docs": null,
+      "github": "https://github.com/upstash/context7",
+      "package": null
+    },
+    "categories": [
+      "mcp",
+      "documentation",
+      "developer-tools"
+    ],
+    "tags": [
+      "documentation",
+      "library-docs",
+      "up-to-date",
+      "research"
+    ],
+    "features": [
+      "Documentação por biblioteca e versão",
+      "Modo MCP ou CLI + skills"
+    ],
+    "use_cases": [
+      "Consultar a documentação oficial de candidatos durante a seleção de recursos"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude-code",
+      "cursor",
+      "vscode",
+      "claude"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": {
+      "method": "remote-mcp",
+      "instructions": "Servidor remoto em mcp.context7.com/mcp ou setup via CLI.",
+      "commands": [
+        "npx ctx7 setup"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "freemium",
+      "notes": "Chave API gratuita recomendada para limites maiores."
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-06",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://context7.com/",
+        "https://github.com/upstash/context7"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": true,
+      "requires_credentials": true,
+      "data_access": "Nomes de bibliotecas consultadas (enviados ao serviço)",
+      "notes": "Concede a um agente acesso a sistemas externos: pedir autorização antes de instalar e usar permissões mínimas."
+    },
+    "limitations": [
+      "Serviço externo: as consultas saem da máquina."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "figma-mcp-server",
+    "name": "Figma MCP Server (oficial)",
+    "type": "mcp-server",
+    "origin": "external",
+    "summary": "Servidor MCP oficial da Figma para dar contexto de design (e escrita) a agentes.",
+    "description": "Servidor MCP da Figma que expõe contexto de design (componentes, variáveis, screenshots, Code Connect) a agentes de código e permite criar/editar conteúdo. Observado como conector ativo na conta Claude do utilizador em 2026-11-06.",
+    "urls": {
+      "official": "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server",
+      "docs": null,
+      "github": null,
+      "package": null
+    },
+    "categories": [
+      "mcp",
+      "design",
+      "design-systems",
+      "integrations"
+    ],
+    "tags": [
+      "figma",
+      "design-to-code",
+      "code-connect",
+      "variables",
+      "design-system",
+      "handoff"
+    ],
+    "features": [
+      "Contexto de design para geração de código",
+      "Leitura de variáveis e componentes",
+      "Code Connect",
+      "Criação de ficheiros e diagramas FigJam"
+    ],
+    "use_cases": [
+      "Implementar componentes a partir do Figma",
+      "Documentar e auditar design systems",
+      "Handoff para desenvolvimento"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude",
+      "claude-code",
+      "cursor",
+      "vscode"
+    ],
+    "requirements": [
+      "Conta Figma; alguns recursos dependem do plano/seat (confirmar no guia oficial)"
+    ],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "figma",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "figma-rest-api",
+        "relation": "complements",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "remote-mcp",
+      "instructions": "Seguir o guia oficial da Figma.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": null
+    },
+    "pricing": {
+      "model": "freemium",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "URL oficial respondeu HTTP 200 em 2026-11-06; descrição baseada na documentação oficial.",
+      "sources": [
+        "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server",
+        "https://mcpservers.org/remote-mcp-servers/figma"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official"
+      ],
+      "unconfirmed_fields": [
+        "install.commands",
+        "requirements (planos/seats)",
+        "pricing"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": true,
+      "data_access": "Ficheiros Figma acessíveis à conta",
+      "notes": "Concede a um agente acesso a sistemas externos: pedir autorização antes de instalar e usar permissões mínimas."
+    },
+    "limitations": [
+      "Funcionalidades e limites dependem do plano Figma."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "github-mcp-server",
+    "name": "GitHub MCP Server",
+    "type": "mcp-server",
+    "origin": "external",
+    "summary": "Servidor MCP oficial do GitHub: repositórios, issues, pull requests, Actions e mais.",
+    "description": "Servidor MCP mantido pela GitHub, disponível como servidor remoto (alojado pela GitHub) ou local. Organiza as ferramentas em toolsets configuráveis.",
+    "urls": {
+      "official": "https://github.com/github/github-mcp-server",
+      "docs": null,
+      "github": "https://github.com/github/github-mcp-server",
+      "package": null
+    },
+    "categories": [
+      "mcp",
+      "automation",
+      "version-control",
+      "integrations"
+    ],
+    "tags": [
+      "github",
+      "issues",
+      "pull-requests",
+      "actions",
+      "code-review",
+      "automation",
+      "toolsets"
+    ],
+    "features": [
+      "Servidor remoto em api.githubcopilot.com/mcp/",
+      "Versão local (Docker/binário)",
+      "Toolsets configuráveis",
+      "Modo só de leitura"
+    ],
+    "use_cases": [
+      "Automatizar triagem de issues e PRs",
+      "Consultar esta biblioteca via API do GitHub",
+      "Ler workflows e resultados de CI"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude",
+      "claude-code",
+      "cursor",
+      "vscode",
+      "codex"
+    ],
+    "requirements": [
+      "Cliente MCP com suporte a servidores remotos (ou Docker para versão local)",
+      "Autenticação OAuth ou PAT"
+    ],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "github-rest-api",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "model-context-protocol",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "remote-mcp",
+      "instructions": "Configurar o URL remoto no cliente MCP ou correr a versão local; ver README.",
+      "commands": []
+    },
+    "configuration": "Restringir toolsets ao necessário e preferir modo read-only para consulta.",
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-04",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/github/github-mcp-server",
+        "https://github.com/github/github-mcp-server"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "high",
+      "executes_code": true,
+      "requires_credentials": true,
+      "data_access": "Repositórios, issues e PRs com as permissões do token",
+      "notes": "Concede a um agente acesso a sistemas externos: pedir autorização antes de instalar e usar permissões mínimas."
+    },
+    "limitations": [
+      "Suporte OAuth remoto varia por cliente.",
+      "Ações de escrita exigem autorização explícita do utilizador."
+    ],
+    "notes": null,
+    "doc": "resources/mcp-servers/github-mcp-server.md"
+  },
+  {
+    "id": "mcp-server-fetch",
+    "name": "MCP Fetch Server (referência)",
+    "type": "mcp-server",
+    "origin": "external",
+    "summary": "Servidor MCP de referência para obter páginas web e convertê-las em Markdown.",
+    "description": "Permite a um agente ler conteúdo web. O conteúdo obtido deve ser tratado como não confiável.",
+    "urls": {
+      "official": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+      "docs": null,
+      "github": "https://github.com/modelcontextprotocol/servers",
+      "package": null
+    },
+    "categories": [
+      "mcp",
+      "research"
+    ],
+    "tags": [
+      "web-fetch",
+      "markdown",
+      "reference-server",
+      "research"
+    ],
+    "features": [
+      "Obtém URLs",
+      "Conversão HTML → Markdown"
+    ],
+    "use_cases": [
+      "Verificar documentação oficial de recursos do catálogo"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude-desktop",
+      "claude-code",
+      "cursor"
+    ],
+    "requirements": [
+      "Python com uv/uvx"
+    ],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "mcp-reference-servers",
+        "relation": "part_of",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "uvx",
+      "instructions": "Ver README do servidor.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-04",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+        "https://github.com/modelcontextprotocol/servers"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": [
+        "license (transição MIT → Apache-2.0)"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Rede (pedidos HTTP arbitrários)",
+      "notes": "Pode aceder a endereços internos; conteúdo web pode conter prompt injection."
+    },
+    "limitations": [
+      "Servidor de referência."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "mcp-server-filesystem",
+    "name": "MCP Filesystem Server (referência)",
+    "type": "mcp-server",
+    "origin": "external",
+    "summary": "Servidor MCP de referência para ler/escrever ficheiros em diretórios permitidos.",
+    "description": "Implementação de referência mantida no repositório modelcontextprotocol/servers. Restringe o acesso aos diretórios indicados e pode correr em modo só de leitura.",
+    "urls": {
+      "official": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+      "docs": null,
+      "github": "https://github.com/modelcontextprotocol/servers",
+      "package": null
+    },
+    "categories": [
+      "mcp",
+      "developer-tools"
+    ],
+    "tags": [
+      "filesystem",
+      "files",
+      "reference-server",
+      "read-only"
+    ],
+    "features": [
+      "Leitura e escrita de ficheiros",
+      "Lista de diretórios permitidos",
+      "Modo read-only"
+    ],
+    "use_cases": [
+      "Dar acesso a esta biblioteca clonada localmente a um cliente MCP"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude-desktop",
+      "claude-code",
+      "cursor"
+    ],
+    "requirements": [
+      "Node.js 24+ (via npx) ou Docker"
+    ],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "mcp-reference-servers",
+        "relation": "part_of",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "npx",
+      "instructions": "Ver README do servidor.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-04",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+        "https://github.com/modelcontextprotocol/servers"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": [
+        "license (transição MIT → Apache-2.0)"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Ficheiros nos diretórios permitidos",
+      "notes": "Concede a um agente acesso a sistemas externos: pedir autorização antes de instalar e usar permissões mínimas."
+    },
+    "limitations": [
+      "Servidor de referência/educativo; avaliar antes de uso em produção."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "mcp-server-git",
+    "name": "MCP Git Server (referência)",
+    "type": "mcp-server",
+    "origin": "external",
+    "summary": "Servidor MCP de referência para ler e manipular repositórios Git locais.",
+    "description": "Ferramentas para status, diff, log e commits num repositório local.",
+    "urls": {
+      "official": "https://github.com/modelcontextprotocol/servers/tree/main/src/git",
+      "docs": null,
+      "github": "https://github.com/modelcontextprotocol/servers",
+      "package": null
+    },
+    "categories": [
+      "mcp",
+      "version-control"
+    ],
+    "tags": [
+      "git",
+      "reference-server",
+      "version-control"
+    ],
+    "features": [
+      "git status/diff/log",
+      "Commits e branches"
+    ],
+    "use_cases": [
+      "Agente que mantém esta biblioteca localmente"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude-desktop",
+      "claude-code",
+      "cursor"
+    ],
+    "requirements": [
+      "Python com uv/uvx"
+    ],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "mcp-reference-servers",
+        "relation": "part_of",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "uvx",
+      "instructions": "Ver README do servidor.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-04",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/modelcontextprotocol/servers/tree/main/src/git",
+        "https://github.com/modelcontextprotocol/servers"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": [
+        "license (transição MIT → Apache-2.0)"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Repositórios Git locais",
+      "notes": "Concede a um agente acesso a sistemas externos: pedir autorização antes de instalar e usar permissões mínimas."
+    },
+    "limitations": [
+      "Servidor de referência."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "netlify-mcp",
+    "name": "Netlify MCP Server",
+    "type": "mcp-server",
+    "origin": "external",
+    "summary": "Servidor MCP oficial da Netlify para criar, construir e publicar sites.",
+    "description": "Permite a agentes usar a API e CLI da Netlify (projetos, deploys, extensões).",
+    "urls": {
+      "official": "https://docs.netlify.com/welcome/build-with-ai/netlify-mcp-server/",
+      "docs": null,
+      "github": "https://github.com/netlify/netlify-mcp",
+      "package": "https://www.npmjs.com/package/@netlify/mcp"
+    },
+    "categories": [
+      "mcp",
+      "deployment",
+      "hosting"
+    ],
+    "tags": [
+      "netlify",
+      "deployment",
+      "automation"
+    ],
+    "features": [
+      "Criar projetos",
+      "Deploys",
+      "Gestão de configuração"
+    ],
+    "use_cases": [
+      "Publicar uma landing page a partir de um agente"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude",
+      "claude-code",
+      "cursor",
+      "vscode"
+    ],
+    "requirements": [
+      "Node.js 22+"
+    ],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "netlify",
+        "relation": "depends_on",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "npx",
+      "instructions": null,
+      "commands": [
+        "npx -y @netlify/mcp"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "ISC",
+      "name": "ISC License",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-03",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://docs.netlify.com/welcome/build-with-ai/netlify-mcp-server/",
+        "https://github.com/netlify/netlify-mcp"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "high",
+      "executes_code": true,
+      "requires_credentials": true,
+      "data_access": "Sites e deploys Netlify",
+      "notes": "Concede a um agente acesso a sistemas externos: pedir autorização antes de instalar e usar permissões mínimas."
+    },
+    "limitations": [
+      "Deploys são ações públicas: pedir confirmação."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "playwright-mcp",
+    "name": "Playwright MCP",
+    "type": "mcp-server",
+    "origin": "external",
+    "summary": "Servidor MCP da Microsoft para automatizar browsers via Playwright.",
+    "description": "Permite a agentes navegar, clicar e ler páginas usando a árvore de acessibilidade (sem depender de screenshots).",
+    "urls": {
+      "official": "https://github.com/microsoft/playwright-mcp",
+      "docs": null,
+      "github": "https://github.com/microsoft/playwright-mcp",
+      "package": "https://www.npmjs.com/package/@playwright/mcp"
+    },
+    "categories": [
+      "mcp",
+      "testing",
+      "automation"
+    ],
+    "tags": [
+      "browser-automation",
+      "playwright",
+      "e2e",
+      "accessibility-tree",
+      "testing"
+    ],
+    "features": [
+      "Snapshots de acessibilidade",
+      "Navegação e interação",
+      "Modo headless"
+    ],
+    "use_cases": [
+      "Testar landing pages com um agente",
+      "Verificações de UI automatizadas"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude-code",
+      "cursor",
+      "vscode",
+      "codex"
+    ],
+    "requirements": [
+      "Node.js LTS"
+    ],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "playwright",
+        "relation": "depends_on",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "npx",
+      "instructions": "Configurar no cliente MCP.",
+      "commands": [
+        "npx @playwright/mcp@latest"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-05",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/microsoft/playwright-mcp",
+        "https://github.com/microsoft/playwright-mcp"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "high",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Páginas web abertas no browser controlado",
+      "notes": "Concede a um agente acesso a sistemas externos: pedir autorização antes de instalar e usar permissões mínimas."
+    },
+    "limitations": [
+      "Conteúdo das páginas é não confiável (risco de prompt injection)."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "supabase-mcp",
+    "name": "Supabase MCP Server",
+    "type": "mcp-server",
+    "origin": "external",
+    "summary": "Servidor MCP oficial para gerir projetos Supabase (tabelas, migrações, logs, edge functions).",
+    "description": "Liga agentes a projetos Supabase. O utilizador tem o conector Supabase disponível no Claude.",
+    "urls": {
+      "official": "https://supabase.com/docs/guides/getting-started/mcp",
+      "docs": null,
+      "github": "https://github.com/supabase-community/supabase-mcp",
+      "package": null
+    },
+    "categories": [
+      "mcp",
+      "backend",
+      "integrations"
+    ],
+    "tags": [
+      "supabase",
+      "postgres",
+      "migrations",
+      "edge-functions"
+    ],
+    "features": [
+      "Consultar tabelas e executar SQL",
+      "Migrações",
+      "Logs e advisors",
+      "Edge functions"
+    ],
+    "use_cases": [
+      "Gerir o backend do vazbarber com um agente"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude",
+      "claude-code",
+      "cursor",
+      "vscode"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "supabase",
+        "relation": "depends_on",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "remote-mcp",
+      "instructions": "Ver documentação oficial.",
+      "commands": []
+    },
+    "configuration": "Usar modo read-only e scoping por projeto; não ligar a bases de dados de produção sem necessidade.",
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-06",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://supabase.com/docs/guides/getting-started/mcp",
+        "https://github.com/supabase-community/supabase-mcp"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "high",
+      "executes_code": true,
+      "requires_credentials": true,
+      "data_access": "Bases de dados Supabase",
+      "notes": "Pode executar SQL e criar projetos (com custos): exigir autorização para cada ação de escrita."
+    },
+    "limitations": [
+      "Ações de escrita em produção são de alto risco."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "webflow-mcp-server",
+    "name": "Webflow MCP Server",
+    "type": "mcp-server",
+    "origin": "external",
+    "summary": "Servidor MCP oficial da Webflow para sites, CMS e Designer.",
+    "description": "Servidor remoto com OAuth e app companheira que sincroniza o canvas do Designer com o agente.",
+    "urls": {
+      "official": "https://developers.webflow.com/mcp",
+      "docs": null,
+      "github": "https://github.com/webflow/mcp-server",
+      "package": null
+    },
+    "categories": [
+      "mcp",
+      "cms",
+      "web-development"
+    ],
+    "tags": [
+      "webflow",
+      "cms",
+      "designer",
+      "landing-page"
+    ],
+    "features": [
+      "Gestão de CMS",
+      "Ações no Designer",
+      "Páginas e estilos"
+    ],
+    "use_cases": [
+      "Editar sites Webflow com um agente"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude",
+      "claude-code",
+      "cursor"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "webflow",
+        "relation": "depends_on",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "remote-mcp",
+      "instructions": "Servidor remoto com OAuth; ver README.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-10-26",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://developers.webflow.com/mcp",
+        "https://github.com/webflow/mcp-server"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": [
+        "urls.official"
+      ]
+    },
+    "risk": {
+      "level": "high",
+      "executes_code": true,
+      "requires_credentials": true,
+      "data_access": "Sites Webflow da conta",
+      "notes": "Concede a um agente acesso a sistemas externos: pedir autorização antes de instalar e usar permissões mínimas."
+    },
+    "limitations": [
+      "Ações no Designer requerem a app companheira aberta."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "wordpress-mcp-adapter",
+    "name": "WordPress MCP Adapter",
+    "type": "mcp-server",
+    "origin": "external",
+    "summary": "Pacote oficial WordPress que expõe Abilities como ferramentas MCP.",
+    "description": "Plugin/pacote Composer canónico da iniciativa 'AI Building Blocks for WordPress'. Converte abilities (Abilities API) em tools, resources e prompts MCP; transportes HTTP e STDIO (via WP-CLI). Abilities são privadas por omissão.",
+    "urls": {
+      "official": "https://github.com/WordPress/mcp-adapter",
+      "docs": "https://developer.wordpress.com/docs/mcp/",
+      "github": "https://github.com/WordPress/mcp-adapter",
+      "package": "https://packagist.org/packages/wordpress/mcp-adapter"
+    },
+    "categories": [
+      "mcp",
+      "cms",
+      "integrations"
+    ],
+    "tags": [
+      "wordpress",
+      "abilities-api",
+      "mcp",
+      "composer"
+    ],
+    "features": [
+      "Abilities → MCP tools/resources/prompts",
+      "HTTP e STDIO",
+      "Permissões por ability"
+    ],
+    "use_cases": [
+      "Deixar um agente gerir conteúdo de um site WordPress",
+      "Automatizar criação de páginas"
+    ],
+    "technologies": [],
+    "platforms": [
+      "wordpress",
+      "claude-desktop",
+      "claude-code"
+    ],
+    "requirements": [
+      "WordPress com Abilities API (core a partir do 6.9)"
+    ],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "wordpress",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "wp-cli",
+        "relation": "integrates_with",
+        "note": null
+      },
+      {
+        "id": "automattic-wordpress-mcp",
+        "relation": "alternative_to",
+        "note": "substitui"
+      }
+    ],
+    "install": {
+      "method": "wordpress-plugin",
+      "instructions": "Instalar como plugin ou via Composer; ver Quick Start.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "GPL-2.0-or-later",
+      "name": "GNU GPL v2 ou posterior",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-04",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/WordPress/mcp-adapter",
+        "https://developer.wordpress.com/docs/mcp/",
+        "https://github.com/WordPress/mcp-adapter",
+        "https://developer.wordpress.org/news/2025/11/introducing-the-wordpress-abilities-api/"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "high",
+      "executes_code": true,
+      "requires_credentials": true,
+      "data_access": "Conteúdo e configuração do site WordPress",
+      "notes": "Concede a um agente acesso a sistemas externos: pedir autorização antes de instalar e usar permissões mínimas."
+    },
+    "limitations": [
+      "Projeto recente; API em evolução (guias de migração v0.5/v0.7)."
+    ],
+    "notes": null,
+    "doc": null
+  }
+]

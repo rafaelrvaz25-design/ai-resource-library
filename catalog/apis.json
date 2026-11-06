@@ -1,0 +1,424 @@
+[
+  {
+    "id": "brevo-api",
+    "name": "Brevo API",
+    "type": "api",
+    "origin": "external",
+    "summary": "API de email transacional e marketing (antigo Sendinblue).",
+    "description": "Usada no projeto vazbarber para emails de confirmação e lembretes no plano gratuito.",
+    "urls": {
+      "official": "https://developers.brevo.com/",
+      "docs": null,
+      "github": null,
+      "package": null
+    },
+    "categories": [
+      "integrations",
+      "backend"
+    ],
+    "tags": [
+      "email",
+      "transactional-email",
+      "api"
+    ],
+    "features": [
+      "Email transacional",
+      "Contactos e campanhas"
+    ],
+    "use_cases": [
+      "Emails de confirmação em sites estáticos"
+    ],
+    "technologies": [],
+    "platforms": [
+      "http"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": null,
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": null
+    },
+    "pricing": {
+      "model": "freemium",
+      "notes": "Plano gratuito com limite diário (300 emails/dia segundo o README do vazbarber)."
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "URL oficial respondeu HTTP 200 em 2026-11-06; descrição baseada na documentação oficial.",
+      "sources": [
+        "https://developers.brevo.com/",
+        "https://github.com/vazbarber/vazbarber.github.io"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official"
+      ],
+      "unconfirmed_fields": [
+        "pricing.notes"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": false,
+      "requires_credentials": true,
+      "data_access": "Lista de contactos",
+      "notes": null
+    },
+    "limitations": [
+      "Limites do plano gratuito."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "claude-api",
+    "name": "Claude API (Anthropic)",
+    "type": "api",
+    "origin": "external",
+    "summary": "API da Anthropic para usar modelos Claude, tool use, MCP connector e skills.",
+    "description": "API Messages com suporte a ferramentas, streaming, batch e integrações.",
+    "urls": {
+      "official": "https://docs.claude.com/en/api/overview",
+      "docs": null,
+      "github": null,
+      "package": null
+    },
+    "categories": [
+      "ai-agents",
+      "integrations"
+    ],
+    "tags": [
+      "claude",
+      "llm",
+      "api",
+      "tool-use"
+    ],
+    "features": [
+      "Messages API",
+      "Tool use",
+      "Batch",
+      "Streaming"
+    ],
+    "use_cases": [
+      "Construir agentes próprios que consultam esta biblioteca"
+    ],
+    "technologies": [],
+    "platforms": [
+      "http"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": null,
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": null
+    },
+    "pricing": {
+      "model": "usage-based",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "URL oficial respondeu HTTP 200 em 2026-11-06; descrição baseada na documentação oficial.",
+      "sources": [
+        "https://docs.claude.com/en/api/overview"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": false,
+      "requires_credentials": true,
+      "data_access": null,
+      "notes": "Nunca guardar chaves API no repositório."
+    },
+    "limitations": [
+      "Custos por utilização."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "figma-rest-api",
+    "name": "Figma REST API",
+    "type": "api",
+    "origin": "external",
+    "summary": "API REST da Figma para ler ficheiros, componentes, estilos, variáveis e comentários.",
+    "description": "Acesso programático a ficheiros Figma; útil para exportar tokens e documentar componentes.",
+    "urls": {
+      "official": "https://developers.figma.com/docs/rest-api/",
+      "docs": null,
+      "github": null,
+      "package": null
+    },
+    "categories": [
+      "design",
+      "integrations",
+      "design-systems"
+    ],
+    "tags": [
+      "figma",
+      "rest",
+      "api",
+      "variables",
+      "components"
+    ],
+    "features": [
+      "Ficheiros e nós",
+      "Componentes e estilos",
+      "Variáveis (dependente do plano)",
+      "Webhooks"
+    ],
+    "use_cases": [
+      "Extrair tokens e documentação de um design system"
+    ],
+    "technologies": [],
+    "platforms": [
+      "http"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "figma",
+        "relation": "part_of",
+        "note": null
+      }
+    ],
+    "install": null,
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": null
+    },
+    "pricing": {
+      "model": "freemium",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "URL oficial respondeu HTTP 200 em 2026-11-06; descrição baseada na documentação oficial.",
+      "sources": [
+        "https://developers.figma.com/docs/rest-api/"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official"
+      ],
+      "unconfirmed_fields": [
+        "features (endpoints de variáveis por plano)"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": false,
+      "requires_credentials": true,
+      "data_access": "Ficheiros Figma",
+      "notes": null
+    },
+    "limitations": [
+      "Algumas APIs (ex.: variáveis) dependem do plano."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "github-rest-api",
+    "name": "GitHub REST API",
+    "type": "api",
+    "origin": "external",
+    "summary": "API REST oficial do GitHub para repositórios, conteúdos, issues e Actions.",
+    "description": "Permite ler ficheiros desta biblioteca sem clonar (GET /repos/{owner}/{repo}/contents/{path}).",
+    "urls": {
+      "official": "https://docs.github.com/en/rest",
+      "docs": "https://docs.github.com/en/rest",
+      "github": null,
+      "package": null
+    },
+    "categories": [
+      "integrations",
+      "version-control"
+    ],
+    "tags": [
+      "github",
+      "rest",
+      "api",
+      "contents-api"
+    ],
+    "features": [
+      "Contents API",
+      "Issues e PRs",
+      "Actions"
+    ],
+    "use_cases": [
+      "Consultar o catálogo remotamente a partir de qualquer agente com token"
+    ],
+    "technologies": [],
+    "platforms": [
+      "http"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": null,
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": "Limites de pedidos por hora."
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "URL oficial respondeu HTTP 200 em 2026-11-06; descrição baseada na documentação oficial.",
+      "sources": [
+        "https://docs.github.com/en/rest",
+        "https://docs.github.com/en/rest"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": false,
+      "requires_credentials": true,
+      "data_access": "Repositórios acessíveis pelo token",
+      "notes": "Usar tokens fine-grained só de leitura."
+    },
+    "limitations": [
+      "Rate limits; repositório privado exige autenticação."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "wordpress-rest-api",
+    "name": "WordPress REST API",
+    "type": "api",
+    "origin": "external",
+    "summary": "API REST incluída no core do WordPress para conteúdos, utilizadores e configurações.",
+    "description": "Endpoints /wp-json/ para ler e escrever posts, páginas, media e tipos personalizados.",
+    "urls": {
+      "official": "https://developer.wordpress.org/rest-api/",
+      "docs": null,
+      "github": null,
+      "package": null
+    },
+    "categories": [
+      "cms",
+      "integrations"
+    ],
+    "tags": [
+      "wordpress",
+      "rest",
+      "api",
+      "headless"
+    ],
+    "features": [
+      "CRUD de conteúdos",
+      "Endpoints personalizados",
+      "Autenticação por application passwords"
+    ],
+    "use_cases": [
+      "WordPress headless",
+      "Automatizar criação de páginas"
+    ],
+    "technologies": [],
+    "platforms": [
+      "http",
+      "wordpress"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "wordpress",
+        "relation": "part_of",
+        "note": null
+      }
+    ],
+    "install": null,
+    "configuration": null,
+    "license": {
+      "spdx": "GPL-2.0-or-later",
+      "name": "GNU GPL v2 ou posterior",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "URL oficial respondeu HTTP 200 em 2026-11-06; descrição baseada na documentação oficial.",
+      "sources": [
+        "https://developer.wordpress.org/rest-api/"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": false,
+      "requires_credentials": true,
+      "data_access": "Conteúdo do site",
+      "notes": null
+    },
+    "limitations": [
+      "Escrita requer autenticação."
+    ],
+    "notes": null,
+    "doc": null
+  }
+]

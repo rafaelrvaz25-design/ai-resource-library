@@ -1,0 +1,2338 @@
+[
+  {
+    "id": "axe-core",
+    "name": "axe-core",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Motor open-source de testes automáticos de acessibilidade.",
+    "description": "Biblioteca da Deque usada por Lighthouse, Storybook, Playwright e extensões de browser para detetar problemas WCAG.",
+    "urls": {
+      "official": "https://www.deque.com/axe/",
+      "docs": null,
+      "github": "https://github.com/dequelabs/axe-core",
+      "package": "https://www.npmjs.com/package/axe-core"
+    },
+    "categories": [
+      "accessibility",
+      "testing"
+    ],
+    "tags": [
+      "a11y",
+      "wcag",
+      "automated-testing",
+      "audit"
+    ],
+    "features": [
+      "Regras mapeadas para WCAG",
+      "Integração com frameworks de teste",
+      "Baixa taxa de falsos positivos (objetivo declarado)"
+    ],
+    "use_cases": [
+      "Testes de acessibilidade em CI",
+      "Auditar um website"
+    ],
+    "technologies": [
+      "javascript"
+    ],
+    "platforms": [
+      "web",
+      "node"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "playwright",
+        "relation": "integrates_with",
+        "note": null
+      },
+      {
+        "id": "wcag-22",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "npm",
+      "instructions": null,
+      "commands": [
+        "npm install -D axe-core"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MPL-2.0",
+      "name": "Mozilla Public License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": "Motor gratuito; a Deque tem produtos comerciais (axe DevTools Pro)."
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-05",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://www.deque.com/axe/",
+        "https://github.com/dequelabs/axe-core"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Código instalado no projeto",
+      "notes": "Dependência npm: rever versão, licença e changelog antes de adicionar."
+    },
+    "limitations": [
+      "Testes automáticos não substituem testes manuais e com tecnologias de apoio."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "claude-code",
+    "name": "Claude Code",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Agente de programação da Anthropic para terminal, IDE, desktop e web.",
+    "description": "Agente que lê e altera código, executa comandos e usa servidores MCP e skills. Lê CLAUDE.md automaticamente (que pode importar AGENTS.md).",
+    "urls": {
+      "official": "https://code.claude.com/docs/en/overview",
+      "docs": "https://code.claude.com/docs/en/memory",
+      "github": "https://github.com/anthropics/claude-code",
+      "package": null
+    },
+    "categories": [
+      "ai-agents",
+      "developer-tools"
+    ],
+    "tags": [
+      "coding-agent",
+      "claude",
+      "cli",
+      "mcp",
+      "skills",
+      "claude-md"
+    ],
+    "features": [
+      "Edição de código e execução de comandos",
+      "Suporte MCP",
+      "Skills e plugins",
+      "Memória via CLAUDE.md"
+    ],
+    "use_cases": [
+      "Desenvolvimento assistido por IA",
+      "Consultar esta biblioteca via CLAUDE.md"
+    ],
+    "technologies": [],
+    "platforms": [
+      "macos",
+      "linux",
+      "windows",
+      "web"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "agents-md",
+        "relation": "integrates_with",
+        "note": null
+      },
+      {
+        "id": "agent-skills-spec",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "cli",
+      "instructions": "Seguir a documentação oficial de instalação.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": null
+    },
+    "pricing": {
+      "model": "paid",
+      "notes": "Requer subscrição Claude ou conta API."
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-06",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://code.claude.com/docs/en/overview",
+        "https://code.claude.com/docs/en/memory",
+        "https://github.com/anthropics/claude-code"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": [
+        "pricing.notes"
+      ]
+    },
+    "risk": {
+      "level": "high",
+      "executes_code": true,
+      "requires_credentials": true,
+      "data_access": "Ficheiros e shell do projeto",
+      "notes": "Executa comandos: rever permissões."
+    },
+    "limitations": [
+      "Proprietário."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "codex-cli",
+    "name": "OpenAI Codex CLI",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Agente de programação open-source da OpenAI para o terminal.",
+    "description": "Agente de código da OpenAI que lê AGENTS.md como fonte de instruções do projeto.",
+    "urls": {
+      "official": "https://developers.openai.com/codex",
+      "docs": null,
+      "github": "https://github.com/openai/codex",
+      "package": null
+    },
+    "categories": [
+      "ai-agents",
+      "developer-tools"
+    ],
+    "tags": [
+      "coding-agent",
+      "openai",
+      "cli",
+      "agents-md"
+    ],
+    "features": [
+      "Agente local no terminal",
+      "Leitura de AGENTS.md",
+      "Sandbox de execução"
+    ],
+    "use_cases": [
+      "Consultar esta biblioteca a partir do Codex"
+    ],
+    "technologies": [],
+    "platforms": [
+      "macos",
+      "linux",
+      "windows"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "agents-md",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "npm",
+      "instructions": "Ver documentação oficial.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "paid",
+      "notes": "CLI open-source; requer conta OpenAI."
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-06",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://developers.openai.com/codex",
+        "https://github.com/openai/codex"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": [
+        "pricing.notes"
+      ]
+    },
+    "risk": {
+      "level": "high",
+      "executes_code": true,
+      "requires_credentials": true,
+      "data_access": "Ficheiros e shell do projeto",
+      "notes": null
+    },
+    "limitations": [
+      "Requer conta OpenAI."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "cursor",
+    "name": "Cursor",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Editor de código com IA, baseado em VS Code.",
+    "description": "IDE com agente de IA integrado; suporta regras de projeto (.cursor/rules), AGENTS.md e servidores MCP.",
+    "urls": {
+      "official": "https://cursor.com/",
+      "docs": "https://cursor.com/docs/context/rules",
+      "github": null,
+      "package": null
+    },
+    "categories": [
+      "ai-agents",
+      "developer-tools"
+    ],
+    "tags": [
+      "ide",
+      "coding-agent",
+      "mcp",
+      "agents-md",
+      "rules"
+    ],
+    "features": [
+      "Agente no editor",
+      "Regras de projeto",
+      "Suporte MCP"
+    ],
+    "use_cases": [
+      "Consultar esta biblioteca a partir do Cursor"
+    ],
+    "technologies": [],
+    "platforms": [
+      "macos",
+      "linux",
+      "windows"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "agents-md",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "desktop-app",
+      "instructions": null,
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": null
+    },
+    "pricing": {
+      "model": "freemium",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "URL oficial respondeu HTTP 200 em 2026-11-06; descrição baseada na documentação oficial.",
+      "sources": [
+        "https://cursor.com/",
+        "https://cursor.com/docs/context/rules"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official"
+      ],
+      "unconfirmed_fields": [
+        "pricing",
+        "features (suporte AGENTS.md — confirmar na versão em uso)"
+      ]
+    },
+    "risk": {
+      "level": "high",
+      "executes_code": true,
+      "requires_credentials": true,
+      "data_access": "Ficheiros do projeto",
+      "notes": null
+    },
+    "limitations": [
+      "Proprietário."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "figma",
+    "name": "Figma",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Ferramenta colaborativa de design de interfaces, prototipagem e design systems.",
+    "description": "Plataforma de design baseada no browser com componentes, variáveis, Dev Mode, protótipos e bibliotecas partilhadas. Ferramenta principal do trabalho UX/UI do utilizador (design system FPF).",
+    "urls": {
+      "official": "https://www.figma.com/",
+      "docs": "https://help.figma.com/",
+      "github": null,
+      "package": null
+    },
+    "categories": [
+      "design",
+      "design-systems",
+      "prototyping"
+    ],
+    "tags": [
+      "ui-design",
+      "prototyping",
+      "components",
+      "variables",
+      "dev-mode",
+      "handoff",
+      "design-system"
+    ],
+    "features": [
+      "Componentes e variantes",
+      "Variáveis (tokens) e modos",
+      "Prototipagem",
+      "Dev Mode para handoff",
+      "Plugins da comunidade"
+    ],
+    "use_cases": [
+      "Criar e documentar design systems",
+      "Protótipos de alta fidelidade",
+      "Handoff para desenvolvimento"
+    ],
+    "technologies": [],
+    "platforms": [
+      "web",
+      "macos",
+      "windows"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "figma-mcp-server",
+        "relation": "integrates_with",
+        "note": null
+      },
+      {
+        "id": "figma-rest-api",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "saas",
+      "instructions": "Usar no browser ou instalar a app desktop.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": null
+    },
+    "pricing": {
+      "model": "freemium",
+      "notes": "Plano gratuito com limites; funcionalidades como Dev Mode e bibliotecas partilhadas dependem do plano."
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "URL oficial respondeu HTTP 200 em 2026-11-06; descrição baseada na documentação oficial.",
+      "sources": [
+        "https://www.figma.com/",
+        "https://help.figma.com/"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official"
+      ],
+      "unconfirmed_fields": [
+        "pricing.notes"
+      ]
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": false,
+      "requires_credentials": true,
+      "data_access": "Ficheiros de design na conta Figma",
+      "notes": null
+    },
+    "limitations": [
+      "Proprietário; algumas funcionalidades dependem do plano pago."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "github-actions",
+    "name": "GitHub Actions",
+    "type": "tool",
+    "origin": "external",
+    "summary": "CI/CD integrado no GitHub para automatizar testes, builds e deployments.",
+    "description": "Workflows YAML executados em runners da GitHub. Usado nesta biblioteca para validação automática e no vazbarber para keep-alive do Supabase.",
+    "urls": {
+      "official": "https://github.com/features/actions",
+      "docs": "https://docs.github.com/en/actions",
+      "github": null,
+      "package": null
+    },
+    "categories": [
+      "automation",
+      "deployment",
+      "testing"
+    ],
+    "tags": [
+      "ci",
+      "cd",
+      "workflows",
+      "github",
+      "automation"
+    ],
+    "features": [
+      "Workflows por evento e agendamento",
+      "Marketplace de actions",
+      "Secrets"
+    ],
+    "use_cases": [
+      "Validar JSON e esquemas em cada push",
+      "Deploy automático"
+    ],
+    "technologies": [],
+    "platforms": [
+      "github"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": {
+      "method": "none",
+      "instructions": "Criar ficheiros em .github/workflows/.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": null
+    },
+    "pricing": {
+      "model": "freemium",
+      "notes": "Minutos gratuitos com limites por plano."
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "URL oficial respondeu HTTP 200 em 2026-11-06; descrição baseada na documentação oficial.",
+      "sources": [
+        "https://github.com/features/actions",
+        "https://docs.github.com/en/actions"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official"
+      ],
+      "unconfirmed_fields": [
+        "pricing.notes"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": true,
+      "data_access": "Secrets do repositório",
+      "notes": "Actions de terceiros executam código: fixar versões e rever origem."
+    },
+    "limitations": [
+      "Minutos limitados em repositórios privados."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "github-pages",
+    "name": "GitHub Pages",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Alojamento gratuito de sites estáticos diretamente a partir de um repositório GitHub.",
+    "description": "Serviço da GitHub para publicar HTML/CSS/JS estático a partir de um branch ou de GitHub Actions. Usado nos três repositórios do utilizador.",
+    "urls": {
+      "official": "https://pages.github.com/",
+      "docs": "https://docs.github.com/en/pages",
+      "github": null,
+      "package": null
+    },
+    "categories": [
+      "hosting",
+      "deployment"
+    ],
+    "tags": [
+      "static-hosting",
+      "deployment",
+      "github",
+      "free-hosting"
+    ],
+    "features": [
+      "Publicação por branch ou Actions",
+      "Domínios personalizados e HTTPS"
+    ],
+    "use_cases": [
+      "Publicar portfólios e landing pages estáticas"
+    ],
+    "technologies": [],
+    "platforms": [
+      "web"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "github-actions",
+        "relation": "complements",
+        "note": null
+      },
+      {
+        "id": "netlify",
+        "relation": "alternative_to",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "saas",
+      "instructions": "Ativar em Settings → Pages do repositório.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": "Gratuito em repositórios públicos; repositórios privados requerem plano pago."
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "URL oficial respondeu HTTP 200 em 2026-11-06; descrição baseada na documentação oficial.",
+      "sources": [
+        "https://pages.github.com/",
+        "https://docs.github.com/en/pages"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official"
+      ],
+      "unconfirmed_fields": [
+        "pricing.notes"
+      ]
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": false,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": "Tudo o que é publicado fica público."
+    },
+    "limitations": [
+      "Só conteúdo estático; sem server-side."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "lighthouse",
+    "name": "Lighthouse",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Auditoria automática de performance, acessibilidade, SEO e boas práticas.",
+    "description": "Ferramenta da Google disponível no Chrome DevTools, CLI e Node. Gera relatório com métricas Core Web Vitals e recomendações.",
+    "urls": {
+      "official": "https://developer.chrome.com/docs/lighthouse/overview",
+      "docs": null,
+      "github": "https://github.com/GoogleChrome/lighthouse",
+      "package": null
+    },
+    "categories": [
+      "performance",
+      "accessibility",
+      "testing",
+      "web-development"
+    ],
+    "tags": [
+      "performance",
+      "core-web-vitals",
+      "seo",
+      "a11y",
+      "audit"
+    ],
+    "features": [
+      "Auditorias de performance",
+      "Verificações de acessibilidade (subconjunto axe)",
+      "SEO e boas práticas",
+      "CLI e CI"
+    ],
+    "use_cases": [
+      "Medir performance de uma landing page",
+      "Verificação rápida de acessibilidade"
+    ],
+    "technologies": [
+      "javascript"
+    ],
+    "platforms": [
+      "chrome",
+      "node"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "axe-core",
+        "relation": "depends_on",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "builtin",
+      "instructions": "Incluído no Chrome DevTools; CLI via npm.",
+      "commands": [
+        "npm install -g lighthouse"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-05",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://developer.chrome.com/docs/lighthouse/overview",
+        "https://github.com/GoogleChrome/lighthouse"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Carrega a página auditada",
+      "notes": null
+    },
+    "limitations": [
+      "Os testes de acessibilidade automáticos cobrem apenas parte dos critérios WCAG."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "lychee",
+    "name": "lychee",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Verificador de links rápido para Markdown, HTML e websites.",
+    "description": "Ferramenta em Rust que deteta links partidos; existe GitHub Action oficial.",
+    "urls": {
+      "official": "https://lychee.cli.rs/",
+      "docs": null,
+      "github": "https://github.com/lycheeverse/lychee",
+      "package": null
+    },
+    "categories": [
+      "documentation",
+      "testing"
+    ],
+    "tags": [
+      "link-checker",
+      "ci",
+      "markdown"
+    ],
+    "features": [
+      "Verificação concorrente",
+      "GitHub Action"
+    ],
+    "use_cases": [
+      "Detetar links partidos em documentação"
+    ],
+    "technologies": [],
+    "platforms": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": {
+      "method": "binary",
+      "instructions": null,
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": "Dupla licença MIT/Apache-2.0."
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-02",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://lychee.cli.rs/",
+        "https://github.com/lycheeverse/lychee"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": [
+        "license (dupla licença)"
+      ]
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": null
+    },
+    "limitations": [
+      "Alternativa mais robusta ao scripts/check_links.py desta biblioteca, mas é uma dependência externa."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "mkdocs",
+    "name": "MkDocs",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Gerador de sites de documentação estáticos a partir de Markdown.",
+    "description": "Ferramenta Python simples para documentação em Markdown com configuração YAML.",
+    "urls": {
+      "official": "https://www.mkdocs.org/",
+      "docs": null,
+      "github": "https://github.com/mkdocs/mkdocs",
+      "package": null
+    },
+    "categories": [
+      "documentation"
+    ],
+    "tags": [
+      "docs-site",
+      "markdown",
+      "python",
+      "static-site"
+    ],
+    "features": [
+      "Markdown + YAML",
+      "Servidor de desenvolvimento",
+      "Temas"
+    ],
+    "use_cases": [
+      "Publicar documentação técnica simples"
+    ],
+    "technologies": [
+      "python",
+      "markdown"
+    ],
+    "platforms": [
+      "python"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "mkdocs-material",
+        "relation": "complements",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "pip",
+      "instructions": null,
+      "commands": [
+        "pip install mkdocs"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "BSD-2-Clause",
+      "name": "BSD 2-Clause",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "maintenance-only",
+      "last_activity": "2025-10-20",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://www.mkdocs.org/",
+        "https://github.com/mkdocs/mkdocs"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": null
+    },
+    "limitations": [
+      "Último commit no branch principal em 2025-10: atividade reduzida; confirmar estado do projeto antes de adotar."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "mkdocs-material",
+    "name": "Material for MkDocs",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Tema e framework de documentação sobre MkDocs, com pesquisa e componentes.",
+    "description": "Tema muito usado para documentação técnica com pesquisa, admonitions, abas e modo escuro.",
+    "urls": {
+      "official": "https://squidfunk.github.io/mkdocs-material/",
+      "docs": null,
+      "github": "https://github.com/squidfunk/mkdocs-material",
+      "package": null
+    },
+    "categories": [
+      "documentation"
+    ],
+    "tags": [
+      "docs-site",
+      "markdown",
+      "search",
+      "theme"
+    ],
+    "features": [
+      "Pesquisa integrada",
+      "Admonitions e abas",
+      "Modo escuro"
+    ],
+    "use_cases": [
+      "Site de documentação para um design system ou biblioteca"
+    ],
+    "technologies": [
+      "python",
+      "markdown"
+    ],
+    "platforms": [
+      "python"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "mkdocs",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "docusaurus",
+        "relation": "alternative_to",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "pip",
+      "instructions": null,
+      "commands": [
+        "pip install mkdocs-material"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-10-30",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://squidfunk.github.io/mkdocs-material/",
+        "https://github.com/squidfunk/mkdocs-material"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": [
+        "limitations (roadmap)"
+      ]
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": null
+    },
+    "limitations": [
+      "O próprio projeto comunicou mudanças de rumo (ex.: Zensical); confirmar o roadmap antes de adotar a longo prazo."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "netlify",
+    "name": "Netlify",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Plataforma de deploy e alojamento para sites estáticos e aplicações web.",
+    "description": "Deploys a partir de Git, previews por pull request, functions e formulários. O utilizador tem o conector Netlify disponível no Claude.",
+    "urls": {
+      "official": "https://www.netlify.com/",
+      "docs": "https://docs.netlify.com/",
+      "github": null,
+      "package": null
+    },
+    "categories": [
+      "hosting",
+      "deployment"
+    ],
+    "tags": [
+      "deployment",
+      "static-hosting",
+      "previews",
+      "serverless"
+    ],
+    "features": [
+      "Deploy previews",
+      "Functions",
+      "Formulários"
+    ],
+    "use_cases": [
+      "Publicar landing pages com previews"
+    ],
+    "technologies": [],
+    "platforms": [
+      "web",
+      "cloud"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "netlify-mcp",
+        "relation": "integrates_with",
+        "note": null
+      },
+      {
+        "id": "github-pages",
+        "relation": "alternative_to",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "saas",
+      "instructions": null,
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": null
+    },
+    "pricing": {
+      "model": "freemium",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "URL oficial respondeu HTTP 200 em 2026-11-06; descrição baseada na documentação oficial.",
+      "sources": [
+        "https://www.netlify.com/",
+        "https://docs.netlify.com/"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official"
+      ],
+      "unconfirmed_fields": [
+        "pricing"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": false,
+      "requires_credentials": true,
+      "data_access": "Sites e configurações de deploy",
+      "notes": null
+    },
+    "limitations": [
+      "Limites do plano gratuito."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "pa11y",
+    "name": "Pa11y",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Ferramenta de linha de comandos para testes automáticos de acessibilidade.",
+    "description": "Executa testes de acessibilidade (HTML_CodeSniffer ou axe) sobre URLs, com saída para terminal ou CI.",
+    "urls": {
+      "official": "https://pa11y.org/",
+      "docs": null,
+      "github": "https://github.com/pa11y/pa11y",
+      "package": null
+    },
+    "categories": [
+      "accessibility",
+      "testing"
+    ],
+    "tags": [
+      "a11y",
+      "cli",
+      "ci",
+      "wcag"
+    ],
+    "features": [
+      "Testes por URL",
+      "Runners axe e htmlcs",
+      "Pa11y CI para múltiplas páginas"
+    ],
+    "use_cases": [
+      "Verificar acessibilidade em CI"
+    ],
+    "technologies": [
+      "javascript"
+    ],
+    "platforms": [
+      "node"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "axe-core",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "npm",
+      "instructions": null,
+      "commands": [
+        "npm install -g pa11y"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "LGPL-3.0",
+      "name": "GNU LGPL v3",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-01",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://pa11y.org/",
+        "https://github.com/pa11y/pa11y"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Código instalado no projeto",
+      "notes": "Dependência npm: rever versão, licença e changelog antes de adicionar."
+    },
+    "limitations": [
+      "Usa um browser headless; exige Node e Chromium."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "pandoc",
+    "name": "Pandoc",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Conversor universal de documentos (Markdown, DOCX, HTML, PDF, LaTeX...).",
+    "description": "Ferramenta de linha de comandos para converter entre dezenas de formatos de documento.",
+    "urls": {
+      "official": "https://pandoc.org/",
+      "docs": null,
+      "github": "https://github.com/jgm/pandoc",
+      "package": null
+    },
+    "categories": [
+      "documentation",
+      "research"
+    ],
+    "tags": [
+      "conversion",
+      "markdown",
+      "docx",
+      "pdf",
+      "cli"
+    ],
+    "features": [
+      "Conversão entre formatos",
+      "Templates",
+      "Filtros Lua"
+    ],
+    "use_cases": [
+      "Converter documentação Markdown em DOCX/PDF"
+    ],
+    "technologies": [],
+    "platforms": [
+      "macos",
+      "windows",
+      "linux"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": {
+      "method": "binary",
+      "instructions": "Instaladores em pandoc.org.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "GPL-2.0-or-later",
+      "name": "GNU GPL v2 ou posterior",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-05",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://pandoc.org/",
+        "https://github.com/jgm/pandoc"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": null
+    },
+    "limitations": [
+      "PDF requer motor LaTeX ou alternativo."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "playwright",
+    "name": "Playwright",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Framework de testes end-to-end e automação de browsers (Chromium, Firefox, WebKit).",
+    "description": "Ferramenta da Microsoft para testes E2E, screenshots e automação. Integra com axe-core para testes de acessibilidade.",
+    "urls": {
+      "official": "https://playwright.dev/",
+      "docs": "https://playwright.dev/docs/intro",
+      "github": "https://github.com/microsoft/playwright",
+      "package": null
+    },
+    "categories": [
+      "testing",
+      "automation",
+      "web-development"
+    ],
+    "tags": [
+      "e2e",
+      "browser-automation",
+      "screenshots",
+      "responsive",
+      "ci"
+    ],
+    "features": [
+      "Testes multi-browser",
+      "Emulação de dispositivos",
+      "Trace viewer",
+      "Codegen"
+    ],
+    "use_cases": [
+      "Testar landing pages em vários tamanhos de ecrã",
+      "Testes de regressão visual"
+    ],
+    "technologies": [
+      "javascript",
+      "typescript",
+      "python"
+    ],
+    "platforms": [
+      "node",
+      "python"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "playwright-mcp",
+        "relation": "complements",
+        "note": null
+      },
+      {
+        "id": "axe-core",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "npm",
+      "instructions": null,
+      "commands": [
+        "npm init playwright@latest"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-05",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://playwright.dev/",
+        "https://playwright.dev/docs/intro",
+        "https://github.com/microsoft/playwright"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Descarrega browsers e executa-os",
+      "notes": null
+    },
+    "limitations": [
+      "Descarrega binários de browsers (centenas de MB)."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "storybook",
+    "name": "Storybook",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Ambiente para desenvolver, testar e documentar componentes de UI isoladamente.",
+    "description": "Workshop de componentes para React, Vue e outros, com documentação automática, addons de acessibilidade e testes visuais.",
+    "urls": {
+      "official": "https://storybook.js.org/",
+      "docs": "https://storybook.js.org/docs",
+      "github": "https://github.com/storybookjs/storybook",
+      "package": null
+    },
+    "categories": [
+      "design-systems",
+      "component-library",
+      "documentation",
+      "testing"
+    ],
+    "tags": [
+      "components",
+      "documentation",
+      "react",
+      "a11y",
+      "visual-testing",
+      "handoff"
+    ],
+    "features": [
+      "Stories por componente",
+      "Docs automáticas",
+      "Addon de acessibilidade (axe)",
+      "Testes de interação"
+    ],
+    "use_cases": [
+      "Documentar o design system em código",
+      "Validar estados de componentes React reutilizáveis"
+    ],
+    "technologies": [
+      "javascript",
+      "typescript",
+      "react"
+    ],
+    "platforms": [
+      "web",
+      "node"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "axe-core",
+        "relation": "integrates_with",
+        "note": null
+      },
+      {
+        "id": "react",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "npm",
+      "instructions": null,
+      "commands": [
+        "npx storybook@latest init"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-06",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://storybook.js.org/",
+        "https://storybook.js.org/docs",
+        "https://github.com/storybookjs/storybook"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Código instalado no projeto",
+      "notes": "Dependência npm: rever versão, licença e changelog antes de adicionar."
+    },
+    "limitations": [
+      "Adiciona configuração e dependências significativas ao projeto."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "supabase",
+    "name": "Supabase",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Backend open-source: Postgres, autenticação, storage e edge functions.",
+    "description": "Plataforma de backend sobre PostgreSQL com Auth, Storage, Realtime e Edge Functions (Deno). Usada no projeto interno vazbarber (marcações).",
+    "urls": {
+      "official": "https://supabase.com/",
+      "docs": "https://supabase.com/docs",
+      "github": "https://github.com/supabase/supabase",
+      "package": null
+    },
+    "categories": [
+      "backend",
+      "web-development"
+    ],
+    "tags": [
+      "postgres",
+      "auth",
+      "edge-functions",
+      "database",
+      "deno"
+    ],
+    "features": [
+      "Postgres gerido",
+      "Auth",
+      "Edge Functions",
+      "Row Level Security"
+    ],
+    "use_cases": [
+      "Backend para sites estáticos",
+      "Formulários e marcações"
+    ],
+    "technologies": [
+      "postgres",
+      "typescript",
+      "deno"
+    ],
+    "platforms": [
+      "web",
+      "cloud"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "supabase-mcp",
+        "relation": "integrates_with",
+        "note": null
+      },
+      {
+        "id": "github-pages",
+        "relation": "complements",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "saas",
+      "instructions": "Criar projeto no dashboard; CLI para desenvolvimento local.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "freemium",
+      "notes": "Plano gratuito pausa projetos inativos (motivo do workflow keep-alive no vazbarber)."
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-06",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://supabase.com/",
+        "https://supabase.com/docs",
+        "https://github.com/supabase/supabase",
+        "https://github.com/vazbarber/vazbarber.github.io"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "high",
+      "executes_code": true,
+      "requires_credentials": true,
+      "data_access": "Base de dados de produção",
+      "notes": "Nunca guardar chaves service_role em repositórios."
+    },
+    "limitations": [
+      "Projetos gratuitos são pausados após inatividade."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "wave",
+    "name": "WAVE (WebAIM)",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Avaliador visual de acessibilidade web, via site e extensão de browser.",
+    "description": "Ferramenta da WebAIM que sobrepõe ícones de erros e alertas de acessibilidade na própria página.",
+    "urls": {
+      "official": "https://wave.webaim.org/",
+      "docs": null,
+      "github": null,
+      "package": null
+    },
+    "categories": [
+      "accessibility",
+      "testing"
+    ],
+    "tags": [
+      "a11y",
+      "browser-extension",
+      "audit",
+      "wcag",
+      "manual-review"
+    ],
+    "features": [
+      "Relatório visual na página",
+      "Extensões para Chrome/Firefox/Edge",
+      "Verificação de contraste"
+    ],
+    "use_cases": [
+      "Revisão de acessibilidade por designers",
+      "Auditoria manual assistida"
+    ],
+    "technologies": [],
+    "platforms": [
+      "chrome",
+      "firefox",
+      "edge",
+      "web"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": {
+      "method": "browser-extension",
+      "instructions": null,
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": null
+    },
+    "pricing": {
+      "model": "freemium",
+      "notes": "Uso individual gratuito; API paga."
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "URL oficial respondeu HTTP 200 em 2026-11-06; descrição baseada na documentação oficial.",
+      "sources": [
+        "https://wave.webaim.org/"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official"
+      ],
+      "unconfirmed_fields": [
+        "pricing.notes"
+      ]
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": false,
+      "requires_credentials": false,
+      "data_access": "Conteúdo da página aberta",
+      "notes": null
+    },
+    "limitations": [
+      "Não automatizável sem a API paga."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "webflow",
+    "name": "Webflow",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Construtor visual de websites com CMS e hosting.",
+    "description": "Plataforma no-code/low-code para design e publicação de sites. O portfolio-v2 inclui um remake de um site Webflow antigo; o utilizador tem o conector Webflow disponível.",
+    "urls": {
+      "official": "https://webflow.com/",
+      "docs": "https://developers.webflow.com/",
+      "github": null,
+      "package": null
+    },
+    "categories": [
+      "web-development",
+      "design",
+      "cms",
+      "hosting"
+    ],
+    "tags": [
+      "no-code",
+      "visual-builder",
+      "cms",
+      "landing-page"
+    ],
+    "features": [
+      "Designer visual",
+      "CMS",
+      "Hosting",
+      "Interações"
+    ],
+    "use_cases": [
+      "Landing pages sem código",
+      "Sites de marketing geridos por designers"
+    ],
+    "technologies": [],
+    "platforms": [
+      "web"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "webflow-mcp-server",
+        "relation": "integrates_with",
+        "note": null
+      },
+      {
+        "id": "wordpress",
+        "relation": "alternative_to",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "saas",
+      "instructions": null,
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": null
+    },
+    "pricing": {
+      "model": "freemium",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "URL oficial respondeu HTTP 200 em 2026-11-06; descrição baseada na documentação oficial.",
+      "sources": [
+        "https://webflow.com/",
+        "https://developers.webflow.com/"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official"
+      ],
+      "unconfirmed_fields": [
+        "pricing"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": false,
+      "requires_credentials": true,
+      "data_access": "Sites Webflow da conta",
+      "notes": null
+    },
+    "limitations": [
+      "Proprietário; exportação de código limitada."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "wordpress",
+    "name": "WordPress",
+    "type": "tool",
+    "origin": "external",
+    "summary": "CMS open-source para sites, blogs e landing pages, com editor de blocos.",
+    "description": "Sistema de gestão de conteúdos com editor de blocos (Gutenberg), temas de blocos (Full Site Editing), plugins e REST API.",
+    "urls": {
+      "official": "https://wordpress.org/",
+      "docs": "https://developer.wordpress.org/",
+      "github": null,
+      "package": null
+    },
+    "categories": [
+      "cms",
+      "web-development"
+    ],
+    "tags": [
+      "cms",
+      "php",
+      "block-editor",
+      "full-site-editing",
+      "landing-page",
+      "themes"
+    ],
+    "features": [
+      "Editor de blocos",
+      "Temas de blocos e Site Editor",
+      "Ecossistema de plugins",
+      "REST API"
+    ],
+    "use_cases": [
+      "Landing pages editáveis por não-programadores",
+      "Sites institucionais e blogs"
+    ],
+    "technologies": [
+      "php",
+      "mysql",
+      "javascript"
+    ],
+    "platforms": [
+      "web",
+      "linux"
+    ],
+    "requirements": [
+      "Servidor com PHP e MySQL/MariaDB (ou WordPress Playground para testes)"
+    ],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "wordpress-playground",
+        "relation": "complements",
+        "note": null
+      },
+      {
+        "id": "wp-cli",
+        "relation": "complements",
+        "note": null
+      },
+      {
+        "id": "wordpress-rest-api",
+        "relation": "part_of",
+        "note": null
+      },
+      {
+        "id": "wordpress-mcp-adapter",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "self-hosted",
+      "instructions": "Instalar num servidor PHP ou usar um alojamento gerido; para testes usar WordPress Playground.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "GPL-2.0-or-later",
+      "name": "GNU GPL v2 ou posterior",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": "Software gratuito; alojamento e temas/plugins premium têm custos."
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "URL oficial respondeu HTTP 200 em 2026-11-06; descrição baseada na documentação oficial.",
+      "sources": [
+        "https://wordpress.org/",
+        "https://developer.wordpress.org/"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": true,
+      "data_access": "Base de dados e ficheiros do site",
+      "notes": "Plugins de terceiros são o principal vetor de risco: verificar origem e manutenção."
+    },
+    "limitations": [
+      "Requer manutenção de segurança (atualizações de core, temas e plugins)."
+    ],
+    "notes": null,
+    "doc": "resources/tools/wordpress.md"
+  },
+  {
+    "id": "wordpress-playground",
+    "name": "WordPress Playground",
+    "type": "tool",
+    "origin": "external",
+    "summary": "WordPress completo a correr no browser (WebAssembly), sem servidor.",
+    "description": "Projeto oficial que executa WordPress em WebAssembly no browser ou em Node. Ideal para protótipos, demos e testes de plugins/temas sem instalar nada. Suporta 'blueprints' JSON.",
+    "urls": {
+      "official": "https://playground.wordpress.net/",
+      "docs": "https://wordpress.github.io/wordpress-playground/",
+      "github": "https://github.com/WordPress/wordpress-playground",
+      "package": null
+    },
+    "categories": [
+      "cms",
+      "web-development",
+      "testing",
+      "prototyping"
+    ],
+    "tags": [
+      "wordpress",
+      "wasm",
+      "sandbox",
+      "blueprints",
+      "prototyping"
+    ],
+    "features": [
+      "WordPress no browser",
+      "Blueprints JSON reprodutíveis",
+      "CLI para uso local"
+    ],
+    "use_cases": [
+      "Prototipar uma landing page WordPress sem servidor",
+      "Testar plugins em isolamento"
+    ],
+    "technologies": [
+      "php",
+      "webassembly"
+    ],
+    "platforms": [
+      "web",
+      "node"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "wordpress",
+        "relation": "complements",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "none",
+      "instructions": "Abrir no browser; existe também uma CLI documentada.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "GPL-2.0-or-later",
+      "name": "GNU GPL v2 ou posterior",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-05",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://playground.wordpress.net/",
+        "https://wordpress.github.io/wordpress-playground/",
+        "https://github.com/WordPress/wordpress-playground"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": [
+        "urls.docs"
+      ]
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Sandbox local no browser",
+      "notes": null
+    },
+    "limitations": [
+      "Ambiente efémero por omissão; não substitui alojamento de produção."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "wp-cli",
+    "name": "WP-CLI",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Interface de linha de comandos oficial para gerir instalações WordPress.",
+    "description": "Permite instalar plugins/temas, gerir utilizadores, base de dados e conteúdos via terminal. Também é usado pelo MCP Adapter para transporte STDIO.",
+    "urls": {
+      "official": "https://wp-cli.org/",
+      "docs": "https://developer.wordpress.org/cli/commands/",
+      "github": "https://github.com/wp-cli/wp-cli",
+      "package": null
+    },
+    "categories": [
+      "cms",
+      "developer-tools",
+      "automation"
+    ],
+    "tags": [
+      "wordpress",
+      "cli",
+      "automation",
+      "php"
+    ],
+    "features": [
+      "Gestão de plugins, temas e core",
+      "Operações de base de dados",
+      "Comandos extensíveis"
+    ],
+    "use_cases": [
+      "Automatizar setup de sites WordPress",
+      "Scripts de deployment"
+    ],
+    "technologies": [
+      "php"
+    ],
+    "platforms": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "requirements": [
+      "PHP"
+    ],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "wordpress",
+        "relation": "complements",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "phar",
+      "instructions": "Seguir as instruções de instalação em wp-cli.org.",
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-02",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://wp-cli.org/",
+        "https://developer.wordpress.org/cli/commands/",
+        "https://github.com/wp-cli/wp-cli"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "high",
+      "executes_code": true,
+      "requires_credentials": true,
+      "data_access": "Acesso total ao site e à base de dados",
+      "notes": "Comandos destrutivos (db reset, search-replace): pedir autorização explícita."
+    },
+    "limitations": [
+      "Requer acesso de shell ao servidor."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "zotero",
+    "name": "Zotero",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Gestor de referências open-source para recolher, organizar e citar fontes.",
+    "description": "Aplicação para guardar fontes (artigos, páginas, livros), anotar PDFs e gerar citações/bibliografias.",
+    "urls": {
+      "official": "https://www.zotero.org/",
+      "docs": "https://www.zotero.org/support/",
+      "github": "https://github.com/zotero/zotero",
+      "package": null
+    },
+    "categories": [
+      "research",
+      "knowledge-management"
+    ],
+    "tags": [
+      "references",
+      "citations",
+      "sources",
+      "pdf-annotation",
+      "bibliography"
+    ],
+    "features": [
+      "Captura de fontes pelo browser",
+      "Anotação de PDFs",
+      "Estilos de citação (CSL)",
+      "Sincronização"
+    ],
+    "use_cases": [
+      "Organizar fontes de pesquisa UX",
+      "Gerar bibliografias"
+    ],
+    "technologies": [],
+    "platforms": [
+      "macos",
+      "windows",
+      "linux",
+      "ios"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": {
+      "method": "desktop-app",
+      "instructions": null,
+      "commands": []
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "AGPL-3.0-only",
+      "name": "GNU AGPL v3",
+      "url": null
+    },
+    "pricing": {
+      "model": "freemium",
+      "notes": "App gratuita; armazenamento de sincronização extra pago."
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-05",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://www.zotero.org/",
+        "https://www.zotero.org/support/",
+        "https://github.com/zotero/zotero"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": [
+        "license (ficheiro COPYING indica AGPL — confirmar versão)"
+      ]
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": false,
+      "requires_credentials": false,
+      "data_access": "Biblioteca local de referências",
+      "notes": null
+    },
+    "limitations": [
+      "Integração com agentes de IA depende de ferramentas de terceiros."
+    ],
+    "notes": null,
+    "doc": null
+  }
+]

@@ -1,0 +1,44 @@
+name: Validar biblioteca
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 6 * * 1"   # segunda-feira: verificação de links e de dados antigos
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar dependências
+        run: pip install -r requirements.txt
+      - name: Validar JSON, esquemas e referências
+        run: python scripts/validate.py
+      - name: Testes obrigatórios
+        run: python -m unittest discover -s tests -v
+      - name: Pesquisa de fumo
+        run: python scripts/search.py "landing page wordpress" --limit 3
+
+  links:
+    # Só no agendamento ou manualmente; relatório sem alterar ficheiros (não bloqueia).
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verificar links
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # token automático da execução (só leitura); não é um segredo guardado no repo
+        run: python scripts/check_links.py --report link-report.md
+      - name: Publicar relatório no resumo da execução
+        run: cat link-report.md >> "$GITHUB_STEP_SUMMARY"

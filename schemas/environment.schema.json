@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/rafaelrvaz25-design/ai-resource-library/schemas/environment.schema.json",
+  "title": "Environment snapshot",
+  "description": "Registo OBSERVADO de um ambiente concreto (ex.: a conta Claude do utilizador). Separa 'instalado', 'disponível para execução' e 'autorizado', que NÃO se deduzem do catálogo. É um instantâneo datado: o agente deve reconfirmar no ambiente atual.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "observed_on", "observed_by", "entries"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "name": { "type": "string" },
+    "description": { "type": ["string", "null"] },
+    "observed_on": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "observed_by": { "type": "string" },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["resource_id", "installed", "available_for_execution", "authorization"],
+        "properties": {
+          "resource_id": { "type": "string" },
+          "installed": { "enum": ["yes", "no", "unknown"] },
+          "available_for_execution": { "enum": ["yes", "no", "unknown"] },
+          "authorization": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["level"],
+            "properties": {
+              "level": { "enum": ["ask-every-time", "read-only-allowed", "allowed-with-scope", "not-allowed"] },
+              "scope": { "type": ["string", "null"] },
+              "granted_by": { "type": ["string", "null"] },
+              "granted_on": { "type": ["string", "null"] }
+            }
+          },
+          "evidence": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "claude-ai-rafael",
+  "name": "Conta Claude (claude.ai) do Rafael",
+  "description": "Instantâneo do que foi OBSERVADO na sessão Claude de 2026-11-06 (conectores e skills listados pela própria sessão). Não garante disponibilidade em sessões futuras: o agente deve reconfirmar no ambiente atual. Nenhuma autorização permanente é concedida por este ficheiro.",
+  "observed_on": "2026-11-06",
+  "observed_by": "Claude (sessão de criação da biblioteca)",
+  "entries": [
+    { "resource_id": "figma-mcp-server", "installed": "yes", "available_for_execution": "yes", "authorization": { "level": "ask-every-time", "scope": null, "granted_by": null, "granted_on": null }, "evidence": "Ferramentas mcp__Figma__* listadas na sessão." },
+    { "resource_id": "figma-agent-skills", "installed": "yes", "available_for_execution": "yes", "authorization": { "level": "ask-every-time", "scope": null, "granted_by": null, "granted_on": null }, "evidence": "Skills figma:* listadas na sessão." },
+    { "resource_id": "supabase-mcp", "installed": "yes", "available_for_execution": "yes", "authorization": { "level": "ask-every-time", "scope": "Pode criar projetos com custos e executar SQL: confirmar sempre.", "granted_by": null, "granted_on": null }, "evidence": "Ferramentas mcp__Supabase__* listadas na sessão." },
+    { "resource_id": "netlify-mcp", "installed": "yes", "available_for_execution": "yes", "authorization": { "level": "ask-every-time", "scope": null, "granted_by": null, "granted_on": null }, "evidence": "Ferramentas mcp__Netlify__* listadas na sessão." },
+    { "resource_id": "webflow-mcp-server", "installed": "yes", "available_for_execution": "yes", "authorization": { "level": "ask-every-time", "scope": null, "granted_by": null, "granted_on": null }, "evidence": "Ferramentas mcp__Webflow__* listadas na sessão." },
+    { "resource_id": "skill-frontend-design", "installed": "yes", "available_for_execution": "yes", "authorization": { "level": "read-only-allowed", "scope": "Orientação de design; não executa código.", "granted_by": null, "granted_on": null }, "evidence": "Skill frontend-design listada na sessão." },
+    { "resource_id": "claude-design-plugin-skills", "installed": "yes", "available_for_execution": "yes", "authorization": { "level": "read-only-allowed", "scope": "Skills de orientação.", "granted_by": null, "granted_on": null }, "evidence": "Skills design:* listadas na sessão." },
+    { "resource_id": "skill-skill-creator", "installed": "yes", "available_for_execution": "yes", "authorization": { "level": "ask-every-time", "scope": null, "granted_by": null, "granted_on": null }, "evidence": "Skill skill-creator listada na sessão." },
+    { "resource_id": "github-mcp-server", "installed": "unknown", "available_for_execution": "unknown", "authorization": { "level": "ask-every-time", "scope": null, "granted_by": null, "granted_on": null }, "evidence": "Nesta sessão o acesso ao GitHub foi feito pela integração GitHub da sessão (git + REST limitada a repositórios associados), não por este servidor." },
+    { "resource_id": "wordpress-mcp-adapter", "installed": "no", "available_for_execution": "no", "authorization": { "level": "ask-every-time", "scope": null, "granted_by": null, "granted_on": null }, "evidence": "Não listado na sessão." },
+    { "resource_id": "automattic-wordpress-mcp", "installed": "no", "available_for_execution": "no", "authorization": { "level": "not-allowed", "scope": "Descontinuado.", "granted_by": null, "granted_on": null }, "evidence": "Não listado; descontinuado." }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "ai-automation",
+  "name": "AI & Automation",
+  "description": "Recursos para agentes de IA, servidores MCP, skills, automações, integrações, orquestração e desenvolvimento assistido por IA.",
+  "goals": [
+    "Escolher a integração mínima necessária (API, servidor MCP ou skill) para cada tarefa.",
+    "Manter instruções portáveis entre agentes.",
+    "Separar descoberta, instalação, execução e autorização."
+  ],
+  "use_cases": [
+    "Automatizar tarefas de desenvolvimento no GitHub",
+    "Testar websites com agentes",
+    "Ligar agentes a CMS e backends",
+    "Escrever skills e instruções reutilizáveis"
+  ],
+  "categories": ["ai-agents", "mcp", "automation", "integrations", "developer-tools"],
+  "tags": ["mcp", "skills", "agents", "github", "automation", "claude", "codex", "cursor"],
+  "resources": [
+    { "id": "github-mcp-server", "role": "core", "rationale": "Servidor oficial do GitHub para issues, PRs, Actions e conteúdos; suporta modo read-only e toolsets." },
+    { "id": "github-actions", "role": "core", "rationale": "Automação determinística (CI) para tarefas que não precisam de um agente." },
+    { "id": "playwright-mcp", "role": "recommended", "rationale": "Testes de UI conduzidos por agente usando a árvore de acessibilidade." },
+    { "id": "chrome-devtools-mcp", "role": "optional", "rationale": "Diagnóstico de performance e rede por agente." },
+    { "id": "context7", "role": "recommended", "rationale": "Documentação atualizada de bibliotecas, útil no passo 'consultar documentação dos candidatos'." },
+    { "id": "mcp-server-filesystem", "role": "optional", "rationale": "Acesso controlado a ficheiros locais (ex.: clone desta biblioteca) em clientes sem shell." },
+    { "id": "mcp-server-git", "role": "optional", "rationale": "Operações Git locais por agente." },
+    { "id": "mcp-server-fetch", "role": "optional", "rationale": "Leitura de documentação web; tratar conteúdo como não confiável." },
+    { "id": "supabase-mcp", "role": "optional", "rationale": "Gestão do backend Supabase; conector já disponível. Escrita exige autorização." },
+    { "id": "netlify-mcp", "role": "optional", "rationale": "Deploys por agente; conector disponível." },
+    { "id": "webflow-mcp-server", "role": "optional", "rationale": "Edição de sites Webflow; conector disponível." },
+    { "id": "wordpress-mcp-adapter", "role": "optional", "rationale": "Integração MCP oficial para WordPress." },
+    { "id": "automattic-wordpress-mcp", "role": "avoid", "rationale": "Descontinuado e arquivado; substituído pelo WordPress MCP Adapter." },
+    { "id": "figma-mcp-server", "role": "optional", "rationale": "Ponte design ↔ código para agentes." },
+    { "id": "claude-code", "role": "core", "rationale": "Agente principal do utilizador para desenvolvimento." },
+    { "id": "codex-cli", "role": "alternative", "rationale": "Agente alternativo que lê AGENTS.md nativamente." },
+    { "id": "cursor", "role": "alternative", "rationale": "IDE com agente e suporte MCP." },
+    { "id": "ai-resource-library-skill", "role": "core", "rationale": "Skill desta biblioteca para seleção de recursos." },
+    { "id": "anthropic-skills", "role": "recommended", "rationale": "Fonte de skills de exemplo e template." },
+    { "id": "skill-mcp-builder", "role": "optional", "rationale": "Para criar um servidor MCP próprio quando nenhum existente serve." },
+    { "id": "skill-skill-creator", "role": "optional", "rationale": "Para criar e avaliar skills novas." },
+    { "id": "skill-webapp-testing", "role": "optional", "rationale": "Testes locais de aplicações web via skill." },
+    { "id": "model-context-protocol", "role": "reference", "rationale": "Especificação base dos servidores MCP." },
+    { "id": "agents-md", "role": "reference", "rationale": "Formato de instruções portável usado por esta biblioteca." },
+    { "id": "agent-skills-spec", "role": "reference", "rationale": "Formato portável de skills." },
+    { "id": "mcp-reference-servers", "role": "reference", "rationale": "Implementações de referência do MCP." },
+    { "id": "claude-api", "role": "optional", "rationale": "Para agentes próprios fora das apps Claude." }
+  ],
+  "recommendations": [
+    {
+      "scenario": "Automatizar tarefas de desenvolvimento no GitHub",
+      "prefer": ["github-mcp-server", "github-actions"],
+      "consider": ["claude-code", "playwright-mcp", "context7"],
+      "why": "Ações repetitivas e determinísticas pertencem a GitHub Actions; o servidor MCP oficial cobre interação do agente com issues/PRs. Começar em modo read-only."
+    },
+    {
+      "scenario": "Testar uma aplicação web com um agente",
+      "prefer": ["playwright-mcp"],
+      "consider": ["chrome-devtools-mcp", "skill-webapp-testing"],
+      "why": "Playwright MCP é mantido pela Microsoft e funciona sem screenshots; DevTools MCP é melhor para performance."
+    },
+    {
+      "scenario": "Ligar um agente a WordPress",
+      "prefer": ["wordpress-mcp-adapter"],
+      "consider": ["wordpress-rest-api", "wp-cli"],
+      "why": "É o pacote oficial e canónico; o plugin da Automattic está descontinuado."
+    }
+  ],
+  "updated_on": "2026-11-06"
+}

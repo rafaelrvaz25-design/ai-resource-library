@@ -1,0 +1,75 @@
+{
+  "id": "web-development",
+  "name": "Web Development",
+  "description": "Recursos para construir, testar e publicar websites e aplicações web: WordPress, React, HTML/CSS/JS, APIs, performance, acessibilidade, responsividade, testes e deployment.",
+  "goals": [
+    "Escolher rapidamente a stack adequada ao tipo de site (estático, CMS, aplicação React).",
+    "Garantir performance e acessibilidade desde o início.",
+    "Publicar com o mínimo de infraestrutura e custo."
+  ],
+  "use_cases": [
+    "Landing page responsiva em WordPress",
+    "Portfólio estático publicado no GitHub Pages",
+    "Componentes React reutilizáveis",
+    "Auditoria de performance e acessibilidade de um website"
+  ],
+  "categories": ["web-development", "frontend", "cms", "performance", "accessibility", "testing", "deployment", "hosting"],
+  "tags": ["wordpress", "react", "nextjs", "html", "css", "javascript", "responsive", "landing-page", "a11y", "performance"],
+  "resources": [
+    { "id": "wordpress", "role": "core", "rationale": "CMS mais adequado quando a página tem de ser editada por não-programadores." },
+    { "id": "create-block-theme", "role": "recommended", "rationale": "Plugin oficial para construir um tema de blocos (theme.json) a partir do Site Editor, sem page builders pesados." },
+    { "id": "wordpress-playground", "role": "recommended", "rationale": "Permite prototipar e testar o site WordPress no browser, sem servidor nem custos." },
+    { "id": "wp-cli", "role": "optional", "rationale": "Automatiza setup e deployment de WordPress quando há acesso de shell; ações destrutivas exigem autorização." },
+    { "id": "query-monitor", "role": "optional", "rationale": "Diagnóstico de performance em WordPress durante o desenvolvimento." },
+    { "id": "wordpress-rest-api", "role": "optional", "rationale": "Para cenários headless ou automação de conteúdos." },
+    { "id": "nextjs", "role": "core", "rationale": "Stack já usada pelo utilizador (portfolio-v2); boa para sites React com exportação estática." },
+    { "id": "react", "role": "core", "rationale": "Base para componentes reutilizáveis." },
+    { "id": "tailwindcss", "role": "optional", "rationale": "Acelera layouts responsivos; alternativa ao Sass usado nos projetos atuais." },
+    { "id": "sass", "role": "optional", "rationale": "Já usado no portfolio-v2 com CSS Modules." },
+    { "id": "shadcn-ui", "role": "optional", "rationale": "Base de componentes React acessíveis cujo código fica no projeto." },
+    { "id": "radix-ui-primitives", "role": "optional", "rationale": "Primitivas acessíveis para componentes próprios." },
+    { "id": "gsap", "role": "optional", "rationale": "Animações e scroll já usados pelo utilizador; atenção à licença própria." },
+    { "id": "motion", "role": "alternative", "rationale": "Alternativa idiomática em React ao GSAP." },
+    { "id": "lighthouse", "role": "core", "rationale": "Auditoria rápida de performance, acessibilidade e SEO sem instalar nada (Chrome DevTools)." },
+    { "id": "axe-core", "role": "recommended", "rationale": "Motor de testes de acessibilidade automatizáveis em CI." },
+    { "id": "wave", "role": "optional", "rationale": "Revisão visual de acessibilidade útil para designers." },
+    { "id": "pa11y", "role": "alternative", "rationale": "Alternativa em CLI para testes de acessibilidade por URL." },
+    { "id": "eslint-plugin-jsx-a11y", "role": "recommended", "rationale": "Previne problemas de acessibilidade em JSX durante o desenvolvimento." },
+    { "id": "playwright", "role": "recommended", "rationale": "Testes em vários tamanhos de ecrã para verificar responsividade." },
+    { "id": "github-pages", "role": "core", "rationale": "Alojamento gratuito já usado nos três projetos do utilizador." },
+    { "id": "netlify", "role": "alternative", "rationale": "Alternativa com deploy previews; conector disponível na conta Claude." },
+    { "id": "github-actions", "role": "recommended", "rationale": "Automatiza testes e deployment." },
+    { "id": "supabase", "role": "optional", "rationale": "Backend para sites estáticos (formulários, marcações), como no vazbarber." },
+    { "id": "internal-portfolio-v2", "role": "reference", "rationale": "Exemplo próprio de Next.js com exportação estática e conteúdo em Markdown." },
+    { "id": "internal-portfolio-static", "role": "reference", "rationale": "Exemplo próprio de site sem build, com tokens em CSS." },
+    { "id": "internal-vazbarber-booking", "role": "reference", "rationale": "Exemplo próprio de site estático com backend Supabase em planos gratuitos." },
+    { "id": "wcag-22", "role": "reference", "rationale": "Critérios de acessibilidade de referência." }
+  ],
+  "recommendations": [
+    {
+      "scenario": "Landing page responsiva em WordPress",
+      "prefer": ["wordpress", "create-block-theme", "wordpress-playground", "lighthouse"],
+      "consider": ["axe-core", "playwright", "wordpress-mcp-adapter"],
+      "why": "Tema de blocos nativo evita page builders pesados; Playground permite prototipar sem servidor; Lighthouse valida performance e acessibilidade antes de publicar."
+    },
+    {
+      "scenario": "Landing page estática sem CMS",
+      "prefer": ["github-pages", "lighthouse"],
+      "consider": ["nextjs", "tailwindcss", "netlify"],
+      "why": "Para conteúdo que só o utilizador edita, HTML/CSS (como o projeto Portfolio) ou Next.js export estático são mais simples e gratuitos."
+    },
+    {
+      "scenario": "Componentes React reutilizáveis",
+      "prefer": ["react", "radix-ui-primitives", "storybook"],
+      "consider": ["shadcn-ui", "tailwindcss", "eslint-plugin-jsx-a11y"],
+      "why": "Primitivas acessíveis + documentação isolada em Storybook dão componentes reutilizáveis e testáveis."
+    },
+    {
+      "scenario": "Testar a acessibilidade de um website",
+      "prefer": ["lighthouse", "axe-core", "wave"],
+      "consider": ["pa11y", "playwright", "wcag-22"],
+      "why": "Combinar testes automáticos (axe/Lighthouse) com revisão manual assistida (WAVE) contra WCAG 2.2."
+    }
+  ],
+  "updated_on": "2026-11-06"
+}

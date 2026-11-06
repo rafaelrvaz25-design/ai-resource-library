@@ -1,0 +1,598 @@
+[
+  {
+    "id": "ai-resource-library",
+    "name": "ai-resource-library (esta biblioteca)",
+    "type": "repository",
+    "origin": "internal",
+    "summary": "Este repositório: catálogo, coleções, esquemas e scripts de pesquisa de recursos para agentes.",
+    "description": "Biblioteca Git-native de recursos para agentes de IA. Registada no próprio catálogo para que a skill e outros recursos possam referenciá-la.",
+    "urls": {
+      "official": "https://github.com/rafaelrvaz25-design/ai-resource-library",
+      "docs": null,
+      "github": "https://github.com/rafaelrvaz25-design/ai-resource-library",
+      "package": null
+    },
+    "categories": [
+      "ai-agents",
+      "knowledge-management",
+      "documentation"
+    ],
+    "tags": [
+      "catalog",
+      "internal",
+      "resource-library",
+      "agents-md"
+    ],
+    "features": [],
+    "use_cases": [
+      "Fonte central de recursos para projetos"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude",
+      "claude-code",
+      "codex",
+      "cursor",
+      "chatgpt"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [],
+    "install": null,
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": "Proprietária",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/rafaelrvaz25-design/ai-resource-library",
+        "https://github.com/rafaelrvaz25-design/ai-resource-library"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": [
+        "maintenance.last_activity"
+      ]
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": false,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": null
+    },
+    "limitations": [
+      "Repositório privado: requer acesso."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "anthropic-skills",
+    "name": "anthropics/skills",
+    "type": "repository",
+    "origin": "external",
+    "summary": "Repositório oficial da Anthropic com skills de exemplo e o template de skills.",
+    "description": "Skills organizadas por pasta (SKILL.md), incluindo design, testes, MCP e documentos. Muitas são Apache-2.0; as skills de documentos (docx, pdf, pptx, xlsx) são source-available. Pode ser registado como marketplace de plugins no Claude Code.",
+    "urls": {
+      "official": "https://github.com/anthropics/skills",
+      "docs": null,
+      "github": "https://github.com/anthropics/skills",
+      "package": null
+    },
+    "categories": [
+      "ai-agents"
+    ],
+    "tags": [
+      "skills",
+      "examples",
+      "claude",
+      "templates",
+      "marketplace"
+    ],
+    "features": [
+      "Skills de exemplo",
+      "Template",
+      "Marketplace para Claude Code"
+    ],
+    "use_cases": [
+      "Encontrar e adaptar skills",
+      "Aprender o formato SKILL.md"
+    ],
+    "technologies": [],
+    "platforms": [
+      "claude",
+      "claude-code"
+    ],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "agent-skills-spec",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": {
+      "method": "claude-code-marketplace",
+      "instructions": null,
+      "commands": [
+        "/plugin marketplace add anthropics/skills"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": null,
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": "Licença por skill (Apache-2.0 na maioria; docx/pdf/pptx/xlsx source-available)."
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-10-28",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/anthropics/skills",
+        "https://github.com/anthropics/skills"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": "Algumas skills incluem scripts."
+    },
+    "limitations": [
+      "Exemplos para demonstração; testar antes de usar em tarefas críticas."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "internal-portfolio-static",
+    "name": "Portfolio (projeto próprio, estático)",
+    "type": "repository",
+    "origin": "internal",
+    "summary": "Referência interna: portfólio em HTML + CSS puro publicado no GitHub Pages.",
+    "description": "Projeto pessoal (público) sem dependências: tokens em CSS custom properties no :root, case studies em páginas HTML. Exemplo de solução mínima.",
+    "urls": {
+      "official": "https://github.com/rafaelrvaz25-design/Portfolio",
+      "docs": null,
+      "github": "https://github.com/rafaelrvaz25-design/Portfolio",
+      "package": null
+    },
+    "categories": [
+      "web-development"
+    ],
+    "tags": [
+      "internal",
+      "portfolio",
+      "html",
+      "css",
+      "no-build",
+      "css-variables"
+    ],
+    "features": [],
+    "use_cases": [
+      "Exemplo de site sem build com tokens em CSS"
+    ],
+    "technologies": [
+      "html",
+      "css",
+      "javascript"
+    ],
+    "platforms": [],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "github-pages",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": null,
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": null,
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/rafaelrvaz25-design/Portfolio",
+        "https://github.com/rafaelrvaz25-design/Portfolio"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": false,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": null
+    },
+    "limitations": [
+      "Projeto pessoal."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "internal-portfolio-v2",
+    "name": "portfolio-v2 (projeto próprio)",
+    "type": "repository",
+    "origin": "internal",
+    "summary": "Referência interna: portfólio em Next.js 13 com GSAP, Framer Motion, three.js e Sass.",
+    "description": "Projeto pessoal do utilizador (público). Next.js com exportação estática para GitHub Pages, conteúdo de case studies em Markdown (marked) e um remake estático de um site Webflow. Registado como referência de stack, não como ferramenta reutilizável.",
+    "urls": {
+      "official": "https://github.com/rafaelrvaz25-design/portfolio-v2",
+      "docs": null,
+      "github": "https://github.com/rafaelrvaz25-design/portfolio-v2",
+      "package": null
+    },
+    "categories": [
+      "web-development"
+    ],
+    "tags": [
+      "internal",
+      "portfolio",
+      "nextjs",
+      "gsap",
+      "static-export",
+      "markdown-content"
+    ],
+    "features": [],
+    "use_cases": [
+      "Exemplo de padrão: conteúdo em Markdown + Next.js export estático",
+      "Referência de animações de scroll"
+    ],
+    "technologies": [
+      "nextjs",
+      "react",
+      "sass",
+      "gsap",
+      "threejs"
+    ],
+    "platforms": [],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "nextjs",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "react",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "gsap",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "motion",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "threejs",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "sass",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "locomotive-scroll",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "marked",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "github-pages",
+        "relation": "integrates_with",
+        "note": null
+      }
+    ],
+    "install": null,
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": null,
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/rafaelrvaz25-design/portfolio-v2",
+        "https://github.com/rafaelrvaz25-design/portfolio-v2"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": false,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": null
+    },
+    "limitations": [
+      "Projeto pessoal; não é uma biblioteca reutilizável.",
+      "Next.js fixado na 13.4.10 e ESLint 8 (versões antigas)."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "internal-vazbarber-booking",
+    "name": "vazbarber.github.io (projeto próprio)",
+    "type": "repository",
+    "origin": "internal",
+    "summary": "Referência interna: site de marcações com GitHub Pages, Supabase e emails Brevo.",
+    "description": "Projeto (público) com front-end estático, Supabase (Postgres, Auth, Edge Functions em Deno) e envio de emails via Brevo, tudo em planos gratuitos. Inclui workflow GitHub Actions de keep-alive. Exemplo de arquitetura serverless de custo zero.",
+    "urls": {
+      "official": "https://github.com/vazbarber/vazbarber.github.io",
+      "docs": null,
+      "github": "https://github.com/vazbarber/vazbarber.github.io",
+      "package": null
+    },
+    "categories": [
+      "web-development",
+      "backend"
+    ],
+    "tags": [
+      "internal",
+      "booking",
+      "supabase",
+      "edge-functions",
+      "github-pages",
+      "serverless"
+    ],
+    "features": [],
+    "use_cases": [
+      "Exemplo de site estático com backend Supabase",
+      "Padrão de keep-alive para planos gratuitos"
+    ],
+    "technologies": [
+      "javascript",
+      "typescript",
+      "deno",
+      "postgres"
+    ],
+    "platforms": [],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "supabase",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "github-pages",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "github-actions",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "brevo-api",
+        "relation": "depends_on",
+        "note": null
+      }
+    ],
+    "install": null,
+    "configuration": null,
+    "license": {
+      "spdx": null,
+      "name": null,
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "unknown",
+      "last_activity": null,
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/vazbarber/vazbarber.github.io",
+        "https://github.com/vazbarber/vazbarber.github.io"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "low",
+      "executes_code": false,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": "Não copiar configuração com chaves para outros projetos."
+    },
+    "limitations": [
+      "Projeto de cliente/pessoal; não reutilizar dados."
+    ],
+    "notes": null,
+    "doc": null
+  },
+  {
+    "id": "mcp-reference-servers",
+    "name": "modelcontextprotocol/servers",
+    "type": "repository",
+    "origin": "external",
+    "summary": "Repositório com os servidores MCP de referência (filesystem, git, fetch, memory, time...).",
+    "description": "Implementações de referência mantidas pelo projeto MCP para demonstrar o protocolo.",
+    "urls": {
+      "official": "https://github.com/modelcontextprotocol/servers",
+      "docs": null,
+      "github": "https://github.com/modelcontextprotocol/servers",
+      "package": null
+    },
+    "categories": [
+      "mcp",
+      "ai-agents"
+    ],
+    "tags": [
+      "mcp",
+      "reference-servers",
+      "examples"
+    ],
+    "features": [
+      "Servidores everything, fetch, filesystem, git, memory, sequentialthinking, time"
+    ],
+    "use_cases": [
+      "Ponto de partida para escolher ou construir servidores MCP"
+    ],
+    "technologies": [],
+    "platforms": [],
+    "requirements": [],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "model-context-protocol",
+        "relation": "part_of",
+        "note": null
+      }
+    ],
+    "install": null,
+    "configuration": null,
+    "license": {
+      "spdx": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-04",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Existência confirmada com git ls-remote; licença lida do ficheiro LICENSE do repositório; data do último commit no branch por omissão; URL oficial respondeu HTTP 200 (2026-11-06).",
+      "sources": [
+        "https://github.com/modelcontextprotocol/servers",
+        "https://github.com/modelcontextprotocol/servers"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "maintenance.last_activity",
+        "license"
+      ],
+      "unconfirmed_fields": [
+        "license (transição MIT → Apache-2.0)"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": null,
+      "notes": null
+    },
+    "limitations": [
+      "Servidores de referência, não necessariamente para produção."
+    ],
+    "notes": null,
+    "doc": null
+  }
+]

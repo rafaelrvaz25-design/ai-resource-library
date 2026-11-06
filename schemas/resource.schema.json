@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/rafaelrvaz25-design/ai-resource-library/schemas/resource.schema.json",
+  "title": "Resource",
+  "description": "Um recurso catalogado (ferramenta, plugin, repositório, servidor MCP, skill, framework, API, standard...). O campo 'type' é validado contra catalog/_registry.json pelo validate.py, para que novos tipos não exijam alterar este esquema.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id", "name", "type", "origin", "summary", "description", "urls",
+    "categories", "tags", "license", "pricing", "maintenance",
+    "verification", "risk", "limitations"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Identificador estável, kebab-case, único em toda a biblioteca. Nunca reutilizar nem renomear (marcar como deprecated em vez disso)."
+    },
+    "name": { "type": "string", "minLength": 1 },
+    "type": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "origin": {
+      "enum": ["external", "internal"],
+      "description": "internal = projeto do próprio utilizador, registado apenas como referência; não é uma ferramenta reutilizável por defeito."
+    },
+    "summary": { "type": "string", "minLength": 10, "maxLength": 200 },
+    "description": { "type": "string", "minLength": 10 },
+    "urls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["official"],
+      "properties": {
+        "official": { "$ref": "#/$defs/urlOrNull" },
+        "docs": { "$ref": "#/$defs/urlOrNull" },
+        "github": { "$ref": "#/$defs/urlOrNull" },
+        "package": { "$ref": "#/$defs/urlOrNull" }
+      }
+    },
+    "categories": { "$ref": "#/$defs/slugList" },
+    "tags": { "$ref": "#/$defs/slugList" },
+    "features": { "$ref": "#/$defs/stringList" },
+    "use_cases": { "$ref": "#/$defs/stringList" },
+    "technologies": { "$ref": "#/$defs/slugList" },
+    "platforms": { "$ref": "#/$defs/slugList" },
+    "requirements": { "$ref": "#/$defs/stringList" },
+    "dependencies": {
+      "type": "array",
+      "description": "Dependências textuais (ex.: 'Node.js 22+'). Dependências que também estão no catálogo vão em 'related' com relation=depends_on.",
+      "items": { "type": "string" }
+    },
+    "related": {
+      "type": "array",
+      "description": "Relações tipadas com outros recursos do catálogo (validadas pelo validate.py).",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "relation"],
+        "properties": {
+          "id": { "type": "string" },
+          "relation": { "enum": ["depends_on", "alternative_to", "complements", "replaced_by", "part_of", "integrates_with"] },
+          "note": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "install": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "method": { "type": ["string", "null"], "description": "ex.: npm, composer, remote-mcp, desktop-app, saas, wordpress-plugin, figma-plugin, none" },
+        "instructions": { "type": ["string", "null"] },
+        "commands": { "type": "array", "items": { "type": "string" }, "description": "Comandos documentados na fonte oficial. Referência apenas: NUNCA executar sem autorização." }
+      }
+    },
+    "configuration": { "type": ["string", "null"] },
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["spdx", "name"],
+      "properties": {
+        "spdx": { "type": ["string", "null"], "description": "Identificador SPDX quando existe; null para licenças proprietárias ou desconhecidas." },
+        "name": { "type": ["string", "null"] },
+        "url": { "$ref": "#/$defs/urlOrNull" }
+      }
+    },
+    "pricing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model"],
+      "properties": {
+        "model": { "enum": ["free", "open-source", "freemium", "paid", "usage-based", "unknown"] },
+        "notes": { "type": ["string", "null"] }
+      }
+    },
+    "maintenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "description": "Estado de manutenção do projeto. Independente do estado de verificação.",
+      "properties": {
+        "status": { "enum": ["active", "maintenance-only", "inactive", "archived", "unknown"] },
+        "last_activity": { "$ref": "#/$defs/dateOrNull" },
+        "checked_on": { "$ref": "#/$defs/dateOrNull" }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "verified_on", "sources", "confirmed_fields"],
+      "description": "Grau de confiança nos METADADOS. Não significa que o recurso seja seguro para executar.",
+      "properties": {
+        "status": { "enum": ["verified", "partially_verified", "unverified", "deprecated"] },
+        "verified_on": { "$ref": "#/$defs/dateOrNull" },
+        "method": { "type": ["string", "null"] },
+        "sources": { "type": "array", "items": { "type": "string", "format": "uri" } },
+        "confirmed_fields": { "type": "array", "items": { "type": "string" } },
+        "unconfirmed_fields": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "risk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "executes_code", "requires_credentials"],
+      "description": "Avaliação de risco indicativa para decidir quando pedir autorização.",
+      "properties": {
+        "level": { "enum": ["low", "medium", "high", "unknown"] },
+        "executes_code": { "type": "boolean" },
+        "requires_credentials": { "type": "boolean" },
+        "data_access": { "type": ["string", "null"] },
+        "notes": { "type": ["string", "null"] }
+      }
+    },
+    "limitations": { "$ref": "#/$defs/stringList" },
+    "notes": { "type": ["string", "null"] },
+    "doc": { "type": ["string", "null"], "pattern": "^resources/.+\\.md$", "description": "Caminho opcional para documentação própria mais detalhada." },
+    "ext": { "type": "object", "description": "Espaço reservado para extensões futuras (avaliações, favoritos...) sem quebrar o esquema." }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "verification": { "properties": { "status": { "const": "verified" } } } } },
+      "then": { "properties": { "verification": { "properties": { "sources": { "minItems": 1 }, "verified_on": { "type": "string" } } } } }
+    }
+  ],
+  "$defs": {
+    "urlOrNull": { "type": ["string", "null"], "pattern": "^https?://" },
+    "dateOrNull": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "stringList": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "slugList": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9]+([-.][a-z0-9]+)*$" } }
+  }
+}

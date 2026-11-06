@@ -1,0 +1,19 @@
+{
+  "_comment": "Registo de tipos de recurso. Para adicionar uma nova categoria: acrescentar uma entrada aqui e criar o ficheiro catalog/<file> com uma lista vazia []. Não é preciso alterar esquemas nem scripts.",
+  "types": {
+    "tool":       { "file": "tools.json",        "label": "Tools",        "description": "Ferramentas de desenvolvimento, design, produtividade, automação, análise e IA." },
+    "plugin":     { "file": "plugins.json",      "label": "Plugins",      "description": "Extensões para aplicações, IDEs, frameworks, ferramentas de design e agentes." },
+    "repository": { "file": "repositories.json", "label": "Repositories", "description": "Repositórios GitHub relevantes, incluindo referências internas a projetos próprios." },
+    "mcp-server": { "file": "mcp-servers.json",  "label": "MCP Servers",  "description": "Servidores compatíveis com o Model Context Protocol." },
+    "skill":      { "file": "skills.json",       "label": "Skills",       "description": "Skills, instruções reutilizáveis, agentes especializados e workflows." },
+    "framework":  { "file": "frameworks.json",   "label": "Frameworks",   "description": "Frameworks e bibliotecas de desenvolvimento." },
+    "api":        { "file": "apis.json",         "label": "APIs",         "description": "APIs e serviços técnicos." },
+    "standard":   { "file": "standards.json",    "label": "Standards",    "description": "Especificações e normas (MCP, WCAG, AGENTS.md, Design Tokens...). Adicionado como exemplo de extensão sem reestruturação." }
+  },
+  "categories": [
+    "accessibility", "ai-agents", "animation", "automation", "cms", "code-quality", "component-library",
+    "deployment", "design", "design-systems", "design-tokens", "developer-tools", "documentation",
+    "frontend", "hosting", "integrations", "knowledge-management", "mcp", "performance", "prototyping",
+    "research", "testing", "ux-research", "version-control", "web-development", "backend"
+  ]
+}
