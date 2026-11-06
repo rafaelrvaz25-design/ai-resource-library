@@ -201,6 +201,12 @@ class T5Security(unittest.TestCase):
                 self.assertTrue(r["risk"]["executes_code"], r["id"])
 
 
+class T5bCssLintDiscovery(unittest.TestCase):
+    def test_stylelint_is_discoverable(self):
+        self.assertIn("stylelint", ids(run_search("stylelint", "--limit", "5")))
+        self.assertIn("stylelint", ids(run_search("css lint", "--limit", "10")))
+
+
 class T6Integrity(unittest.TestCase):
     """Teste 6: IDs e referências internas válidos."""
 

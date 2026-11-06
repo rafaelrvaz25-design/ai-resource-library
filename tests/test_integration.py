@@ -214,6 +214,38 @@ class TestUpdateCheck(unittest.TestCase):
             self.assertEqual(ll.check_updates(path, git=same)["status"], "current")
             self.assertEqual(ll.check_updates(path, git=different)["status"], "different")
 
+    def test_real_git_history_behind_ahead_and_diverged(self):
+        def run(*args):
+            subprocess.run(["git", *map(str, args)], check=True, capture_output=True, text=True)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            remote = root / "remote.git"
+            work = root / "work"
+            run("init", "--bare", remote)
+            run("init", "-b", "main", work)
+            run("-C", work, "config", "user.email", "test@example.invalid")
+            run("-C", work, "config", "user.name", "Test")
+            (work / "test.txt").write_text("one")
+            run("-C", work, "add", "test.txt")
+            run("-C", work, "commit", "-m", "one")
+            run("-C", work, "remote", "add", "origin", remote)
+            run("-C", work, "push", "-u", "origin", "main")
+            (work / "test.txt").write_text("two")
+            run("-C", work, "commit", "-am", "two")
+            self.assertEqual(ll.check_updates(work, str(remote), check_history=True)["history"], "ahead")
+            run("-C", work, "push", "origin", "main")
+            old = root / "old"
+            run("clone", "-b", "main", remote, old)
+            (work / "test.txt").write_text("three")
+            run("-C", work, "commit", "-am", "three")
+            run("-C", work, "push", "origin", "main")
+            self.assertEqual(ll.check_updates(old, str(remote), check_history=True)["history"], "behind")
+            run("-C", old, "config", "user.email", "test@example.invalid")
+            run("-C", old, "config", "user.name", "Test")
+            (old / "test.txt").write_text("local")
+            run("-C", old, "commit", "-am", "local")
+            self.assertEqual(ll.check_updates(old, str(remote), check_history=True)["history"], "diverged")
+
     def test_missing_git_or_network_is_unknown(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp)

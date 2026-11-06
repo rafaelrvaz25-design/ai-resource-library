@@ -205,6 +205,11 @@
       "id": "lightning-css",
       "role": "optional",
       "rationale": "Otimização de CSS apenas se houver benefício mensurável e compatibilidade."
+    },
+    {
+      "id": "stylelint",
+      "role": "optional",
+      "rationale": "Auditoria estática e consistência de CSS; requer regras adequadas para impor tokens."
     }
   ],
   "recommendations": [

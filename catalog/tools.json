@@ -2685,5 +2685,113 @@
       "Pode ser redundante com o pipeline CSS existente.",
       "A minificação não corrige problemas de arquitetura ou consistência de estilos."
     ]
+  },
+  {
+    "type": "tool",
+    "origin": "external",
+    "requirements": [],
+    "dependencies": [],
+    "configuration": null,
+    "notes": null,
+    "doc": null,
+    "id": "stylelint",
+    "name": "Stylelint",
+    "summary": "Linter de CSS para detetar erros e aplicar convenções de estilos.",
+    "description": "Linter extensível para CSS e sintaxes relacionadas. Útil para reforçar regras de consistência de estilos. A proibição de valores hexadecimais requer configurar regras ou plugins adequados.",
+    "urls": {
+      "official": "https://stylelint.io/",
+      "docs": "https://stylelint.io/user-guide/get-started",
+      "github": "https://github.com/stylelint/stylelint",
+      "package": "https://www.npmjs.com/package/stylelint"
+    },
+    "categories": [
+      "web-development",
+      "developer-tools",
+      "code-quality"
+    ],
+    "tags": [
+      "css",
+      "stylelint",
+      "lint",
+      "styles",
+      "design-tokens",
+      "consistency"
+    ],
+    "features": [
+      "Análise estática de CSS",
+      "Regras de estilo configuráveis",
+      "Integração com ferramentas de desenvolvimento"
+    ],
+    "use_cases": [
+      "Detetar erros de CSS antes de publicar",
+      "Impor convenções de estilos e tokens com configuração adequada"
+    ],
+    "technologies": [
+      "css",
+      "javascript",
+      "scss"
+    ],
+    "platforms": [
+      "node"
+    ],
+    "related": [
+      {
+        "id": "lightning-css",
+        "relation": "complements",
+        "note": "Stylelint verifica regras; Lightning CSS transforma e minifica"
+      }
+    ],
+    "install": {
+      "method": "npm",
+      "instructions": "Consultar documentação oficial, versão do Node e regras para CSS/SCSS antes de integrar.",
+      "commands": [
+        "npm install --save-dev stylelint stylelint-config-standard"
+      ]
+    },
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": "https://github.com/stylelint/stylelint/blob/main/LICENSE"
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-06",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Metadados oficiais do GitHub: descrição, licença MIT, repositório não arquivado e atividade. Regras, compatibilidade e instalação não executadas.",
+      "sources": [
+        "https://github.com/stylelint/stylelint",
+        "https://stylelint.io/"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.github",
+        "license.spdx",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": [
+        "requirements",
+        "install",
+        "configuration"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Lê ficheiros CSS e configuração local",
+      "notes": "Rever regras e plugins antes de executar no projeto."
+    },
+    "limitations": [
+      "Exige configurar regras para impor tokens ou proibir valores escritos à mão.",
+      "Não substitui auditoria visual nem testes de contraste."
+    ]
   }
 ]
