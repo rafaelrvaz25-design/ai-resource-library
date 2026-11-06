@@ -222,8 +222,9 @@ def locate(env: dict | None = None, home: Path | None = None, cwd: Path | None =
 
 
 
-def check_updates(path: Path, repo_url: str = DEFAULT_REPO_URL, git: GitRunner = default_git) -> dict:
-    """Compara HEAD local com main remota, sem fetch, pull, escrita ou prompts interativos."""
+def check_updates(path: Path, repo_url: str = DEFAULT_REPO_URL, git: GitRunner = default_git,
+                  check_history: bool = False) -> dict:
+    """Verifica main remota; o histórico opcional usa apenas um clone temporário."""
     path = Path(path)
     if not (path / ".git").exists():
         return {"status": "unknown", "reason": "cópia sem metadados Git"}
@@ -239,9 +240,37 @@ def check_updates(path: Path, repo_url: str = DEFAULT_REPO_URL, git: GitRunner =
         if not line:
             return {"status": "unknown", "reason": "main remota não encontrada"}
         head = local.stdout.strip()
-        return {"status": "current" if head == line[0] else "different",
-                "local_sha": head, "remote_sha": line[0],
-                "note": "different significa SHA diferente, não prova que a cópia esteja atrás"}
+        result = {"status": "current" if head == line[0] else "different",
+                  "local_sha": head, "remote_sha": line[0]}
+        if result["status"] == "current" or not check_history:
+            return result
+        with tempfile.TemporaryDirectory(prefix="ai-resource-library-history-") as tmp:
+            target = tmp + "/repo"
+            clone = git(["clone", "--quiet", "--no-hardlinks", "--no-checkout",
+                         str(path.resolve()), target], timeout=30)
+            if clone.returncode:
+                return {**result, "history": "unknown", "reason": "clone temporário falhou",
+                        "detail": scrub(clone.stderr.strip())}
+            fetched = git(["-C", target, "fetch", "--quiet", "--no-tags",
+                           repo_url, "refs/heads/main"], timeout=60)
+            if fetched.returncode:
+                return {**result, "history": "unknown", "reason": "fetch temporário falhou",
+                        "detail": scrub(fetched.stderr.strip())}
+            remote_ref = git(["-C", target, "rev-parse", "FETCH_HEAD"], timeout=8)
+            if remote_ref.returncode or remote_ref.stdout.strip() != line[0]:
+                return {**result, "history": "unknown", "reason": "main remota mudou durante a verificação"}
+            behind = git(["-C", target, "merge-base", "--is-ancestor", head, line[0]], timeout=10)
+            ahead = git(["-C", target, "merge-base", "--is-ancestor", line[0], head], timeout=10)
+            if behind.returncode == 0:
+                result["history"] = "behind"
+            elif ahead.returncode == 0:
+                result["history"] = "ahead"
+            elif behind.returncode == 1 and ahead.returncode == 1:
+                result["history"] = "diverged"
+            else:
+                result["history"] = "unknown"
+                result["reason"] = "histórico insuficiente ou Git falhou"
+            return result
     except (OSError, subprocess.TimeoutExpired):
         return {"status": "unknown", "reason": "Git indisponível ou timeout"}
 
@@ -253,15 +282,18 @@ def main(argv=None) -> int:
     p.add_argument("--project", help="Diretório do projeto atual (omissão: diretório de trabalho).")
     p.add_argument("--cleanup", metavar="PATH", help="Apagar uma cópia temporária criada por --remote.")
     p.add_argument("--check-updates", action="store_true", help="Comparar HEAD local com main remota, sem modificar ficheiros.")
+    p.add_argument("--check-history", action="store_true", help="Comparar histórico num clone temporário; requer --check-updates.")
     p.add_argument("--path-only", action="store_true", help="Imprimir só o caminho (vazio se não encontrada).")
     a = p.parse_args(argv)
+    if a.check_history and not a.check_updates:
+        p.error("--check-history requer --check-updates")
     if a.cleanup:
         r = cleanup(a.cleanup)
         print(json.dumps(r, ensure_ascii=False))
         return 0 if r["status"] == "removed" else 1
     r = locate(project=Path(a.project) if a.project else None, remote=a.remote, repo_url=a.repo_url)
     if a.check_updates and r["status"] == "found":
-        r["update_check"] = check_updates(Path(r["path"]), repo_url=a.repo_url or DEFAULT_REPO_URL)
+        r["update_check"] = check_updates(Path(r["path"]), repo_url=a.repo_url or DEFAULT_REPO_URL, check_history=a.check_history)
     if a.path_only:
         print(r.get("path") or "")
     else:
