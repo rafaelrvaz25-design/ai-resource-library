@@ -58,6 +58,15 @@ SYNONYMS = {
     "repositorio": ["repository"], "repositorios": ["repository"],
     "mcp": ["mcp", "mcp-server"], "plugin": ["plugin"], "plugins": ["plugin"], "skill": ["skill"], "skills": ["skill"],
     "landing": ["landing-page", "landing"], "responsive": ["responsive"],
+    # Sinónimos de Product Design em PT-PT
+    "direcao": ["direction", "visual-direction"], "visual": ["ui-design", "visual-direction"],
+    "visuais": ["visual", "visual-research"], "interface": ["ui-design", "frontend"],
+    "interfaces": ["ui-design", "frontend"], "portfolio": ["portfolio", "ui-design"],
+    "identidade": ["brand-identity", "branding"], "marca": ["branding", "brand"],
+    "logotipo": ["logo"], "handoff": ["ui-specification", "documentation"],
+    "refinar": ["refinement", "ui-design"], "melhorar": ["ui-design", "frontend-design"],
+    "componentes": ["components", "ui-specification"],
+    "referencias": ["references", "design-inspiration"],
 }
 
 # Pesos por campo
