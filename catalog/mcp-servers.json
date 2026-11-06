@@ -85,6 +85,118 @@
     "doc": null
   },
   {
+    "id": "awwwards-mcp",
+    "name": "Awwwards MCP",
+    "type": "mcp-server",
+    "origin": "external",
+    "summary": "Servidor MCP para inspiração visual, pesquisa de sites premiados e análise de referências web.",
+    "description": "Pesquisa sites do Awwwards, disponibiliza screenshots e dados de design, permite comparar referências e, com componentes de browser opcionais, examinar estrutura, movimento e reconstruções de páginas. Algumas operações utilizam páginas públicas sujeitas aos termos dos respetivos sites.",
+    "urls": {
+      "official": "https://github.com/INSANE0777/Awwwards-mcp",
+      "docs": "https://github.com/INSANE0777/Awwwards-mcp#readme",
+      "github": "https://github.com/INSANE0777/Awwwards-mcp",
+      "package": null
+    },
+    "categories": [
+      "mcp",
+      "design",
+      "research",
+      "frontend"
+    ],
+    "tags": [
+      "awwwards",
+      "design-inspiration",
+      "visual-research",
+      "site-analysis",
+      "mcp"
+    ],
+    "features": [
+      "Pesquisa de referências visuais",
+      "Comparação de design e briefing",
+      "Captura e análise opcionais de páginas e movimento"
+    ],
+    "use_cases": [
+      "Investigar referências visuais para um projeto web",
+      "Analisar estilos e interações de sites"
+    ],
+    "technologies": [
+      "nodejs",
+      "typescript"
+    ],
+    "platforms": [
+      "claude-code",
+      "codex",
+      "cursor"
+    ],
+    "requirements": [
+      "Node.js >= 22.13",
+      "Browser e ffmpeg opcionais para análises avançadas"
+    ],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "playwright-mcp",
+        "relation": "complements",
+        "note": "Automação de browser genérica em complemento à pesquisa especializada do Awwwards."
+      }
+    ],
+    "install": {
+      "method": "npx",
+      "instructions": "Instalação base sem browser; instalar dependências adicionais só com autorização se forem necessárias.",
+      "commands": [
+        "npx -y awwwards-mcp"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": "https://github.com/INSANE0777/Awwwards-mcp/blob/main/LICENSE"
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-05",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Repositório público, README.md e LICENSE consultados diretamente via GitHub em 2026-11-06; commit recente observado. Não houve execução do código nem auditoria de segurança.",
+      "sources": [
+        "https://github.com/INSANE0777/Awwwards-mcp",
+        "https://github.com/INSANE0777/Awwwards-mcp/blob/main/README.md",
+        "https://github.com/INSANE0777/Awwwards-mcp/blob/main/LICENSE"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "description",
+        "license",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "high",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Sites públicos e URLs visitados; cache e screenshots locais.",
+      "notes": "Pode fazer pedidos web, scraping e navegação; respeitar robots.txt, termos, direitos de imagem e autorização antes da ligação MCP."
+    },
+    "limitations": [
+      "Algumas funcionalidades avançadas exigem Playwright/Chromium e ffmpeg.",
+      "A utilização comercial deve ser avaliada face aos termos do Awwwards e aos direitos dos autores.",
+      "Parsers e pesquisa baseados em fontes externas podem tornar-se obsoletos."
+    ],
+    "notes": "Descoberto no artigo UX Planet '5 New GitHub Repos for Claude Code Worth Trying for Product Design'; catalogado sem instalar ou executar.",
+    "doc": null
+  },
+  {
     "id": "chrome-devtools-mcp",
     "name": "Chrome DevTools MCP",
     "type": "mcp-server",
