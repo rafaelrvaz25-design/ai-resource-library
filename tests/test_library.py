@@ -59,6 +59,46 @@ class T2UiUxDesign(unittest.TestCase):
         self.assertEqual(top[0], "tokens-studio")
 
 
+class T2bProductDesignDiscovery(unittest.TestCase):
+    """Regressão de recuperação PT-PT e pesquisa por intenção, sem executar recursos externos."""
+
+    def test_visual_direction_recovers_oil_ui(self):
+        top = ids(run_search("direcao visual interface", "--collection", "ui-ux-design"))
+        self.assertIn("oil-ui", top[:5])
+        self.assertIn("skill-frontend-design", top)
+
+    def test_portfolio_visual_query_recovers_design_skills(self):
+        # Next.js é contexto, não requisito para descobrir uma skill de UI.
+        top = ids(run_search("melhorar design visual portfolio", "--limit", "12"))
+        self.assertIn("oil-ui", top)
+        self.assertIn("skill-frontend-design", top)
+
+    def test_handoff_recovers_dimensional_drawing(self):
+        top = ids(run_search("documentar componentes handoff", "--collection", "ui-ux-design"))
+        self.assertIn("dimensional-drawing", top)
+
+    def test_inspiration_recovers_awwwards(self):
+        top = ids(run_search("investigacao referencias visuais", "--collection", "ui-ux-design"))
+        self.assertIn("awwwards-mcp", top)
+
+    def test_design_system_recovers_design_how(self):
+        top = ids(run_search("design system componentes", "--collection", "ui-ux-design"))
+        self.assertIn("design-how", top)
+
+    def test_brand_identity_recovers_skill(self):
+        top = ids(run_search("identidade visual marca"))
+        self.assertIn("brand-identity-skill", top[:5])
+
+    def test_recommendation_never_implies_installation(self):
+        result = run_search("direcao visual interface")
+        self.assertTrue(result["results"])
+        self.assertTrue(all("NÃO implica" in r["catalog_status"] for r in result["results"]))
+
+    def test_unknown_intent_not_fabricated(self):
+        result = run_search("zzzxxyy-inexistente")
+        self.assertEqual(result["results"], [])
+
+
 class T3AiAutomation(unittest.TestCase):
     """Teste 3: servidores MCP e ferramentas para automatizar desenvolvimento."""
 

@@ -73,6 +73,28 @@ python scripts/search.py "<2-4 palavras-chave>" --json [--type ...] [--platform 
 Começar pelas `search_queries` do passo 2. A pesquisa é textual. Se não houver resultados: usar termos em inglês,
 menos filtros ou `--min-coverage 0.3`.
 
+### Decompor pedidos complexos (obrigatório)
+
+**Não enviar o pedido completo como uma única query.** Separar objetivo de design, contexto técnico e restrições:
+1. Identificar a intenção principal (ex.: direção visual, documentação de componentes, acessibilidade).
+2. Criar **2–4 pesquisas curtas e independentes** com 2–4 termos de capacidade, sem exigir todas as tecnologias.
+3. Usar contexto do projeto para **filtrar e interpretar** candidatos depois da recuperação. Next.js e React são
+   restrições de implementação, não condições para descobrir uma skill de UI.
+4. Combinar candidatos sem duplicações e consultar a coleção relevante para papéis e cenários.
+5. Verificar recursos já utilizados. Preferir melhorar a configuração existente quando suficiente.
+6. **Não confundir score lexical com qualidade**: justificar adequação, limitações, alternativas e custo/risco.
+   Se faltarem opções adequadas, repetir com sinónimos ou menor cobertura e declarar a lacuna.
+
+Exemplo para «melhorar o portfolio-v2 em Next.js mantendo performance e acessibilidade»:
+```bash
+python scripts/search.py "direcao visual interface" --collection ui-ux-design --json
+python scripts/search.py "design system componentes" --collection ui-ux-design --json
+python scripts/search.py "acessibilidade" --json
+python scripts/search.py "performance" --json
+```
+Para referências usar «investigacao referencias visuais»; para handoff «documentar componentes handoff»;
+para identidade de marca «identidade visual marca». **Não instalar recursos só porque aparecem na pesquisa.**
+
 ## 4. Consultar metadados dos candidatos
 
 `python scripts/search.py --show <id>` para os 3–6 melhores. Ver:
