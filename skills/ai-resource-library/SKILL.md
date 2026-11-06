@@ -55,7 +55,7 @@ do repositório, apagada no fim).
 ## 2. Identificar o contexto do projeto
 
 ```bash
-python $LIB/skills/ai-resource-library/scripts/project_context.py <dir-do-projeto> --library $LIB --compact
+python $LIB/skills/ai-resource-library/scripts/project_context.py <dir-do-projeto> --library $LIB --goal "objetivo do utilizador" --compact
 ```
 O script devolve:
 - linguagens e tecnologias, separando as detetadas por evidência das só mencionadas na documentação;
