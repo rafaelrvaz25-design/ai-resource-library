@@ -270,6 +270,16 @@ class TestProjectContext(unittest.TestCase):
         self.assertNotIn("rm -rf", dump, "só nomes de scripts, nunca o conteúdo")
         self.assertNotIn("node_modules", json.dumps(r["configs"]))
 
+
+    def test_goal_first_queries(self):
+        self.w("package.json", json.dumps({"dependencies": {"react": "18"}}))
+        r = pc.analyse(self.root, goal="Melhorar a qualidade visual e acessibilidade do portfolio")
+        self.assertEqual(r["search_queries"][0], "direcao visual interface")
+        self.assertIn("acessibilidade", r["search_queries"])
+        self.assertIn("react accessibility lint", r["search_queries"])
+        self.assertEqual(pc.goal_queries(""), [])
+
+
     def test_project_without_package_json(self):
         self.w("pyproject.toml", '[project]\nname="api"\ndependencies=["fastapi>=0.1","requests"]\n')
         self.w("app/main.py", "print('ok')\n")
