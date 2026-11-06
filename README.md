@@ -16,6 +16,23 @@ para agentes. **A biblioteca informa — não instala, não executa e não autor
 4. Reutilizar entre projetos e entre agentes, sem copiar metadados.
 5. Manter tudo atualizável e rastreável pelo Git.
 
+## Descoberta progressiva (protocolo 2.0)
+
+O catálogo continua a ser a única fonte de verdade. O índice compacto é gerado
+em tempo de execução, sem manter 87 resumos independentes. O agente pesquisa primeiro
+cartões curtos, lê critérios de uso/exclusão e só abre fichas integrais de candidatos:
+
+```bash
+python scripts/discover.py --index
+python scripts/discover.py "css lint" --technology nextjs
+python scripts/discover.py --show stylelint
+```
+
+`--index` devolve cartões com ID, nome, tipo, resumo, capacidades, casos de uso,
+critério de exclusão quando definido e estado de verificação. O ranking de pesquisa
+é uma ajuda à seleção, não uma decisão automática. Medir redução de tokens e qualidade
+com testes em Claude antes de afirmar ganhos quantitativos.
+
 ## Estrutura
 
 ```
