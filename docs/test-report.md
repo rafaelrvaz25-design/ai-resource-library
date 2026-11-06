@@ -61,3 +61,45 @@ que o validador falha e identifica o ID. Todos os ficheiros do registo existem. 
 Os 62 inconclusivos são páginas `github.com` que o ambiente desta sessão bloqueia (HTTP 403); os mesmos
 repositórios foram confirmados por `git ls-remote`. No GitHub Actions o script usa a API do GitHub com o token
 automático da execução. Primeira execução do workflow no GitHub Actions (push inicial, 2026-11-06): **success** (validação, 18 testes e pesquisa de fumo).
+
+---
+
+# Relatório de testes — v1.1: integração entre projetos (2026-11-06)
+
+Comando: `python -m unittest discover -s tests -v` → **42/42 OK**
+(18 do catálogo em `test_library.py`, sem alterações, e 24 novos em `test_integration.py`).
+`python scripts/validate.py` → 0 erros, 1 aviso (MkDocs inativo, já conhecido).
+
+## Cenários pedidos
+
+| Cenário | Teste(s) | Resultado |
+|---|---|---|
+| Biblioteca por variável de ambiente | `test_found_by_environment_variable` (com prioridade sobre `~`) | OK |
+| Caminho local convencional | `test_found_in_conventional_local_path` | OK |
+| Caminho alternativo | `test_found_in_alternative_known_path`, `test_found_via_extra_paths_variable`, `test_found_in_project_directories` | OK |
+| Diretório existente mas inválido | `test_existing_but_invalid_directory_is_skipped`, `test_invalid_env_path_falls_through`, `test_registry_listing_missing_catalog_file_is_invalid` | OK |
+| Indisponível localmente | `test_unavailable_locally_without_remote` | OK |
+| Fallback remoto | `test_remote_fallback_clones_to_temp_and_cleans_up` (repositório Git local via `file://`), `test_local_copy_prevents_clone` | OK |
+| Falha de autenticação | `test_authentication_failure_is_reported_clearly` (git falso; confirma que o token não aparece na saída e que não tenta clonar), `test_terminal_prompt_disabled_counts_as_auth_failure` | OK |
+| Contexto de projeto JavaScript | `test_javascript_project` (deteção de stack, restrições, lacunas, recursos já usados; não lê `.env` nem conteúdo de scripts) | OK |
+| Projeto sem `package.json` | `test_project_without_package_json` (Python), `test_wordpress_theme_without_package_json` (não expõe `wp-config.php`), `test_static_site_only_html` | OK |
+
+Extra:
+- erros de rede;
+- recusa de credenciais no URL;
+- `cleanup` só apaga pastas temporárias próprias;
+- push desativado na cópia temporária;
+- o código do projeto nunca é executado;
+- limite de profundidade.
+
+## Verificação real (fora dos testes unitários)
+
+| Verificação | Resultado |
+|---|---|
+| Skill a partir do `portfolio-v2` | Encontrou `/home/claude/ai-resource-library` (caminho conhecido) sem clonar |
+| Sem caminhos conhecidos | Encontrou a biblioteca pelos antecessores do projeto |
+| Fallback remoto real (GitHub, sessão autenticada) | Clone temporário do commit atual, validado e apagado; nada ficou em `/tmp` |
+| Repositório inexistente | `auth_failed` com mensagem clara (o GitHub não distingue "não existe" de "sem acesso" em repositórios privados) |
+| `project_context.py` no `portfolio-v2` | Stack completa, 4 restrições, 4 lacunas; 1.ª pesquisa sugerida "github pages nextjs deploy" |
+| `project_context.py` no `vazbarber` (sem `package.json`) | Supabase, GitHub Actions, HTML/TypeScript/SQL |
+| Novo recurso `github-pages-actions-deploy` | 1.º lugar em "github pages nextjs deploy", "github actions deploy" e "publicar next.js github pages" |

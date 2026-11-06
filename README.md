@@ -31,8 +31,8 @@ ai-resource-library/
 ├── resources/                Documentação própria opcional (ex.: wordpress.md, github-mcp-server.md)
 ├── schemas/                  resource · collection · environment (JSON Schema 2020-12)
 ├── scripts/                  search.py · validate.py · check_links.py · new_resource.py · library.py
-├── skills/ai-resource-library/SKILL.md   Skill de consulta (formato Agent Skills)
-├── tests/test_library.py     Testes obrigatórios
+├── skills/ai-resource-library/  Skill de consulta: SKILL.md + scripts/locate_library.py e project_context.py
+├── tests/                    Testes do catálogo (test_library.py) e da integração (test_integration.py)
 ├── docs/                     architecture.md · contributing.md · integrations.md · test-report.md
 └── .github/workflows/validate.yml
 ```
@@ -41,11 +41,11 @@ Decisões e diferenças face à estrutura inicial: [docs/architecture.md](docs/a
 
 ## Conteúdo (2026-11-06)
 
-**78 recursos** · 42 `verified` · 33 `partially_verified` · 2 `unverified` · 1 `deprecated` · 5 internos
+**79 recursos** · 42 `verified` · 34 `partially_verified` · 2 `unverified` · 1 `deprecated` · 5 internos
 
 | Tipo | N.º | Exemplos |
 |---|---|---|
-| Tools | 23 | Figma, WordPress, Playwright, Lighthouse, axe-core, Supabase, Claude Code |
+| Tools | 24 | Figma, WordPress, Playwright, Lighthouse, axe-core, Supabase, deploy oficial do GitHub Pages |
 | Frameworks | 13 | Next.js, React, GSAP, Motion, Tailwind CSS, shadcn/ui, Style Dictionary |
 | MCP Servers | 13 | GitHub, Figma, Playwright, Chrome DevTools, Supabase, WordPress MCP Adapter |
 | Skills | 7 | frontend-design, webapp-testing, mcp-builder, ai-resource-library |
@@ -58,7 +58,7 @@ Decisões e diferenças face à estrutura inicial: [docs/architecture.md](docs/a
 
 | Coleção | Recursos | Foco |
 |---|---|---|
-| `web-development` | 28 | WordPress, React/Next.js, performance, acessibilidade, testes, deployment |
+| `web-development` | 29 | WordPress, React/Next.js, performance, acessibilidade, testes, deployment |
 | `ui-ux-design` | 14 | Figma, design systems, tokens, handoff, acessibilidade no design |
 | `ai-automation` | 27 | Servidores MCP, skills, agentes, automação GitHub |
 | `research-documentation` | 13 | Fontes, documentação técnica, conversão, links |
@@ -100,7 +100,7 @@ Regras completas em [docs/contributing.md](docs/contributing.md) e [AGENTS.md](A
 ```bash
 pip install -r requirements.txt          # jsonschema
 python scripts/validate.py               # esquemas, IDs, referências, duplicados, segredos, manutenção
-python -m unittest discover -s tests -v  # 6 testes obrigatórios (18 casos)
+python -m unittest discover -s tests -v  # testes do catálogo e da integração
 python scripts/check_links.py --report link-report.md
 ```
 
@@ -119,6 +119,8 @@ semanalmente (relatório no resumo da execução, sem alterar ficheiros).
 
 - **Claude Code**: abrir o repositório (lê `CLAUDE.md`), ou referenciar a cópia local no `CLAUDE.md` de outro projeto.
 - **Claude (apps)**: instalar a skill `skills/ai-resource-library` e dar acesso ao repositório na sessão.
+- A partir de qualquer projeto, a skill localiza a biblioteca (`locate_library.py`, sem clonar se já houver uma
+  cópia válida) e lê o contexto do projeto (`project_context.py`) antes de pesquisar.
 
 Detalhes e limitações por método: [docs/integrations.md](docs/integrations.md).
 
@@ -130,7 +132,7 @@ Ver [docs/integrations.md](docs/integrations.md).
 ## Limitações conhecidas
 
 - Pesquisa por palavras-chave: sinónimos limitados; perguntas muito abstratas precisam do agente para decompor.
-- 33 recursos `partially_verified`: preços, planos e algumas licenças por confirmar (ver `unconfirmed_fields`).
+- 34 recursos `partially_verified`: preços, planos e algumas licenças por confirmar (ver `unconfirmed_fields`).
 - Dados de manutenção são instantâneos (2026-11-06); o validador avisa quando ficam antigos.
 - `check_links.py` pode dar "inconclusivo" em sites que bloqueiam pedidos automáticos.
 - `environments/` reflete uma sessão concreta; não prova disponibilidade futura.

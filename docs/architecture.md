@@ -28,7 +28,7 @@ skills/                ──► skill portável (formato Agent Skills)
 | **Sem índice gerado** | Com < 500 registos, o `search.py` lê os JSON diretamente em milissegundos; um índice gerado seria mais um artefacto a sincronizar. Reavaliar acima de alguns milhares de registos. |
 | **`scripts/new_resource.py` e `scripts/library.py`** | Adicionar recursos com deteção de duplicados; código de leitura partilhado. |
 | **`tests/` e `requirements.txt`** | Os 6 testes obrigatórios correm em CI. Única dependência: `jsonschema` (só para validar). |
-| **`skills/ai-resource-library/`** | Skill de consulta portável (§11). |
+| **`skills/ai-resource-library/`** | Skill de consulta portável (§11), com `scripts/locate_library.py` (descoberta validada e clone temporário) e `scripts/project_context.py` (contexto do projeto, só leitura). Os scripts vivem com a skill para poderem ser usados antes de a biblioteca estar localizada. |
 | **Sem `.cursor/` nem outros adaptadores** | Codex lê `AGENTS.md` nativamente e o `CLAUDE.md` importa-o. Ver `integrations.md` para os restantes. |
 
 ## Modelo de dados (resumo)

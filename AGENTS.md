@@ -22,6 +22,13 @@ A biblioteca é uma **fonte de conhecimento**. Não instala, não executa e não
 
 ## 2. Consultar a biblioteca (sem carregar tudo para o contexto)
 
+A partir de outro projeto, começar por localizar a biblioteca e ler o contexto do projeto (ambos só leitura):
+```bash
+python <lib>/skills/ai-resource-library/scripts/locate_library.py [--remote]      # valida e evita clones
+python <lib>/skills/ai-resource-library/scripts/project_context.py <projeto> --library <lib> --compact
+```
+Detalhes da ordem de procura, da cópia local vs remoto e de cada agente: `docs/integrations.md`.
+
 Por ordem de preferência:
 
 1. **Script de pesquisa** (se puder executar Python 3.9+; não precisa de dependências):

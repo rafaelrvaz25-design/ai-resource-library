@@ -703,6 +703,146 @@
     "doc": null
   },
   {
+    "id": "github-pages-actions-deploy",
+    "name": "GitHub Pages: deploy com GitHub Actions (oficial)",
+    "type": "tool",
+    "origin": "external",
+    "summary": "Fluxo oficial para publicar no GitHub Pages a partir de um workflow, com starter para Next.js estático.",
+    "description": "Conjunto oficial mantido pela GitHub: actions/configure-pages (ativa o Pages, devolve base_path e pode configurar Next.js, Nuxt, Gatsby e SvelteKit), actions/upload-pages-artifact (empacota a pasta gerada) e actions/deploy-pages (publica o artefacto). O repositório actions/starter-workflows inclui o workflow pages/nextjs.yml, que instala dependências, faz next build e publica a pasta out/. Substitui a publicação manual num branch gh-pages: o site passa a ser construído e publicado em cada push.",
+    "urls": {
+      "official": "https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages",
+      "docs": "https://github.com/actions/starter-workflows/blob/main/pages/nextjs.yml",
+      "github": "https://github.com/actions/deploy-pages",
+      "package": null
+    },
+    "categories": [
+      "deployment",
+      "hosting",
+      "automation"
+    ],
+    "tags": [
+      "github-pages",
+      "github-actions",
+      "deploy",
+      "deployment",
+      "nextjs",
+      "static-export",
+      "ci",
+      "workflow",
+      "official"
+    ],
+    "features": [
+      "configure-pages: ativa o Pages e expõe base_path; static_site_generator: next ajusta a configuração do Next.js no build",
+      "upload-pages-artifact: empacota a pasta de saída (ex.: out/) como artefacto",
+      "deploy-pages: publica o artefacto no ambiente github-pages",
+      "Starter workflow pages/nextjs.yml com cache de .next/cache e deteção npm/yarn",
+      "Concorrência configurada para não cancelar deploys em curso"
+    ],
+    "use_cases": [
+      "Automatizar o deploy de um site Next.js com output: 'export' (ex.: portfolio-v2)",
+      "Publicar qualquer site estático gerado em CI sem branch gh-pages",
+      "Correr lint e testes antes de publicar, no mesmo workflow"
+    ],
+    "technologies": [
+      "github-actions",
+      "nextjs",
+      "node"
+    ],
+    "platforms": [
+      "github"
+    ],
+    "requirements": [
+      "Em Settings → Pages do repositório, a origem tem de ser 'GitHub Actions'",
+      "Permissões do workflow: pages: write e id-token: write (contents: read)",
+      "Next.js configurado com exportação estática"
+    ],
+    "dependencies": [
+      "actions/checkout",
+      "actions/setup-node",
+      "actions/cache (opcional)"
+    ],
+    "related": [
+      {
+        "id": "github-pages",
+        "relation": "part_of",
+        "note": null
+      },
+      {
+        "id": "github-actions",
+        "relation": "depends_on",
+        "note": null
+      },
+      {
+        "id": "nextjs",
+        "relation": "integrates_with",
+        "note": "starter pages/nextjs.yml"
+      },
+      {
+        "id": "netlify",
+        "relation": "alternative_to",
+        "note": "deploy previews; fora do GitHub"
+      }
+    ],
+    "install": {
+      "method": "github-workflow",
+      "instructions": "Criar .github/workflows/<nome>.yml a partir do starter oficial (Actions → New workflow → Pages → Next.js) e mudar a origem do Pages para 'GitHub Actions'. Ver resources/tools/github-pages-actions-deploy.md.",
+      "commands": []
+    },
+    "configuration": "Se o projeto já gere o basePath (ex.: variável BASE_PATH), considerar não usar static_site_generator: next e passar steps.<id>.outputs.base_path ao build, para evitar duas fontes de configuração.",
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "pricing": {
+      "model": "free",
+      "notes": "Usa minutos do GitHub Actions; GitHub Pages em repositórios privados depende do plano."
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-10-15",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "partially_verified",
+      "verified_on": "2026-11-06",
+      "method": "Repositórios actions/configure-pages, upload-pages-artifact, deploy-pages e starter-workflows confirmados com git ls-remote (tags v6, v5, v5) e data do último commit; licenças MIT lidas dos ficheiros LICENSE; action.yml de configure-pages confirma static_site_generator (next, nuxt, gatsby, sveltekit); conteúdo de pages/nextjs.yml lido; página de documentação respondeu HTTP 200.",
+      "sources": [
+        "https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages",
+        "https://github.com/actions/deploy-pages",
+        "https://github.com/actions/upload-pages-artifact",
+        "https://github.com/actions/configure-pages",
+        "https://github.com/actions/starter-workflows/blob/main/pages/nextjs.yml"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls",
+        "license",
+        "features",
+        "maintenance.last_activity",
+        "requirements (permissões)"
+      ],
+      "unconfirmed_fields": [
+        "pricing.notes (Pages em repositórios privados)",
+        "necessidade de .nojekyll neste fluxo (o starter não o cria e upload-pages-artifact exclui ficheiros ocultos por omissão)"
+      ]
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Publica conteúdo do repositório num site público",
+      "notes": "Usa o GITHUB_TOKEN da execução com pages: write; fixar versões das actions; tudo o que é publicado fica público."
+    },
+    "limitations": [
+      "O starter fixa versões das actions que podem estar desatualizadas (ex.: upload-pages-artifact@v3 no starter vs v5 atual): rever ao copiar.",
+      "Tamanho do site: limite oficial suportado de 1 GB; deploys maiores podem falhar por timeout de 10 minutos.",
+      "static_site_generator: next altera a configuração do Next.js durante o build; pode colidir com lógica própria de basePath."
+    ],
+    "notes": "Lacuna identificada no primeiro teste de integração com o portfolio-v2 (deploy manual em três passos).",
+    "doc": "resources/tools/github-pages-actions-deploy.md"
+  },
+  {
     "id": "lighthouse",
     "name": "Lighthouse",
     "type": "tool",

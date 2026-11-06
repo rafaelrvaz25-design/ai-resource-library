@@ -49,6 +49,7 @@ SYNONYMS = {
     "pagina": ["page"], "responsiva": ["responsive"], "responsivo": ["responsive"],
     "animacao": ["animation"], "animacoes": ["animation"],
     "desempenho": ["performance"], "implementacao": ["deployment"], "publicar": ["deployment", "hosting"],
+    "deploy": ["deploy", "deployment"], "pages": ["github-pages", "pages"],
     "alojamento": ["hosting"], "fontes": ["sources", "references"], "referencias": ["references"],
     "sintese": ["synthesis"], "conhecimento": ["knowledge-management"],
     "prototipagem": ["prototyping"], "prototipo": ["prototyping"], "usabilidade": ["usability", "ux-research"],

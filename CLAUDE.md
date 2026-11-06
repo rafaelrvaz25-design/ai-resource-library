@@ -9,9 +9,13 @@ As regras universais estão em AGENTS.md e aplicam-se integralmente:
 ## Notas específicas para Claude
 
 **Localizar o catálogo.** Se este repositório estiver aberto, a raiz é a pasta deste ficheiro. Noutros projetos,
-procurar por esta ordem: variável `AI_RESOURCE_LIBRARY_ROOT`, `./ai-resource-library`, `~/ai-resource-library`.
-Sem cópia local, ler os ficheiros pela integração GitHub da sessão (repositório
-`rafaelrvaz25-design/ai-resource-library`, privado). Não assumir que o acesso de uma sessão anterior continua ativo.
+usar `skills/ai-resource-library/scripts/locate_library.py`. A ordem é: `AI_RESOURCE_LIBRARY_ROOT` → `~/ai-resource-library`
+e afins → caminhos conhecidos do ambiente (ex.: `/home/claude/ai-resource-library`, só se existir) → projeto atual e
+antecessores → clone temporário com `--remote`. Cada diretório é validado antes de ser usado. Não assumir que o
+acesso de uma sessão anterior continua ativo.
+
+**Contexto do projeto.** `skills/ai-resource-library/scripts/project_context.py <projeto> --library <lib> --compact`
+(só leitura) dá tecnologias, restrições, lacunas e pesquisas sugeridas antes de pesquisar.
 
 **Pesquisar.** Executar `python scripts/search.py "<termos>" --json` e trabalhar sobre o JSON. Decompor a pergunta
 do utilizador em 2–4 palavras-chave e filtros; se vier vazio, repetir com termos em inglês ou com menos filtros.

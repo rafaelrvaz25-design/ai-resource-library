@@ -1,61 +1,122 @@
 # Integrações com agentes e projetos
 
-Resumo: a biblioteca é um repositório Git **privado**. Qualquer agente que consiga ler o repositório consegue
-usá-la; a forma de acesso depende do produto. **O acesso de uma sessão não passa automaticamente para outras.**
+A biblioteca é um repositório Git **privado**. Um agente só a consegue usar se tiver acesso a uma cópia local
+ou ao repositório remoto **nessa sessão**. Nada a torna automaticamente disponível em todas as sessões:
+o acesso dado numa conversa ou máquina não passa para outra.
 
-## Métodos de acesso
+## Como a skill encontra a biblioteca
 
-| Método | Como | Limitações reais |
+`skills/ai-resource-library/scripts/locate_library.py` procura por esta ordem e usa a **primeira cópia válida**:
+
+1. `$AI_RESOURCE_LIBRARY_ROOT`
+2. Diretório pessoal: `~/ai-resource-library`, `~/.ai-resource-library`, `~/{src,projects,code,dev}/ai-resource-library`
+3. Caminhos conhecidos de ambientes, só se existirem: `/home/claude/ai-resource-library` (sessões cloud do Claude),
+   `/workspace(s)/ai-resource-library`, mais os de `$AI_RESOURCE_LIBRARY_EXTRA_PATHS` (separados por `:`)
+4. O projeto atual e até 3 antecessores, incluindo `./ai-resource-library` e `./.ai-resource-library`
+5. Com `--remote`: testa o acesso (`git ls-remote`) e faz um clone superficial para uma **pasta temporária**
+
+"Válida" significa que o diretório tem `AGENTS.md`, o registo de tipos, os ficheiros de catálogo, os esquemas e o
+`search.py`. Diretórios inválidos são reportados e ignorados. Se houver uma cópia válida, **não clona**.
+
+## Cópia local vs repositório remoto
+
+| | Cópia local | Remoto (clone temporário) |
 |---|---|---|
-| **Git clone** | `git clone https://github.com/rafaelrvaz25-design/ai-resource-library ~/ai-resource-library` | Requer credenciais com acesso ao repositório privado. Atualizar com `git pull`. |
-| **Scripts locais** | `python scripts/search.py ...` na cópia local | Requer Python 3.9+ e shell. Sem dependências para pesquisar. |
-| **Integração GitHub nativa do agente** | Indicar o repositório ao agente (ex.: anexar o repositório na sessão Claude) | Depende do produto e de autorização por sessão/organização. Algumas integrações só leem ficheiros (sem executar scripts). |
-| **GitHub REST API** | `GET /repos/rafaelrvaz25-design/ai-resource-library/contents/catalog/mcp-servers.json` | Token com permissão de leitura; rate limits; devolve conteúdo em base64. |
-| **GitHub MCP Server** | Ferramentas de leitura de ficheiros do servidor oficial (`github-mcp-server` no catálogo) | Requer o servidor configurado no cliente; preferir modo read-only. |
-| **MCP Filesystem** | Apontar `mcp-server-filesystem` (read-only) para a cópia local | Útil em clientes MCP sem shell (ex.: apps desktop). |
-| **Skill** | `skills/ai-resource-library/` | Ver abaixo. Requer que a biblioteca esteja acessível por um dos métodos anteriores. |
-| **Servidor MCP próprio** | Não implementado (v2) | Exigiria um processo a correr; desnecessário enquanto `search.py` + leitura de ficheiros chegar. |
+| Velocidade | Imediata | Segundos (clone superficial) |
+| Atualização | Só o que tiver sido puxado (`git pull`); pode estar desatualizada | Versão atual do branch principal |
+| Requisitos | Existir no disco | Acesso autenticado nesta sessão + rede |
+| Persistência | Permanente | Apagada no fim (`--cleanup`); não fica cópia |
+| Escrita | Possível, se o utilizador pedir manutenção | Push desativado na cópia temporária |
+| Falhas | Diretório inválido → passa ao seguinte | `auth_failed`, `repo_not_found`, `network_error`, com mensagem clara |
 
-## Claude
+Credenciais: o script usa apenas a autenticação que o git já tem (credential helper, `gh`, SSH ou o proxy da
+sessão). Nunca põe tokens no URL nem os imprime, e as mensagens de erro do git são filtradas.
 
-### Claude (claude.ai / apps)
-1. Instalar a skill: comprimir a pasta `skills/ai-resource-library` em ZIP e carregá-la nas definições de
-   skills do Claude (o nome exato do menu pode mudar entre versões), ou guardar a proposta de skill que o Claude ofereceu na sessão de criação.
-2. Em cada sessão nova, dar acesso ao repositório (integração GitHub da sessão) e pedir, por exemplo:
-   *"Consulta a minha ai-resource-library: que recursos tenho para uma landing page em WordPress?"*
-3. Sem acesso ao repositório na sessão, a skill avisa e não inventa resultados.
+## Contexto do projeto
 
-### Claude Code
-- Dentro do repositório: o `CLAUDE.md` é lido automaticamente e importa o `AGENTS.md`.
-- Noutros projetos, acrescentar ao `CLAUDE.md` do projeto:
-  ```markdown
-  ## Recursos
-  Antes de escolher ferramentas, consultar a AI Resource Library em ~/ai-resource-library
-  (python ~/ai-resource-library/scripts/search.py "<termos>" --json). Regras: ~/ai-resource-library/AGENTS.md
-  ```
-- Skill pessoal: copiar `skills/ai-resource-library/` para `~/.claude/skills/ai-resource-library/`.
+`skills/ai-resource-library/scripts/project_context.py <projeto> --library <lib>` faz uma análise estática e
+limitada: manifestos de JavaScript, Python, PHP, Go, Rust, Ruby e Java, configurações de frameworks, workflows,
+documentação e lacunas. Devolve pesquisas sugeridas e os recursos do catálogo que o projeto já usa.
+Não executa scripts do projeto e não lê `.env`.
 
-## Codex (OpenAI)
-Lê `AGENTS.md` nativamente quando trabalha dentro do repositório. Noutros projetos, acrescentar ao `AGENTS.md`
-desse projeto o mesmo parágrafo de "Recursos" acima. Não é necessário adaptador.
+---
+
+## Claude Code
+
+| Automatizável | Continua a exigir ação/autorização |
+|---|---|
+| Ler `CLAUDE.md` do projeto e seguir para a biblioteca | Ter uma cópia local **ou** acesso ao repositório na máquina/sessão |
+| Skill pessoal disponível em todos os projetos | Instalar a skill uma vez |
+| Encontrar a cópia local sem clonar | Atualizar a cópia (`git pull`) |
+| Correr `search.py` e `project_context.py` (só leitura) | Instalar ou executar qualquer recurso recomendado |
+
+Configuração única:
+```bash
+git clone https://github.com/rafaelrvaz25-design/ai-resource-library ~/ai-resource-library
+mkdir -p ~/.claude/skills && cp -r ~/ai-resource-library/skills/ai-resource-library ~/.claude/skills/
+# opcional, num caminho diferente:  export AI_RESOURCE_LIBRARY_ROOT=/caminho/para/ai-resource-library
+```
+Em cada projeto, acrescentar ao `CLAUDE.md` (ou `AGENTS.md`):
+```markdown
+## Recursos
+Antes de escolher ferramentas, usar a skill ai-resource-library (AI Resource Library pessoal).
+```
+
+## Claude na versão web (claude.ai e apps)
+
+| Automatizável | Continua a exigir ação/autorização |
+|---|---|
+| A skill fica disponível em todas as conversas depois de instalada | Instalar/atualizar a skill nas definições (ou aceitar a proposta do Claude) |
+| Em sessões com ambiente de código, a skill localiza `/home/claude/ai-resource-library` ou faz um clone temporário | **Dar acesso ao repositório em cada conversa** (anexar o repositório / integração GitHub) |
+| Analisar um projeto anexado à sessão | Anexar o projeto a analisar |
+| | Confirmar qualquer uso de conectores (Figma, Supabase...) |
+
+Notas:
+- A skill instalada pode conter só o `SKILL.md`. Nesse caso segue a procura manual descrita no próprio ficheiro e
+  usa os scripts que estão dentro da biblioteca, depois de a encontrar.
+- Para ter os scripts junto da skill, carregar a pasta `skills/ai-resource-library` completa (em ZIP), se o
+  produto o permitir.
+- Sem acesso ao repositório, a skill informa que a biblioteca não está acessível e não inventa resultados.
+
+## Codex
+
+| Automatizável | Continua a exigir ação/autorização |
+|---|---|
+| Lê `AGENTS.md` nativamente (dentro da biblioteca ou do projeto) | Cópia local ou acesso ao repositório no ambiente do Codex |
+| Correr os scripts da biblioteca | Aprovação conforme o modo de sandbox do Codex |
+
+No `AGENTS.md` de cada projeto:
+```markdown
+## Recursos
+Antes de escolher ferramentas, consultar a AI Resource Library:
+`python ~/ai-resource-library/skills/ai-resource-library/scripts/locate_library.py` e seguir
+`<biblioteca>/skills/ai-resource-library/SKILL.md`. Regras: `<biblioteca>/AGENTS.md`.
+```
 
 ## Cursor
-Versões recentes leem `AGENTS.md`. Se a versão em uso não o fizer, criar `.cursor/rules/ai-resource-library.mdc`
-no projeto consumidor com um parágrafo a apontar para `AGENTS.md` e para `scripts/search.py`
-(confirmar o formato atual na documentação de regras do Cursor). Não foi criado adaptador porque duplicaria `AGENTS.md`.
 
-## ChatGPT
-Não lê ficheiros de instruções do repositório automaticamente. Opções: ligar o GitHub através dos conectores
-disponíveis na conta (se existirem no plano) e pedir para ler `AGENTS.md` e a coleção relevante; ou anexar
-`AGENTS.md` + `collections/<id>.json` + o `catalog/<tipo>.json` necessário à conversa. Sem execução de scripts,
-a pesquisa é feita pelo próprio modelo sobre os JSON — menos determinística.
+| Automatizável | Continua a exigir ação/autorização |
+|---|---|
+| Versões recentes leem `AGENTS.md` do projeto | Cópia local da biblioteca na máquina |
+| Regras de projeto (`.cursor/rules/`) | Confirmar comandos no terminal conforme as definições do Cursor |
 
-## Outros agentes
-Qualquer agente com leitura do repositório: começar por `AGENTS.md`. Para adicionar um adaptador, criar um
-ficheiro fino no formato que o agente lê, que **aponta** para `AGENTS.md` em vez de o copiar.
+Usar o mesmo parágrafo de "Recursos" no `AGENTS.md` do projeto. Se a versão em uso não ler `AGENTS.md`, criar uma
+regra em `.cursor/rules/` com esse parágrafo. Confirmar o formato atual na documentação de regras do Cursor.
 
-## Usar a biblioteca a partir de outro projeto (sem copiar recursos)
+## ChatGPT e outros agentes
 
-1. Ter uma cópia local partilhada (`~/ai-resource-library`) ou acesso GitHub.
-2. Referir a biblioteca no ficheiro de instruções do projeto (parágrafo acima).
-3. No projeto, registar apenas as **decisões** (que recursos foram escolhidos e porquê), não os metadados.
+O ChatGPT não lê ficheiros de instruções do repositório automaticamente. Opções:
+- ligar o GitHub (se o plano tiver esse conector);
+- anexar `AGENTS.md`, a coleção relevante e o `catalog/<tipo>.json` necessário.
+
+Sem execução de scripts, a pesquisa e o contexto são feitos pelo modelo e são menos determinísticos.
+Outros agentes: começar por `AGENTS.md`. Um adaptador deve **apontar** para ele, não copiá-lo.
+
+## Outros métodos de acesso
+
+| Método | Uso | Limitações |
+|---|---|---|
+| GitHub REST API | `GET /repos/rafaelrvaz25-design/ai-resource-library/contents/<caminho>` | Token de leitura; rate limits; sem execução de scripts |
+| GitHub MCP Server | Ler ficheiros a partir de clientes MCP | Configurar o servidor; preferir read-only |
+| MCP Filesystem | Apontar (read-only) para a cópia local | Apps desktop sem shell |
+| Servidor MCP próprio | Não implementado | Ver `architecture.md` |
