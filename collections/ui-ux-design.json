@@ -13,42 +13,187 @@
     "Preparar especificações de handoff",
     "Planear e sintetizar investigação com utilizadores"
   ],
-  "categories": ["design", "design-systems", "design-tokens", "prototyping", "ux-research", "accessibility"],
-  "tags": ["figma", "design-system", "tokens", "components", "handoff", "a11y", "prototyping", "ux-research"],
+  "categories": [
+    "design",
+    "design-systems",
+    "design-tokens",
+    "prototyping",
+    "ux-research",
+    "accessibility"
+  ],
+  "tags": [
+    "figma",
+    "design-system",
+    "tokens",
+    "components",
+    "handoff",
+    "a11y",
+    "prototyping",
+    "ux-research"
+  ],
   "resources": [
-    { "id": "figma", "role": "core", "rationale": "Ferramenta principal do utilizador; variáveis e componentes nativos cobrem a maioria das necessidades de um design system." },
-    { "id": "figma-mcp-server", "role": "core", "rationale": "Já ligado na conta Claude; permite a agentes ler e criar componentes, variáveis e documentação diretamente no Figma." },
-    { "id": "figma-agent-skills", "role": "recommended", "rationale": "Skills observadas na conta (ex.: figma-generate-library) que estruturam a criação de design systems em Figma. Estado unverified: confirmar na sessão." },
-    { "id": "tokens-studio", "role": "recommended", "rationale": "Quando os tokens têm de ser versionados em Git e partilhados com código." },
-    { "id": "style-dictionary", "role": "recommended", "rationale": "Transforma tokens em CSS/SCSS/JS para fechar o ciclo design → código." },
-    { "id": "design-tokens-format", "role": "reference", "rationale": "Formato portável para estruturar tokens." },
-    { "id": "storybook", "role": "recommended", "rationale": "Documentação viva dos componentes em código, complementar à documentação em Figma." },
-    { "id": "stark", "role": "optional", "rationale": "Verificação de contraste e simulação de visão dentro do Figma." },
-    { "id": "claude-design-plugin-skills", "role": "optional", "rationale": "Skills de design-system, handoff, accessibility-review e user-research observadas na conta. Estado unverified." },
-    { "id": "figma-rest-api", "role": "optional", "rationale": "Para extrair tokens ou documentação por script." },
-    { "id": "wcag-22", "role": "reference", "rationale": "Critérios de acessibilidade aplicáveis já no design (contraste, alvos de toque, foco)." },
-    { "id": "radix-ui-primitives", "role": "optional", "rationale": "Referência de comportamento acessível dos componentes que o design deve especificar." },
-    { "id": "zotero", "role": "optional", "rationale": "Organização de fontes e referências de investigação UX." },
-    { "id": "skill-frontend-design", "role": "optional", "rationale": "Orientação estética quando um agente gera interfaces sem design system definido." }
+    {
+      "id": "figma",
+      "role": "core",
+      "rationale": "Ferramenta principal do utilizador; variáveis e componentes nativos cobrem a maioria das necessidades de um design system."
+    },
+    {
+      "id": "figma-mcp-server",
+      "role": "core",
+      "rationale": "Já ligado na conta Claude; permite a agentes ler e criar componentes, variáveis e documentação diretamente no Figma."
+    },
+    {
+      "id": "figma-agent-skills",
+      "role": "recommended",
+      "rationale": "Skills observadas na conta (ex.: figma-generate-library) que estruturam a criação de design systems em Figma. Estado unverified: confirmar na sessão."
+    },
+    {
+      "id": "tokens-studio",
+      "role": "recommended",
+      "rationale": "Quando os tokens têm de ser versionados em Git e partilhados com código."
+    },
+    {
+      "id": "style-dictionary",
+      "role": "recommended",
+      "rationale": "Transforma tokens em CSS/SCSS/JS para fechar o ciclo design → código."
+    },
+    {
+      "id": "design-tokens-format",
+      "role": "reference",
+      "rationale": "Formato portável para estruturar tokens."
+    },
+    {
+      "id": "storybook",
+      "role": "recommended",
+      "rationale": "Documentação viva dos componentes em código, complementar à documentação em Figma."
+    },
+    {
+      "id": "stark",
+      "role": "optional",
+      "rationale": "Verificação de contraste e simulação de visão dentro do Figma."
+    },
+    {
+      "id": "claude-design-plugin-skills",
+      "role": "optional",
+      "rationale": "Skills de design-system, handoff, accessibility-review e user-research observadas na conta. Estado unverified."
+    },
+    {
+      "id": "figma-rest-api",
+      "role": "optional",
+      "rationale": "Para extrair tokens ou documentação por script."
+    },
+    {
+      "id": "wcag-22",
+      "role": "reference",
+      "rationale": "Critérios de acessibilidade aplicáveis já no design (contraste, alvos de toque, foco)."
+    },
+    {
+      "id": "radix-ui-primitives",
+      "role": "optional",
+      "rationale": "Referência de comportamento acessível dos componentes que o design deve especificar."
+    },
+    {
+      "id": "zotero",
+      "role": "optional",
+      "rationale": "Organização de fontes e referências de investigação UX."
+    },
+    {
+      "id": "skill-frontend-design",
+      "role": "optional",
+      "rationale": "Orientação estética quando um agente gera interfaces sem design system definido."
+    },
+    {
+      "id": "oil-ui",
+      "role": "optional",
+      "rationale": "Explorar e comparar direções visuais com revisão por screenshot."
+    },
+    {
+      "id": "dimensional-drawing",
+      "role": "optional",
+      "rationale": "Documentar medidas e anatomia de componentes para handoff."
+    },
+    {
+      "id": "awwwards-mcp",
+      "role": "optional",
+      "rationale": "Pesquisar referências visuais com análise especializada; requer avaliar termos e permissões."
+    },
+    {
+      "id": "design-how",
+      "role": "optional",
+      "rationale": "Selecionar design systems, skills de migração e efeitos visuais em código."
+    },
+    {
+      "id": "brand-identity-skill",
+      "role": "optional",
+      "rationale": "Desenvolver identidade visual quando o projeto exige branding completo."
+    }
   ],
   "recommendations": [
     {
       "scenario": "Criar e documentar um design system em Figma",
-      "prefer": ["figma", "figma-mcp-server", "design-tokens-format"],
-      "consider": ["tokens-studio", "style-dictionary", "storybook", "figma-agent-skills", "claude-design-plugin-skills"],
+      "prefer": [
+        "figma",
+        "figma-mcp-server",
+        "design-tokens-format"
+      ],
+      "consider": [
+        "tokens-studio",
+        "style-dictionary",
+        "storybook",
+        "figma-agent-skills",
+        "claude-design-plugin-skills"
+      ],
       "why": "Começar com variáveis e componentes nativos do Figma (sem plugins) e uma estrutura de tokens compatível com DTCG. Acrescentar Tokens Studio + Style Dictionary só quando for preciso sincronizar com código."
     },
     {
       "scenario": "Handoff para desenvolvimento",
-      "prefer": ["figma", "figma-mcp-server"],
-      "consider": ["storybook", "style-dictionary", "claude-design-plugin-skills"],
+      "prefer": [
+        "figma",
+        "figma-mcp-server"
+      ],
+      "consider": [
+        "storybook",
+        "style-dictionary",
+        "claude-design-plugin-skills"
+      ],
       "why": "O servidor MCP dá contexto de design diretamente ao agente de código; tokens exportados evitam valores hardcoded."
     },
     {
       "scenario": "Acessibilidade no design",
-      "prefer": ["stark", "wcag-22"],
-      "consider": ["claude-design-plugin-skills"],
+      "prefer": [
+        "stark",
+        "wcag-22"
+      ],
+      "consider": [
+        "claude-design-plugin-skills"
+      ],
       "why": "Verificar contraste e estados de foco antes do handoff é mais barato do que corrigir depois."
+    },
+    {
+      "scenario": "Explorar identidade visual e referências de interface",
+      "prefer": [
+        "figma"
+      ],
+      "consider": [
+        "oil-ui",
+        "awwwards-mcp",
+        "brand-identity-skill",
+        "design-how"
+      ],
+      "why": "Selecionar o recurso conforme a necessidade: direções de UI, investigação de referências, identidade de marca ou componentes de design system."
+    },
+    {
+      "scenario": "Documentar componentes para handoff",
+      "prefer": [
+        "figma",
+        "figma-mcp-server"
+      ],
+      "consider": [
+        "dimensional-drawing",
+        "storybook",
+        "design-how"
+      ],
+      "why": "Usar desenhos dimensionais para comunicar estrutura, e Storybook ou skills especializadas para especificação no código."
     }
   ],
   "updated_on": "2026-11-06"

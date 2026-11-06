@@ -100,6 +100,122 @@
     "doc": null
   },
   {
+    "id": "brand-identity-skill",
+    "name": "Brand Identity Skill",
+    "type": "skill",
+    "origin": "external",
+    "summary": "Skill de identidade de marca que articula logótipo, tipografia, paleta e entrega de guidelines.",
+    "description": "Gera várias direções de identidade a partir do briefing, mede contraste, licenças de fontes e cobertura de glifos, e produz elementos de marca e um kit de guidelines após seleção humana.",
+    "urls": {
+      "official": "https://github.com/fatihaydost/brand-identity-skill",
+      "docs": "https://github.com/fatihaydost/brand-identity-skill#readme",
+      "github": "https://github.com/fatihaydost/brand-identity-skill",
+      "package": null
+    },
+    "categories": [
+      "design",
+      "design-systems",
+      "ai-agents"
+    ],
+    "tags": [
+      "branding",
+      "brand-identity",
+      "logo",
+      "typography",
+      "color-palette",
+      "skill"
+    ],
+    "features": [
+      "Várias direções de identidade visual",
+      "Verificação de contraste e tipografia",
+      "Brand guidelines, logótipos e tokens"
+    ],
+    "use_cases": [
+      "Criar identidade visual a partir de um briefing",
+      "Preparar guidelines e assets de uma marca"
+    ],
+    "technologies": [
+      "python"
+    ],
+    "platforms": [
+      "claude-code"
+    ],
+    "requirements": [
+      "Python 3.10+",
+      "Browser Chromium",
+      "uv recomendado para dependências de Python"
+    ],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "wcag-22",
+        "relation": "integrates_with",
+        "note": "Testa contraste segundo critérios de acessibilidade."
+      },
+      {
+        "id": "design-tokens-format",
+        "relation": "integrates_with",
+        "note": "Gera tokens compatíveis com DTCG."
+      }
+    ],
+    "install": {
+      "method": "claude-code-marketplace",
+      "instructions": "Requer instalação autorizada da skill, browser e dependências; recomenda-se Claude Code.",
+      "commands": [
+        "/plugin marketplace add fatihaydost/brand-identity-skill",
+        "/plugin install brand-identity@brand-identity-skill"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": "https://github.com/fatihaydost/brand-identity-skill/blob/main/LICENSE"
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-04",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Repositório público, README.md e LICENSE consultados diretamente via GitHub em 2026-11-06; commit recente observado. Não houve execução do código nem auditoria de segurança.",
+      "sources": [
+        "https://github.com/fatihaydost/brand-identity-skill",
+        "https://github.com/fatihaydost/brand-identity-skill/blob/main/README.md",
+        "https://github.com/fatihaydost/brand-identity-skill/blob/main/LICENSE"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "description",
+        "license",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "high",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Briefings e ficheiros de marca; pode consultar sites e fontes públicas via browser.",
+      "notes": "Executa scripts e instala dependências por uv; informação fornecida ao agente também é processada pelo serviço de IA."
+    },
+    "limitations": [
+      "A execução integral foi testada sobretudo em Claude Code; Claude web tem restrições para acesso a fontes.",
+      "Consumo elevado de tokens e várias interações por processo.",
+      "A verificação de conflitos de marcas registadas não está incluída."
+    ],
+    "notes": "Descoberto no artigo UX Planet '5 New GitHub Repos for Claude Code Worth Trying for Product Design'; catalogado sem instalar ou executar.",
+    "doc": null
+  },
+  {
     "id": "claude-design-plugin-skills",
     "name": "Skills de design do Claude (observadas)",
     "type": "skill",
@@ -189,6 +305,119 @@
       "Disponibilidade específica da conta; não portável para outros agentes."
     ],
     "notes": "Observado no ambiente Claude do utilizador (lista de skills disponíveis) em 2026-11-06.",
+    "doc": null
+  },
+  {
+    "id": "dimensional-drawing",
+    "name": "Dimensional Drawing",
+    "type": "skill",
+    "origin": "external",
+    "summary": "Duas skills que produzem desenhos técnicos de componentes UI e animações das respetivas especificações.",
+    "description": "Transforma cards, dialogs e outros componentes em folhas técnicas com medidas, espaçamentos, raios e camadas. Inclui uma skill de motion separada; dados desconhecidos ficam por confirmar em vez de serem inventados.",
+    "urls": {
+      "official": "https://github.com/enesozturk/dimensional-drawing",
+      "docs": "https://github.com/enesozturk/dimensional-drawing#readme",
+      "github": "https://github.com/enesozturk/dimensional-drawing",
+      "package": null
+    },
+    "categories": [
+      "design",
+      "documentation",
+      "animation",
+      "prototyping"
+    ],
+    "tags": [
+      "ui-specification",
+      "handoff",
+      "dimensional-drawing",
+      "motion",
+      "skill"
+    ],
+    "features": [
+      "Desenhos técnicos de componentes",
+      "Variáveis dimensionais e vistas explodidas",
+      "Animação opcional da folha técnica"
+    ],
+    "use_cases": [
+      "Documentar a anatomia de componentes para handoff",
+      "Criar documentação visual de UI"
+    ],
+    "technologies": [
+      "html",
+      "javascript"
+    ],
+    "platforms": [
+      "claude-code",
+      "claude",
+      "codex",
+      "cursor"
+    ],
+    "requirements": [
+      "Fonte do componente, Storybook, URL ou screenshot",
+      "Para renderização headless da animação: Node.js 18+, Playwright e ffmpeg"
+    ],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "figma",
+        "relation": "complements",
+        "note": "Complementa especificações de design, sem substituir os ficheiros Figma."
+      }
+    ],
+    "install": {
+      "method": "skill",
+      "instructions": "Instalar apenas as pastas de skill necessárias; a animação pode exigir dependências opcionais.",
+      "commands": [
+        "npx skills add enesozturk/dimensional-drawing"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": "https://github.com/enesozturk/dimensional-drawing/blob/main/LICENSE"
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-10-23",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Repositório público, README.md e LICENSE consultados diretamente via GitHub em 2026-11-06; commit recente observado. Não houve execução do código nem auditoria de segurança.",
+      "sources": [
+        "https://github.com/enesozturk/dimensional-drawing",
+        "https://github.com/enesozturk/dimensional-drawing/blob/main/README.md",
+        "https://github.com/enesozturk/dimensional-drawing/blob/main/LICENSE"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "description",
+        "license",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Ficheiros, URLs e screenshots de componentes fornecidos ao agente.",
+      "notes": "O renderizador opcional executa Node.js e pode iniciar Chromium e ffmpeg."
+    },
+    "limitations": [
+      "Descreve a arquitetura do componente, não o conteúdo textual.",
+      "A animação headless requer dependências adicionais.",
+      "A integração motion foi otimizada para Claude Motion; outras bibliotecas não foram testadas."
+    ],
+    "notes": "Descoberto no artigo UX Planet '5 New GitHub Repos for Claude Code Worth Trying for Product Design'; catalogado sem instalar ou executar.",
     "doc": null
   },
   {
@@ -285,6 +514,117 @@
       "Dependem do conector Figma estar ativo."
     ],
     "notes": "Observado no ambiente Claude do utilizador em 2026-11-06.",
+    "doc": null
+  },
+  {
+    "id": "oil-ui",
+    "name": "Oil UI",
+    "type": "skill",
+    "origin": "external",
+    "summary": "Skill para agentes que explora direções visuais distintas e valida interfaces através de screenshots.",
+    "description": "Conduz o processo desde enquadramento do produto até protótipos e comparação de estilos; a versão open-source recomenda uma direção por omissão e permite comparar alternativas. Tem versão Pro com capacidades adicionais.",
+    "urls": {
+      "official": "https://github.com/oil-oil/oil-ui",
+      "docs": "https://github.com/oil-oil/oil-ui#readme",
+      "github": "https://github.com/oil-oil/oil-ui",
+      "package": null
+    },
+    "categories": [
+      "design",
+      "prototyping",
+      "frontend",
+      "ai-agents"
+    ],
+    "tags": [
+      "ui-design",
+      "visual-direction",
+      "screenshot-review",
+      "design-exploration",
+      "skill"
+    ],
+    "features": [
+      "Comparação de propostas visuais",
+      "Revisão de screenshots desktop e mobile",
+      "Refinamento de UI"
+    ],
+    "use_cases": [
+      "Explorar direções de UI para um website ou produto",
+      "Rever visualmente uma landing page"
+    ],
+    "technologies": [
+      "python"
+    ],
+    "platforms": [
+      "claude-code",
+      "codex",
+      "cursor"
+    ],
+    "requirements": [
+      "Agente com suporte a Agent Skills",
+      "Python 3 para verificação de versões"
+    ],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "skill-frontend-design",
+        "relation": "complements",
+        "note": "Ambas apoiam direção visual, com métodos diferentes."
+      }
+    ],
+    "install": {
+      "method": "skill",
+      "instructions": "Consultar instruções oficiais e rever a skill antes de instalar.",
+      "commands": [
+        "npx skills add oil-oil/oil-ui"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": "https://github.com/oil-oil/oil-ui/blob/main/LICENSE"
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": "Versão open-source gratuita; existe opção Pro paga."
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-04",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Repositório público, README.md e LICENSE consultados diretamente via GitHub em 2026-11-06; commit recente observado. Não houve execução do código nem auditoria de segurança.",
+      "sources": [
+        "https://github.com/oil-oil/oil-ui",
+        "https://github.com/oil-oil/oil-ui/blob/main/README.md",
+        "https://github.com/oil-oil/oil-ui/blob/main/LICENSE"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "description",
+        "license",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Ficheiros de projeto e screenshots locais quando a skill é utilizada.",
+      "notes": "Cria artefactos no projeto e consulta a lista pública de versões periodicamente; desativável via OIL_NO_UPDATE_CHECK=1."
+    },
+    "limitations": [
+      "Versão gratuita e Pro têm capacidades distintas.",
+      "Verificação visual depende do ambiente e do acesso ao browser.",
+      "Instalar a versão gratuita e a Pro em simultâneo pode gerar conflito de invocação."
+    ],
+    "notes": "Descoberto no artigo UX Planet '5 New GitHub Repos for Claude Code Worth Trying for Product Design'; catalogado sem instalar ou executar.",
     "doc": null
   },
   {
