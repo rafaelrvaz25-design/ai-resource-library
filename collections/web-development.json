@@ -180,6 +180,21 @@
       "id": "wcag-22",
       "role": "reference",
       "rationale": "Critérios de acessibilidade de referência."
+    },
+    {
+      "id": "oil-ui",
+      "role": "optional",
+      "rationale": "Explorar opções visuais em websites antes de implementar."
+    },
+    {
+      "id": "awwwards-mcp",
+      "role": "optional",
+      "rationale": "Recolher referências de design e padrões de interação de sites."
+    },
+    {
+      "id": "design-how",
+      "role": "optional",
+      "rationale": "Aplicar sistemas de design e efeitos de interface em React."
     }
   ],
   "recommendations": [
