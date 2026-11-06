@@ -179,7 +179,24 @@ def catalog_matches(library: Path, terms: set[str], deps: set[str]) -> list[dict
     return sorted(out, key=lambda x: x["id"])
 
 
-def analyse(root: Path, library: Path | None = None) -> dict:
+def goal_queries(goal: str) -> list[str]:
+    """Converte uma intenção declarada em pesquisas curtas, sem interpretar código do projeto."""
+    import unicodedata
+    plain = "".join(c for c in unicodedata.normalize("NFKD", goal.lower()) if not unicodedata.combining(c))
+    groups = (
+        (("visual", "interface", "portfolio", "design", "layout"), "direcao visual interface"),
+        (("consistencia", "componentes", "design system", "tokens"), "design system componentes"),
+        (("acessib", "contraste", "wcag"), "acessibilidade"),
+        (("performance", "rapidez", "carregamento", "velocidade"), "performance"),
+        (("tipografia", "fontes", "texto"), "tipografia"),
+        (("imagem", "fotografia", "webp"), "imagens otimizacao"),
+        (("marca", "identidade", "logotipo"), "identidade visual marca"),
+        (("handoff", "documentacao", "especificacoes"), "documentar componentes handoff"),
+    )
+    return [query for terms, query in groups if any(term in plain for term in terms)]
+
+
+def analyse(root: Path, library: Path | None = None, goal: str = "") -> dict:
     root = root.resolve()
     files, truncated = scan(root)
     names = {str(f): f for f in files}
@@ -330,7 +347,7 @@ def analyse(root: Path, library: Path | None = None) -> dict:
         "constraints": constraints,
         "tooling": tooling,
         "gaps": gaps,
-        "search_queries": [q.strip() for q in dict.fromkeys(queries) if q.strip()],
+        "search_queries": [q.strip() for q in dict.fromkeys(goal_queries(goal) + queries) if q.strip()],
         "notes": "Análise estática e limitada; nenhum script do projeto foi executado. 'environment_commands' "
                  "descreve o ambiente atual, não o projeto.",
     }
@@ -344,6 +361,7 @@ def analyse(root: Path, library: Path | None = None) -> dict:
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description="Contexto técnico de um projeto (só leitura).")
     p.add_argument("project", nargs="?", default=".")
+    p.add_argument("--goal", help="Objetivo do utilizador; gera pesquisas de intenção antes das técnicas.")
     p.add_argument("--library", help="Caminho da AI Resource Library para indicar recursos já usados.")
     p.add_argument("--compact", action="store_true", help="Só tecnologias, restrições, lacunas e pesquisas.")
     a = p.parse_args(argv)
@@ -351,7 +369,7 @@ def main(argv=None) -> int:
     if not root.is_dir():
         print(json.dumps({"error": f"'{a.project}' não é um diretório"}, ensure_ascii=False))
         return 1
-    r = analyse(root, Path(a.library) if a.library else None)
+    r = analyse(root, Path(a.library) if a.library else None, goal=a.goal or "")
     if a.compact:
         r = {k: r[k] for k in ("project", "languages", "technologies", "mentioned_in_docs", "constraints", "gaps",
                                "search_queries")
