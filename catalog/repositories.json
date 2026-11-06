@@ -183,6 +183,125 @@
     "doc": null
   },
   {
+    "id": "design-how",
+    "name": "design.how",
+    "type": "repository",
+    "origin": "external",
+    "summary": "Coleção de design systems, skills para agentes e efeitos visuais reutilizáveis para a web.",
+    "description": "Integra design systems com componentes e temas, skills para criar, documentar, rever e migrar sistemas de design, e um vault de efeitos tipográficos e interativos. É uma coleção de recursos, não uma única ferramenta.",
+    "urls": {
+      "official": "https://github.com/arla6ka/design.how",
+      "docs": "https://github.com/arla6ka/design.how#readme",
+      "github": "https://github.com/arla6ka/design.how",
+      "package": null
+    },
+    "categories": [
+      "design-systems",
+      "design",
+      "frontend",
+      "animation"
+    ],
+    "tags": [
+      "design-system",
+      "design-skills",
+      "shadcn",
+      "react",
+      "motion",
+      "visual-effects"
+    ],
+    "features": [
+      "Design systems Glaze, Lime, Quartz e Sodium",
+      "Skills de auditoria, migração e documentação",
+      "Vault de efeitos visuais"
+    ],
+    "use_cases": [
+      "Criar e manter um design system em código",
+      "Explorar efeitos de tipografia e movimento"
+    ],
+    "technologies": [
+      "react",
+      "typescript",
+      "javascript"
+    ],
+    "platforms": [
+      "claude-code",
+      "codex",
+      "cursor"
+    ],
+    "requirements": [
+      "Agente com suporte a Agent Skills",
+      "Dependências específicas de cada skill ou tema"
+    ],
+    "dependencies": [],
+    "related": [
+      {
+        "id": "shadcn-ui",
+        "relation": "integrates_with",
+        "note": "Os temas e componentes disponibilizam integração shadcn."
+      },
+      {
+        "id": "style-dictionary",
+        "relation": "complements",
+        "note": "Ambos apoiam sistemas de design e tokens em fluxos distintos."
+      }
+    ],
+    "install": {
+      "method": "skill",
+      "instructions": "Escolher skills ou design system individualmente, em vez de instalar todo o repositório.",
+      "commands": [
+        "npx skills@latest add arla6ka/design.how"
+      ]
+    },
+    "configuration": null,
+    "license": {
+      "spdx": "MIT",
+      "name": "MIT License",
+      "url": "https://github.com/arla6ka/design.how/blob/main/LICENSE"
+    },
+    "pricing": {
+      "model": "open-source",
+      "notes": null
+    },
+    "maintenance": {
+      "status": "active",
+      "last_activity": "2026-11-06",
+      "checked_on": "2026-11-06"
+    },
+    "verification": {
+      "status": "verified",
+      "verified_on": "2026-11-06",
+      "method": "Repositório público, README.md e LICENSE consultados diretamente via GitHub em 2026-11-06; commit recente observado. Não houve execução do código nem auditoria de segurança.",
+      "sources": [
+        "https://github.com/arla6ka/design.how",
+        "https://github.com/arla6ka/design.how/blob/main/README.md",
+        "https://github.com/arla6ka/design.how/blob/main/LICENSE"
+      ],
+      "confirmed_fields": [
+        "name",
+        "urls.official",
+        "urls.github",
+        "description",
+        "license",
+        "maintenance.last_activity"
+      ],
+      "unconfirmed_fields": []
+    },
+    "risk": {
+      "level": "medium",
+      "executes_code": true,
+      "requires_credentials": false,
+      "data_access": "Código do projeto; algumas skills podem aceder a páginas e screenshots locais.",
+      "notes": "Inclui scripts Node e ferramentas de browser; as modificações do design system devem ser revistas antes de execução."
+    },
+    "limitations": [
+      "É uma coleção heterogénea: avaliar cada skill e visual separadamente.",
+      "Algumas verificações requerem Chromium e Playwright.",
+      "Os efeitos visuais necessitam de revisão de performance e acessibilidade no projeto final."
+    ],
+    "notes": "Descoberto no artigo UX Planet '5 New GitHub Repos for Claude Code Worth Trying for Product Design'; catalogado sem instalar ou executar.",
+    "doc": null
+  },
+  {
     "id": "internal-portfolio-static",
     "name": "Portfolio (projeto próprio, estático)",
     "type": "repository",
