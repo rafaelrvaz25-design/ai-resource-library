@@ -70,7 +70,7 @@ SYNONYMS = {
     "cor": ["color", "colour", "contrast"], "cores": ["color", "colour", "palette"],
     "contraste": ["contrast", "accessibility", "wcag"],
     "tipografia": ["typography", "fonts", "type"],
-    "fontes": ["fonts", "typography", "font"], "otimizacao": ["optimization", "performance"],
+    "fonte": ["source", "reference"], "otimizacao": ["optimization", "performance"],
     "imagens": ["images", "image"], "imagem": ["image", "images"],
     "consistencia": ["consistency", "design-system", "tokens"],
 }
@@ -87,6 +87,9 @@ def tokenize(text: str) -> list[str]:
 def expand_query(query: str) -> list[list[str]]:
     """Cada termo da pergunta vira um grupo de alternativas (termo + sinónimos)."""
     norm = normalize(query)
+    # Expressões específicas desambiguam fontes de pesquisa vs. tipográficas.
+    for phrase in ("fontes tipograficas", "fontes tipograficos", "fontes de letra", "tipo de letra"):
+        norm = norm.replace(phrase, "tipografia")
     # junta expressões compostas conhecidas
     for phrase, joined in (("design system", "design-system"), ("landing page", "landing"),
                            ("design tokens", "tokens"), ("model context protocol", "mcp")):

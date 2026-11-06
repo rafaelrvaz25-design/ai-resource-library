@@ -5,6 +5,8 @@ description: Pesquisa a AI Resource Library pessoal do utilizador (catálogo de 
 
 # AI Resource Library — consulta e recomendação
 
+**Versão do protocolo da skill: 1.1.0** (atualização manual; não é a versão do catálogo).
+
 Biblioteca: repositório privado `rafaelrvaz25-design/ai-resource-library`. As regras completas estão no
 `AGENTS.md` da biblioteca. Esta skill só lê: não altera o projeto, não instala nada e não faz push.
 
@@ -45,8 +47,10 @@ Se for uma cópia local, **verificar atualização quando houver rede e autoriza
 tiver scripts, usar `$LIB/skills/ai-resource-library/scripts/locate_library.py --check-updates`.
 O estado `different` indica SHA diferente, não prova que a cópia esteja atrasada. Se a verificação
 falhar, indicar estado desconhecido e continuar com a versão local, explicitando a limitação.
-Comparar também a secção de decomposição desta skill com a versão no repositório: uma skill instalada
-pode estar desatualizada mesmo quando a biblioteca está atual. **Não atualizar automaticamente** a skill.
+Comparar também a **versão do protocolo da skill** instalada com a do SKILL.md na main remota.
+Se a instalada não tiver versão, indicar `legacy/unknown`; se for diferente, indicar a diferença
+sem assumir que a versão instalada é mais antiga (consultar histórico se necessário).
+Uma skill instalada pode estar desatualizada mesmo quando a biblioteca está atual. **Não atualizar automaticamente** a skill.
 
 Depois de localizada, `$LIB` = caminho encontrado. Dizer ao utilizador qual foi usado e se é **cópia local**
 (pode estar desatualizada: o `git -C $LIB log -1` mostra a versão) ou **cópia remota temporária** (versão atual
@@ -78,7 +82,8 @@ cd $LIB
 python scripts/search.py --collection <id> --json          # papéis + recomendações por cenário
 python scripts/search.py "<2-4 palavras-chave>" --json [--type ...] [--platform ...]
 ```
-Começar pelo **objetivo expresso pelo utilizador**, e usar as `search_queries` técnicas do passo 2 como complemento. A pesquisa é textual. Se não houver resultados: usar termos em inglês,
+Começar pelo **objetivo expresso pelo utilizador**, e usar as `search_queries` técnicas do passo 2 como complemento. A pesquisa é textual. Para tipografia pesquisar `tipografia` ou `fontes tipográficas`; para bibliografia usar `fontes de pesquisa`.
+Se não houver resultados: usar termos em inglês,
 menos filtros ou `--min-coverage 0.3`.
 
 ### Decompor pedidos complexos (obrigatório)
@@ -89,6 +94,8 @@ menos filtros ou `--min-coverage 0.3`.
 3. Usar contexto do projeto para **filtrar e interpretar** candidatos depois da recuperação. Next.js e React são
    restrições de implementação, não condições para descobrir uma skill de UI.
 4. Combinar candidatos sem duplicações e consultar a coleção relevante para papéis e cenários.
+   Descartar resultados específicos de tecnologias ausentes do projeto (ex.: Query Monitor num Next.js sem WordPress),
+   exceto quando o utilizador procura explicitamente essa tecnologia. A pontuação lexical não é uma medida de qualidade.
 5. Verificar recursos já utilizados. Preferir melhorar a configuração existente quando suficiente.
 6. **Não confundir score lexical com qualidade**: justificar adequação, limitações, alternativas e custo/risco.
    Se faltarem opções adequadas, repetir com sinónimos ou menor cobertura e declarar a lacuna.

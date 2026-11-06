@@ -99,6 +99,19 @@ class T2bProductDesignDiscovery(unittest.TestCase):
         self.assertEqual(result["results"], [])
 
 
+class T2cAmbiguousSources(unittest.TestCase):
+    def test_typographic_phrase_is_not_bibliography(self):
+        groups = search.expand_query("fontes tipográficas")
+        self.assertEqual(len(groups), 1)
+        self.assertIn("typography", groups[0])
+        self.assertNotIn("sources", groups[0])
+
+    def test_bibliography_sources_remain_supported(self):
+        groups = search.expand_query("fontes")
+        self.assertIn("sources", groups[0])
+        self.assertNotIn("typography", groups[0])
+
+
 class T2cVisualVocabulary(unittest.TestCase):
     def test_visual_synonyms_are_expanded(self):
         for word, expected in (("tipografia", "typography"), ("cor", "color"),

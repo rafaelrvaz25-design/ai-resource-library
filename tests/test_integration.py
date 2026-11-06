@@ -271,6 +271,18 @@ class TestProjectContext(unittest.TestCase):
         self.assertNotIn("node_modules", json.dumps(r["configs"]))
 
 
+    def test_goal_detects_plural_images_and_colors(self):
+        queries = pc.goal_queries("Melhorar as cores, imagens, tipografia e performance")
+        self.assertIn("cores contraste", queries)
+        self.assertIn("imagens otimizacao", queries)
+        self.assertIn("tipografia", queries)
+        self.assertIn("performance", queries)
+        self.assertEqual(len(queries), len(set(queries)))
+
+    def test_goal_does_not_infer_unmentioned_areas(self):
+        self.assertEqual(pc.goal_queries("Corrigir deploy do website"), [])
+        self.assertEqual(pc.goal_queries("fontes de pesquisa"), [])
+
     def test_goal_first_queries(self):
         self.w("package.json", json.dumps({"dependencies": {"react": "18"}}))
         r = pc.analyse(self.root, goal="Melhorar a qualidade visual e acessibilidade do portfolio")
