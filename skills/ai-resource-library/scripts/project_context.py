@@ -180,20 +180,24 @@ def catalog_matches(library: Path, terms: set[str], deps: set[str]) -> list[dict
 
 
 def goal_queries(goal: str) -> list[str]:
-    """Converte uma intenção declarada em pesquisas curtas, sem interpretar código do projeto."""
+    """Decompõe objetivos PT-PT em capacidades, incluindo plurais e acentos."""
     import unicodedata
     plain = "".join(c for c in unicodedata.normalize("NFKD", goal.lower()) if not unicodedata.combining(c))
+    words = set(re.findall(r"[a-z0-9]+", plain))
+    # Cada grupo exige uma palavra ou expressão explícita; não inferir intenções ausentes.
     groups = (
-        (("visual", "interface", "portfolio", "design", "layout"), "direcao visual interface"),
-        (("consistencia", "componentes", "design system", "tokens"), "design system componentes"),
-        (("acessib", "contraste", "wcag"), "acessibilidade"),
+        (("visual", "interface", "interfaces", "portfolio", "design", "layout"), "direcao visual interface"),
+        (("consistencia", "componentes", "componente", "design system", "tokens"), "design system componentes"),
+        (("acessibilidade", "acessivel", "acessiveis", "contraste", "contrastes", "wcag"), "acessibilidade"),
         (("performance", "rapidez", "carregamento", "velocidade"), "performance"),
-        (("tipografia", "fontes", "texto"), "tipografia"),
-        (("imagem", "fotografia", "webp"), "imagens otimizacao"),
+        (("tipografia", "tipografica", "tipograficas", "fontes tipograficas", "tipo de letra"), "tipografia"),
+        (("cor", "cores", "paleta", "paletas", "coloracao"), "cores contraste"),
+        (("imagem", "imagens", "fotografia", "fotografias", "webp", "avif"), "imagens otimizacao"),
         (("marca", "identidade", "logotipo"), "identidade visual marca"),
         (("handoff", "documentacao", "especificacoes"), "documentar componentes handoff"),
     )
-    return [query for terms, query in groups if any(term in plain for term in terms)]
+    return [query for terms, query in groups
+            if any((term in plain if " " in term else term in words) for term in terms)]
 
 
 def analyse(root: Path, library: Path | None = None, goal: str = "") -> dict:
