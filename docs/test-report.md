@@ -60,4 +60,4 @@ que o validador falha e identifica o ID. Todos os ficheiros do registo existem. 
 
 Os 62 inconclusivos são páginas `github.com` que o ambiente desta sessão bloqueia (HTTP 403); os mesmos
 repositórios foram confirmados por `git ls-remote`. No GitHub Actions o script usa a API do GitHub com o token
-automático da execução. **A execução real do workflow só é confirmada depois do primeiro push** — ver o separador Actions.
+automático da execução. Primeira execução do workflow no GitHub Actions (push inicial, 2026-11-06): **success** (validação, 18 testes e pesquisa de fumo).
