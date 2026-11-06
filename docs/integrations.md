@@ -18,6 +18,15 @@ o acesso dado numa conversa ou máquina não passa para outra.
 "Válida" significa que o diretório tem `AGENTS.md`, o registo de tipos, os ficheiros de catálogo, os esquemas e o
 `search.py`. Diretórios inválidos são reportados e ignorados. Se houver uma cópia válida, **não clona**.
 
+## Verificar se a cópia local está atualizada
+
+`python skills/ai-resource-library/scripts/locate_library.py --check-updates` compara o commit local
+com `refs/heads/main` remota através de Git, sem fetch nem pull. A verificação é opcional,
+precisa de rede e acesso Git, e devolve `current`, `different` ou `unknown`.
+`different` não garante que a cópia esteja desatualizada: pode ter commits locais.
+Se não houver rede, continuar sem bloquear a descoberta. A skill instalada no agente é
+uma cópia separada e pode precisar de atualização manual.
+
 ## Cópia local vs repositório remoto
 
 | | Cópia local | Remoto (clone temporário) |

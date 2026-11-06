@@ -221,12 +221,38 @@ def locate(env: dict | None = None, home: Path | None = None, cwd: Path | None =
     return r
 
 
+
+def check_updates(path: Path, repo_url: str = DEFAULT_REPO_URL, git: GitRunner = default_git) -> dict:
+    """Compara HEAD local com main remota, sem fetch, pull, escrita ou prompts interativos."""
+    path = Path(path)
+    if not (path / ".git").exists():
+        return {"status": "unknown", "reason": "cópia sem metadados Git"}
+    try:
+        local = git(["-C", str(path), "rev-parse", "HEAD"], timeout=8)
+        if local.returncode or not local.stdout.strip():
+            return {"status": "unknown", "reason": "não foi possível ler HEAD local"}
+        remote = git(["ls-remote", repo_url, "refs/heads/main"], timeout=12)
+        if remote.returncode:
+            return {"status": "unknown", "reason": "não foi possível consultar a main remota",
+                    "detail": scrub(remote.stderr.strip())}
+        line = remote.stdout.strip().split()
+        if not line:
+            return {"status": "unknown", "reason": "main remota não encontrada"}
+        head = local.stdout.strip()
+        return {"status": "current" if head == line[0] else "different",
+                "local_sha": head, "remote_sha": line[0],
+                "note": "different significa SHA diferente, não prova que a cópia esteja atrás"}
+    except (OSError, subprocess.TimeoutExpired):
+        return {"status": "unknown", "reason": "Git indisponível ou timeout"}
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description="Localiza a AI Resource Library.")
     p.add_argument("--remote", action="store_true", help="Se não houver cópia local, clonar para pasta temporária.")
     p.add_argument("--repo-url", help=f"URL do repositório (omissão: $AI_RESOURCE_LIBRARY_REPO ou {DEFAULT_REPO_URL}).")
     p.add_argument("--project", help="Diretório do projeto atual (omissão: diretório de trabalho).")
     p.add_argument("--cleanup", metavar="PATH", help="Apagar uma cópia temporária criada por --remote.")
+    p.add_argument("--check-updates", action="store_true", help="Comparar HEAD local com main remota, sem modificar ficheiros.")
     p.add_argument("--path-only", action="store_true", help="Imprimir só o caminho (vazio se não encontrada).")
     a = p.parse_args(argv)
     if a.cleanup:
@@ -234,6 +260,8 @@ def main(argv=None) -> int:
         print(json.dumps(r, ensure_ascii=False))
         return 0 if r["status"] == "removed" else 1
     r = locate(project=Path(a.project) if a.project else None, remote=a.remote, repo_url=a.repo_url)
+    if a.check_updates and r["status"] == "found":
+        r["update_check"] = check_updates(Path(r["path"]), repo_url=a.repo_url or DEFAULT_REPO_URL)
     if a.path_only:
         print(r.get("path") or "")
     else:

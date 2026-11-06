@@ -40,6 +40,14 @@ Um diretório que exista mas falhe esta verificação é ignorado: indicar o mot
      dar acesso (ver `docs/integrations.md`). **Nunca** inventar recursos de memória como se fossem do catálogo.
    - Nunca pôr tokens no URL, nunca imprimir credenciais, nunca fazer push.
 
+Se for uma cópia local, **verificar atualização quando houver rede e autorização de leitura**, sem alterar ficheiros:
+`python <dir-desta-skill>/scripts/locate_library.py --check-updates`. Se a skill instalada não
+tiver scripts, usar `$LIB/skills/ai-resource-library/scripts/locate_library.py --check-updates`.
+O estado `different` indica SHA diferente, não prova que a cópia esteja atrasada. Se a verificação
+falhar, indicar estado desconhecido e continuar com a versão local, explicitando a limitação.
+Comparar também a secção de decomposição desta skill com a versão no repositório: uma skill instalada
+pode estar desatualizada mesmo quando a biblioteca está atual. **Não atualizar automaticamente** a skill.
+
 Depois de localizada, `$LIB` = caminho encontrado. Dizer ao utilizador qual foi usado e se é **cópia local**
 (pode estar desatualizada: o `git -C $LIB log -1` mostra a versão) ou **cópia remota temporária** (versão atual
 do repositório, apagada no fim).
@@ -47,7 +55,7 @@ do repositório, apagada no fim).
 ## 2. Identificar o contexto do projeto
 
 ```bash
-python $LIB/skills/ai-resource-library/scripts/project_context.py <dir-do-projeto> --library $LIB --compact
+python $LIB/skills/ai-resource-library/scripts/project_context.py <dir-do-projeto> --library $LIB --goal "objetivo do utilizador" --compact
 ```
 O script devolve:
 - linguagens e tecnologias, separando as detetadas por evidência das só mencionadas na documentação;
@@ -70,7 +78,7 @@ cd $LIB
 python scripts/search.py --collection <id> --json          # papéis + recomendações por cenário
 python scripts/search.py "<2-4 palavras-chave>" --json [--type ...] [--platform ...]
 ```
-Começar pelas `search_queries` do passo 2. A pesquisa é textual. Se não houver resultados: usar termos em inglês,
+Começar pelo **objetivo expresso pelo utilizador**, e usar as `search_queries` técnicas do passo 2 como complemento. A pesquisa é textual. Se não houver resultados: usar termos em inglês,
 menos filtros ou `--min-coverage 0.3`.
 
 ### Decompor pedidos complexos (obrigatório)

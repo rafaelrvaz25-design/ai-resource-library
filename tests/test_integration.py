@@ -201,6 +201,32 @@ class TestRemoteErrors(Base):
         self.assertIn(out.returncode, (0, 2), out.stderr)
 
 
+class TestUpdateCheck(unittest.TestCase):
+    def test_current_and_different(self):
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp)
+            (path / ".git").mkdir()
+            def same(args, timeout):
+                return subprocess.CompletedProcess(args, 0, stdout="abc123\n" if "rev-parse" in args else "abc123\trefs/heads/main\n", stderr="")
+            def different(args, timeout):
+                return subprocess.CompletedProcess(args, 0, stdout="abc123\n" if "rev-parse" in args else "def456\trefs/heads/main\n", stderr="")
+            self.assertEqual(ll.check_updates(path, git=same)["status"], "current")
+            self.assertEqual(ll.check_updates(path, git=different)["status"], "different")
+
+    def test_missing_git_or_network_is_unknown(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp)
+            self.assertEqual(ll.check_updates(path)["status"], "unknown")
+            (path / ".git").mkdir()
+            def failure(args, timeout):
+                if "rev-parse" in args:
+                    return subprocess.CompletedProcess(args, 0, stdout="abc123\n", stderr="")
+                return subprocess.CompletedProcess(args, 128, stdout="", stderr="Could not resolve host")
+            self.assertEqual(ll.check_updates(path, git=failure)["status"], "unknown")
+
+
+
 class TestProjectContext(unittest.TestCase):
     def setUp(self):
         self._tmp = tempfile.TemporaryDirectory()
@@ -243,6 +269,16 @@ class TestProjectContext(unittest.TestCase):
         self.assertNotIn("ghp_naoleras", dump, "não pode ler .env")
         self.assertNotIn("rm -rf", dump, "só nomes de scripts, nunca o conteúdo")
         self.assertNotIn("node_modules", json.dumps(r["configs"]))
+
+
+    def test_goal_first_queries(self):
+        self.w("package.json", json.dumps({"dependencies": {"react": "18"}}))
+        r = pc.analyse(self.root, goal="Melhorar a qualidade visual e acessibilidade do portfolio")
+        self.assertEqual(r["search_queries"][0], "direcao visual interface")
+        self.assertIn("acessibilidade", r["search_queries"])
+        self.assertIn("react accessibility lint", r["search_queries"])
+        self.assertEqual(pc.goal_queries(""), [])
+
 
     def test_project_without_package_json(self):
         self.w("pyproject.toml", '[project]\nname="api"\ndependencies=["fastapi>=0.1","requests"]\n')

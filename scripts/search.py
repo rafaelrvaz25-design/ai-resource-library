@@ -67,6 +67,12 @@ SYNONYMS = {
     "refinar": ["refinement", "ui-design"], "melhorar": ["ui-design", "frontend-design"],
     "componentes": ["components", "ui-specification"],
     "referencias": ["references", "design-inspiration"],
+    "cor": ["color", "colour", "contrast"], "cores": ["color", "colour", "palette"],
+    "contraste": ["contrast", "accessibility", "wcag"],
+    "tipografia": ["typography", "fonts", "type"],
+    "fontes": ["fonts", "typography", "font"], "otimizacao": ["optimization", "performance"],
+    "imagens": ["images", "image"], "imagem": ["image", "images"],
+    "consistencia": ["consistency", "design-system", "tokens"],
 }
 
 # Pesos por campo
